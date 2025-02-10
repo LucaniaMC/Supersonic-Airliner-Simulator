@@ -6,7 +6,7 @@ Itch.io Page: https://bestlucania.itch.io/supersonic-airliner-simulator
 
 ## Installation
 
-1. `https://github.com/LucaniaMC/Supersonic-Airliner-Simulator.git`
+1. `git clone https://github.com/LucaniaMC/Supersonic-Airliner-Simulator.git`
 2. In Unity Hub, click Add to add the folder as a new project
 3. Open the project in Unity
 
