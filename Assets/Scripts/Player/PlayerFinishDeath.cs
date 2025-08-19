@@ -29,6 +29,16 @@ public class PlayerFinishDeath : MonoBehaviour
 
     public AudioSource boostsound; //Fix boost audio continue playing when finished
 
+    private AudioManager audioManager;
+
+
+    //Assign game managers
+    void Start() 
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
+
     void OnFinish() 
     {
         if (script1.input == true) 
@@ -37,13 +47,14 @@ public class PlayerFinishDeath : MonoBehaviour
             script2.enabled = false;
             overlay.SetActive(true);
         
-            boostsound.mute = true; //Fix boost audio continue playing when finished
+            audioManager.ToggleLoopingSFX("BoostLoop", false); //Fix boost audio continue playing when finished
+            //This is now causing a null reference error
             hasrun = true; //Set death to true to fix death happening after victory
 
             confetti.SetActive(true);
             animator.SetBool("Finish",true);
 
-            FindObjectOfType<AudioManager>().Play("Finish");
+            audioManager.Play("Finish");
 
             Invoke ("NextScene", 2f); 
         }
@@ -51,12 +62,18 @@ public class PlayerFinishDeath : MonoBehaviour
 
     void NextScene() 
     {
+        //if in test scene, reload the scene
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            Invoke("ReloadScene", 2f);
+            return;
+        }
         //if next scene index doesn't exist, go back to title screen
-        if (SceneManager.GetActiveScene().buildIndex + 1 > SceneManager.sceneCountInBuildSettings - 1) 
+        if (SceneManager.GetActiveScene().buildIndex + 1 > SceneManager.sceneCountInBuildSettings - 1)
         {
             SceneManager.LoadScene("TitleScreen");
-        } 
-        else 
+        }
+        else    //load next scene
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
@@ -78,7 +95,7 @@ public class PlayerFinishDeath : MonoBehaviour
         
             Invoke ("ReloadScene", 2f);  
 
-            FindObjectOfType<AudioManager>().Play("Fail"); //Failsound
+            audioManager.Play("Fail"); //Failsound
             hasrun = true;
         }
     }

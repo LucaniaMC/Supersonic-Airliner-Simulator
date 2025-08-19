@@ -6,8 +6,6 @@ public class PlayerController : MonoBehaviour
     
     public GameObject player;
 
-    public AudioSource boostsound; //Put this in audiomanager
-
     //For player movements
     float moveSpeed = 0f;
     Vector3 target;
@@ -20,7 +18,16 @@ public class PlayerController : MonoBehaviour
 
     float time = 0f;
     float delay = 0.1f;
-    
+
+    private AudioManager audioManager;
+
+
+    //Assign game managers
+    void Start() 
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
 
     void Update()
     {
@@ -28,7 +35,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButton(0) & input == true)    //Supersonic speed
         {
             moveSpeed = 3f;
-            FindObjectOfType<AudioManager>().ToggleLoopingSFX("BoostLoop", true);
+            audioManager.ToggleLoopingSFX("BoostLoop", true);
 
 
            //Generate Sonic Boom
@@ -43,14 +50,14 @@ public class PlayerController : MonoBehaviour
         else    //Default speed
         {
             moveSpeed = 1.5f;
-            FindObjectOfType<AudioManager>().ToggleLoopingSFX("BoostLoop", false);
+            audioManager.ToggleLoopingSFX("BoostLoop", false);
         }
 
 
-        //Play sound without repeating
+        //Play initial boost
         if (Input.GetMouseButtonDown(0) & input == true) 
         {
-            FindObjectOfType<AudioManager>().Play("BoostStart");
+            audioManager.Play("BoostStart");
         }
 
 
