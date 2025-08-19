@@ -25,10 +25,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Switch between speeds when holding down left mouse button
-        if (Input.GetMouseButton(0) & input == true) 
+        if (Input.GetMouseButton(0) & input == true)    //Supersonic speed
         {
-           moveSpeed = 3f;
-           boostsound.mute = false;
+            moveSpeed = 3f;
+            FindObjectOfType<AudioManager>().ToggleLoopingSFX("BoostLoop", true);
 
 
            //Generate Sonic Boom
@@ -40,10 +40,10 @@ public class PlayerController : MonoBehaviour
                 Instantiate(boom, player.transform.position, Quaternion.identity); 
             }
         }
-        else
+        else    //Default speed
         {
             moveSpeed = 1.5f;
-            boostsound.mute = true;
+            FindObjectOfType<AudioManager>().ToggleLoopingSFX("BoostLoop", false);
         }
 
 

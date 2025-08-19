@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948317548207082399}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -44,34 +44,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5e92f9be42957448dd0450d306a8a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFXVolume: 1
+  musicVolume: 1
   sounds:
   - name: BoostStart
     clip: {fileID: 8300000, guid: 71907fe034e457b4b87bf024f924c036, type: 3}
+    type: 1
     volume: 0.4
-    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: BoostLoop
     clip: {fileID: 8300000, guid: 9e4e9b2cb887f804bb6995d886ff8b7d, type: 3}
+    type: 1
     volume: 1
-    pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Fail
     clip: {fileID: 8300000, guid: 63b777fbe15d00243970cbc460388b6b, type: 3}
+    type: 1
     volume: 1
-    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Finish
     clip: {fileID: 8300000, guid: 59622fc4cb735d14eaefd1f077b35df4, type: 3}
+    type: 1
     volume: 1
-    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Click
     clip: {fileID: 8300000, guid: 3980e31a4b4b83e4592a4de6f35403ed, type: 3}
+    type: 1
     volume: 1
-    pitch: 1
     loop: 0
+    source: {fileID: 0}
+  - name: BoostLoop
+    clip: {fileID: 8300000, guid: 9e4e9b2cb887f804bb6995d886ff8b7d, type: 3}
+    type: 1
+    volume: 1
+    loop: 1
     source: {fileID: 0}
