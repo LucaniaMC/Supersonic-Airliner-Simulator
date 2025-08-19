@@ -25,31 +25,31 @@ public class TitleScreen : MonoBehaviour
 
     public void StartButton() 
     {
-        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<AudioManager>().PlaySFX("Click", true);
         levelMenu.SetActive(true);
     }
 
     public void ExitStart() 
     {
-        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<AudioManager>().PlaySFX("Click", true);
         levelMenu.SetActive(false);
     }
 
     public void OptionsButton() 
     {
-        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<AudioManager>().PlaySFX("Click", true);
         optionsMenu.SetActive(true);
     }
 
     public void ExitOptions() 
     {
-        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<AudioManager>().PlaySFX("Click", true);
         optionsMenu.SetActive(false);
     }
 
     public void OpenLevel (int levelID) 
     {
-        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<AudioManager>().PlaySFX("Click", true);
         levelName = "Level " + levelID;
         StartCoroutine(StartLevel());
     }

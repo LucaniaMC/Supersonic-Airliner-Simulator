@@ -33,7 +33,7 @@ public class PlayerSkinManager : MonoBehaviour
         }
 
         UpdateSkin(selectedOption);
-        FindObjectOfType<AudioManager>().Play("Click");
+        FindObjectOfType<AudioManager>().PlaySFX("Click", true);
     }
 
     public void BackOption() //switch to previous skin
