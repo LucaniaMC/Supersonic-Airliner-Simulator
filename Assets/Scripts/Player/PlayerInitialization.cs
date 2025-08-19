@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 
-public class Intro : MonoBehaviour
+public class PlayerInitialization : MonoBehaviour
 {
-    public PlayerController script1;
-    public FuelBar script2;
-    public PlayerShadow script3;
-    public Intro self;
+    public PlayerController controller;
+    public FuelBar fuelBar;
+    public PlayerShadow shadow;
+    public PlayerInitialization self;
     public GameObject launch;
     public GameObject overlay;
     
     void Awake()
     {
-        script1.enabled = false;
-        script2.enabled = false;
-        script3.enabled = false;
+        controller.enabled = false;
+        fuelBar.enabled = false;
+        shadow.enabled = false;
         Invoke("DisableOverlay", 1f);
     }
 
@@ -22,10 +22,10 @@ public class Intro : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) 
         {
             FindObjectOfType<AudioManager>().Play("BoostStart");
-            script1.enabled = true;
-            script2.enabled = true;
-            script3.enabled = true;
-            script1.input = true;
+            controller.enabled = true;
+            fuelBar.enabled = true;
+            shadow.enabled = true;
+            controller.input = true;
             self.enabled = false;
             launch.SetActive(true);
         }  

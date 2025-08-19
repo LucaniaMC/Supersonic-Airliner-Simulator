@@ -140,42 +140,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1014265929193243723, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
-      propertyPath: m_UseNormalMap
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1014265929193243723, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
-      propertyPath: m_ShadowIntensity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1014265929193243723, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
-      propertyPath: m_LightVolumeOpacity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1014265929193243723, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
-      propertyPath: m_AlphaBlendOnOverlap
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128320250476125837, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7241969388789770205, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7587496663254192208, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
-      propertyPath: m_AlphaBlendOnOverlap
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8429168692320197647, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
       propertyPath: confetti
       value: 
       objectReference: {fileID: 381833950}
-    - target: {fileID: 8429168692331918940, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 8429168693152847464, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -231,10 +199,6 @@ PrefabInstance:
     - target: {fileID: 8429168693357330257, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8783624328231615012, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}

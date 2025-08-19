@@ -1135,7 +1135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8429168692320197643}
-  boostsound: {fileID: 8429168692320197641}
   input: 1
   boom: {fileID: 8564431319478455084, guid: ae2d5ba917fb0d64f9d495e4e4a9f663, type: 3}
 --- !u!114 &8429168692320197644
@@ -1183,9 +1182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e515425731380b42b5977e43e0bc16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script1: {fileID: 8429168692320197645}
-  script2: {fileID: 8429168692320197644}
-  script3: {fileID: 8429168693530980494}
+  controller: {fileID: 8429168692320197645}
+  fuelBar: {fileID: 8429168692320197644}
+  shadow: {fileID: 8429168693530980494}
   self: {fileID: 8429168692320197646}
   launch: {fileID: 8429168692331918942}
   overlay: {fileID: 8429168692223993338}
