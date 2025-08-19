@@ -21,7 +21,6 @@ public class PlayerInitialization : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) 
         {
-            FindObjectOfType<AudioManager>().Play("BoostStart");
             controller.enabled = true;
             fuelBar.enabled = true;
             shadow.enabled = true;
