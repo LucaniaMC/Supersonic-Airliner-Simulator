@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] sounds;
 
-    private Sound currentMusic; 
+    private Sound currentMusic;
 
 
     //Singleton
@@ -27,11 +27,13 @@ public class AudioManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        InitializeSounds();
     }
 
 
     //Initialization, create audiosource components from class instances created in inspector
-    void Start()
+    void InitializeSounds()
     {
         foreach (Sound s in sounds)
         {
@@ -88,7 +90,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("SFX not found: " + name);
             return;
         }
-        //Warning if SFT isn't a looping type
+        //Warning if SFX isn't a looping type
         if (s.source.loop == false)
         {
             Debug.LogWarning("SFX: " + name + " isn't set to looping");
@@ -111,6 +113,7 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name && sound.type == SoundType.Music);
+        //Warning if there is no sound
         if (s == null)
         {
             Debug.LogWarning("Music not found: " + name);

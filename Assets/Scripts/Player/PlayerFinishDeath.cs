@@ -23,38 +23,36 @@ public class PlayerFinishDeath : MonoBehaviour
 
     //Finish event
 
-    public PlayerController script1;
-    public FuelBar script2;
+    public PlayerController controller;
+    public FuelBar fuelBar;
     public GameObject confetti;
-
-    public AudioSource boostsound; //Fix boost audio continue playing when finished
-
-    private AudioManager audioManager;
 
 
     //Assign game managers
-    void Start() 
+    void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
+        //confetti = GameObject.Find("Confetti"); //this is not working on inactive objects
+        fuelBar = FindObjectOfType<FuelBar>();
+        controller = FindObjectOfType<PlayerController>();
     }
 
 
     void OnFinish() 
     {
-        if (script1.input == true) 
+        if (controller.input == true) 
         {
-            script1.enabled = false;
-            script2.enabled = false;
+            controller.enabled = false;
+            fuelBar.enabled = false;
             overlay.SetActive(true);
         
-            audioManager.ToggleLoopingSFX("BoostLoop", false); //Fix boost audio continue playing when finished
+            controller.audioManager.ToggleLoopingSFX("BoostLoop", false); //Fix boost audio continue playing when finished
             //This is now causing a null reference error
             hasrun = true; //Set death to true to fix death happening after victory
 
             confetti.SetActive(true);
             animator.SetBool("Finish",true);
 
-            audioManager.Play("Finish");
+            controller.audioManager.PlaySFX("Finish", false);
 
             Invoke ("NextScene", 2f); 
         }
@@ -90,12 +88,12 @@ public class PlayerFinishDeath : MonoBehaviour
         {
             overlay.SetActive(true);
             animator.SetBool("OnDeath",true);
-            script2.enabled = false;
-            script1.input = false; //Disable player input in PlayerController
+            fuelBar.enabled = false;
+            controller.input = false; //Disable player input in PlayerController
         
             Invoke ("ReloadScene", 2f);  
 
-            audioManager.Play("Fail"); //Failsound
+            controller.audioManager.PlaySFX("Fail", false); //Failsound
             hasrun = true;
         }
     }

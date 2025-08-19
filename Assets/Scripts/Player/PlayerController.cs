@@ -12,14 +12,13 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public bool input = true; //For disabling input
 
-
     //Generate Sonic Boom
     public GameObject boom;
 
     float time = 0f;
     float delay = 0.1f;
 
-    private AudioManager audioManager;
+    [HideInInspector] public AudioManager audioManager;
 
 
     //Assign game managers

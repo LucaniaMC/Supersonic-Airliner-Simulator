@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &948317548207082397
 Transform:
@@ -76,10 +76,4 @@ MonoBehaviour:
     type: 1
     volume: 1
     loop: 0
-    source: {fileID: 0}
-  - name: BoostLoop
-    clip: {fileID: 8300000, guid: 9e4e9b2cb887f804bb6995d886ff8b7d, type: 3}
-    type: 1
-    volume: 1
-    loop: 1
     source: {fileID: 0}
