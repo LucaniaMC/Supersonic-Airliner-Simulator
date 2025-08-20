@@ -2113,6 +2113,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 948317548207082396, guid: 8a95a2774ce3a3345a162959bc781f22, type: 3}
+      propertyPath: sounds.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 948317548207082396, guid: 8a95a2774ce3a3345a162959bc781f22, type: 3}
+      propertyPath: sounds.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 801bc4a2871a43848874bf8d75c925c0, type: 3}
+    - target: {fileID: 948317548207082396, guid: 8a95a2774ce3a3345a162959bc781f22, type: 3}
+      propertyPath: sounds.Array.data[6].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 948317548207082396, guid: 8a95a2774ce3a3345a162959bc781f22, type: 3}
+      propertyPath: sounds.Array.data[6].name
+      value: MenuMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 948317548207082396, guid: 8a95a2774ce3a3345a162959bc781f22, type: 3}
+      propertyPath: sounds.Array.data[6].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 948317548207082397, guid: 8a95a2774ce3a3345a162959bc781f22, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4012,7 +4032,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607842665}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 801bc4a2871a43848874bf8d75c925c0, type: 3}

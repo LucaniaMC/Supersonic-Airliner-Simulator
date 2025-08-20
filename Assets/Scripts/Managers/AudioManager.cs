@@ -122,6 +122,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        //Stop currently playing music
         if (currentMusic != null && currentMusic.source.isPlaying)
             currentMusic.source.Stop();
 

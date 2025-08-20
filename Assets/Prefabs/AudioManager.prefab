@@ -77,3 +77,21 @@ MonoBehaviour:
     volume: 1
     loop: 0
     source: {fileID: 0}
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 801bc4a2871a43848874bf8d75c925c0, type: 3}
+    type: 0
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: DayMusic
+    clip: {fileID: 8300000, guid: c50394e1f121ed74eb72e220f7f9c5c8, type: 3}
+    type: 0
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: NightMusic
+    clip: {fileID: 8300000, guid: f027e75cbfdf06c4bbf1c3f9da6f1dda, type: 3}
+    type: 0
+    volume: 1
+    loop: 1
+    source: {fileID: 0}

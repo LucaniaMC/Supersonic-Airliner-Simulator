@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
     public bool finished = false;   //Has the player reached the goal
 
     public bool isNight = false; //Is the level a night level
-    public string BGM;  //BGM that plays in the level
+    public string BGMName;  //BGM that plays in the level
 
     [HideInInspector] public GameObject player;
     [HideInInspector] public GameObject goal;

@@ -17,6 +17,7 @@ public class TitleScreen : MonoBehaviour
         Invoke("DisableOverlay", 1f);
         optionsMenu.SetActive(false);
         levelMenu.SetActive(false);
+        AudioManager.instance.PlayMusic("MenuMusic");
     }
 
     void DisableOverlay() 

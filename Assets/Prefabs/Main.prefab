@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 8429168692223993337}
   - component: {fileID: 8429168692223993336}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1152,7 +1152,6 @@ MonoBehaviour:
   boom: {fileID: 8564431319478455084, guid: ae2d5ba917fb0d64f9d495e4e4a9f663, type: 3}
   launch: {fileID: 778915846643892628, guid: a4c1348d75c6a774e8d9e15fc41b71b3, type: 3}
   confetti: {fileID: 1073120195597019897, guid: 2228b05487032784bb24c53cb99d6c4c, type: 3}
-  audioManager: {fileID: 0}
   levelManager: {fileID: 0}
   movement: {fileID: 0}
   fuelBar: {fileID: 0}
@@ -1172,9 +1171,9 @@ MonoBehaviour:
   failed: 0
   finished: 0
   isNight: 0
+  BGMName: 
   player: {fileID: 0}
   goal: {fileID: 0}
-  audioManager: {fileID: 0}
   fuelBar: {fileID: 0}
   overlay: {fileID: 8429168692223993338}
   animator: {fileID: 8429168692223993336}
@@ -1847,14 +1846,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.79097223, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.8666667, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d8ac3ff54c750a24681b679edd35c137, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2370,8 +2369,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -84.73, y: 138}
-  m_SizeDelta: {x: 271.5, y: 8.5}
+  m_AnchoredPosition: {x: -84.73, y: 137.63}
+  m_SizeDelta: {x: 271.5, y: 7.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8429168693643408004
 MonoBehaviour:
