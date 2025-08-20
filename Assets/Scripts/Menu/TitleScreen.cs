@@ -49,10 +49,10 @@ public class TitleScreen : MonoBehaviour
         optionsMenu.SetActive(false);
     }
 
-    public void OpenLevel (int levelID) 
+    public void OpenLevel (string levelNumber) 
     {
         AudioManager.instance.PlaySFX("Click", true);
-        levelName = "Level " + levelID;
+        levelName = "Level " + levelNumber;
         StartCoroutine(StartLevel());
     }
 
