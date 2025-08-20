@@ -43,6 +43,8 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.volume = s.volume;
         }
+
+        ApplyVolumeSettings();
     }
 
 
@@ -126,5 +128,39 @@ public class AudioManager : MonoBehaviour
         currentMusic = s;
         currentMusic.source.volume = s.volume; // reset in case it was faded
         currentMusic.source.Play();
+    }
+
+
+    //update volume for each sound
+    public void ApplyVolumeSettings()
+    {
+        foreach (Sound s in sounds)
+        {
+            if (s.source == null) continue;
+
+            if (s.type == SoundType.SFX)
+            {
+                s.source.volume = s.volume * SFXVolume;
+            }
+            else if (s.type == SoundType.Music)
+            {
+                s.source.volume = s.volume * musicVolume;
+            }
+        }
+    }
+
+
+    //for future UI buttons
+    public void SetSFXVolume(float value)
+    {
+        SFXVolume = value;
+        ApplyVolumeSettings();
+    }
+
+
+    public void SetMusicVolume(float value)
+    {
+        musicVolume = value;
+        ApplyVolumeSettings();
     }
 }
