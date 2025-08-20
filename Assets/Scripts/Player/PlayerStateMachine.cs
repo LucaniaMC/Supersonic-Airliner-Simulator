@@ -36,6 +36,12 @@ public class PlayerStateMachine : MonoBehaviour
 
     void Update() 
     {
+        //Fix for audio manager not referenced correctly
+        if (audioManager == null)
+        {
+            audioManager = FindObjectOfType<AudioManager>();
+        }
+
         currentState.StateUpdate();
     }
 

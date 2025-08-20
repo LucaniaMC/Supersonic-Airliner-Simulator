@@ -26,6 +26,16 @@ public class LevelManager : MonoBehaviour
         goal = GameObject.FindWithTag("Finish");
         player = GameObject.FindWithTag("Player");
     }
+
+
+    //Fix for audio manager not referenced correctly
+    void Update()
+    {
+        if (audioManager == null)
+        {
+            audioManager = FindObjectOfType<AudioManager>();
+        }
+    }
     
 
     public void Finish()
