@@ -2,10 +2,11 @@
 using UnityEngine.Audio;
 using System;
 
-
+//A singleton instance that plays audio from an array, which can be set up in the inspector
+//Usage: AudioManager.instance.FunctionName(param);
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance; //Singleton
+    public static AudioManager instance; //Singleton self reference
 
     [Range(0f, 1f)] public float SFXVolume = 1f; //volume multiplier for SFX
     [Range(0f, 1f)] public float musicVolume = 1f; //Volume multiplier for music
@@ -15,9 +16,9 @@ public class AudioManager : MonoBehaviour
     private Sound currentMusic;
 
 
-    //Singleton
     void Awake()
     {
+        //Remove duplicated instances, the first one is kept
         if (instance != null && instance != this)
         {
             Debug.LogWarning("AudioManager: duplicate instance destroyed.");
@@ -32,7 +33,7 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    //Initialization, create audiosource components from class instances created in inspector
+    //Initialization, create audiosource components from array
     void InitializeSounds()
     {
         foreach (Sound s in sounds)
@@ -55,7 +56,7 @@ public class AudioManager : MonoBehaviour
         //Warning if there is no sound
         if (s == null)
         {
-            Debug.LogWarning("SFX not found: " + name);
+            Debug.LogWarning("Sound not found: " + name);
             return;
         }
 

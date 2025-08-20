@@ -15,15 +15,15 @@ public class PlayerCollision : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) 
     {
         //Reach goal finish game
-        if (other.tag == "Finish" && levelManager.failed == false) 
+        if (other.tag == "Finish" && levelManager.status == LevelManager.LevelStatus.InProgress) 
         {
-            levelManager.finished = true;
+            levelManager.status = LevelManager.LevelStatus.Finished;
         }
 
         //Death zone death
-        if (other.tag == "DeathZone" && levelManager.finished == false) 
+        if (other.tag == "DeathZone" && levelManager.status == LevelManager.LevelStatus.InProgress) 
         {
-            levelManager.failed = true;
+            levelManager.status = LevelManager.LevelStatus.Failed;
         }
     }
 }

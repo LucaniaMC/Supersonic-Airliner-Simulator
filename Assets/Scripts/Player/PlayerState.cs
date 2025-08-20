@@ -94,7 +94,7 @@ public class PlayerAirState : PlayerState
 
         if (player.fuelBar.fuel == 0)
         {
-            player.levelManager.failed = true;
+            player.levelManager.status = LevelManager.LevelStatus.Failed;
         }
         
         Transitions();
@@ -106,12 +106,12 @@ public class PlayerAirState : PlayerState
 
     public override void Transitions()
     {
-        if (player.levelManager.failed == true)
+        if (player.levelManager.status == LevelManager.LevelStatus.Failed)
         {
             player.TransitionToState(new PlayerFailState(player));
         }
 
-        if (player.levelManager.finished == true)
+        if (player.levelManager.status == LevelManager.LevelStatus.Finished)
         {
             player.TransitionToState(new PlayerWinState(player));
         }

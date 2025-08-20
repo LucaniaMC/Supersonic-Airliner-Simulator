@@ -1,11 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Manages dynamic level information, place the prefab in scenes
 public class LevelManager : MonoBehaviour
 {
-    public bool failed = false;     //Has the player failed
-    public bool finished = false;   //Has the player reached the goal
+    public enum LevelStatus
+    {
+        InProgress,
+        Failed,
+        Finished
+    }
 
+    public LevelStatus status = LevelStatus.InProgress;
     public bool isNight = false; //Is the level a night level
     public string BGMName;  //BGM that plays in the level
 
@@ -15,17 +21,20 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public FuelBar fuelBar;
 
     bool hasrun = false; //Stupid way to make the code run only once
-    public GameObject overlay;
-    public Animator animator;
+    private GameObject overlay;
+    private Animator overlayAnimator;
 
 
     void Start()
     {
-        fuelBar = FindObjectOfType<FuelBar>();
+        fuelBar = GameObject.FindObjectOfType<FuelBar>();
         goal = GameObject.FindWithTag("Finish");
         player = GameObject.FindWithTag("Player");
+        overlay = GameObject.Find("Overlay");
+        overlayAnimator = overlay.GetComponent<Animator>();
+        AudioManager.instance.PlayMusic(BGMName);
     }
-  
+
 
     public void Finish()
     {
@@ -33,7 +42,7 @@ public class LevelManager : MonoBehaviour
         overlay.SetActive(true);
 
         hasrun = true;
-        animator.SetBool("Finish", true);
+        overlayAnimator.SetBool("Finish", true);
 
         Invoke("NextScene", 2f);
     }
@@ -57,26 +66,26 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
-    
-    
-    public void Fail() 
+
+
+    public void Fail()
     {
-        if (hasrun == false) 
+        if (hasrun == false)
         {
             overlay.SetActive(true);
-            animator.SetBool("OnDeath",true);
+            overlayAnimator.SetBool("OnDeath", true);
             fuelBar.enabled = false;
-        
-            Invoke ("ReloadScene", 2f);  
+
+            Invoke("ReloadScene", 2f);
 
             hasrun = true;
         }
     }
 
 
-    void ReloadScene() 
+    void ReloadScene()
     {
         Scene reloadscene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(reloadscene.name);
-    }  
+    }
 }
