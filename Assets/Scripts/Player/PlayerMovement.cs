@@ -30,16 +30,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    //move at supersonic speed
     public void SonicBoost()
     {
-        //Switch between speeds when holding down left mouse button
-            moveSpeed = 3f;
-            player.audioManager.ToggleLoopingSFX("BoostLoop", true);
+        moveSpeed = 3f;
+        player.audioManager.ToggleLoopingSFX("BoostLoop", true);
 
-            SpawnSonicBoom();
+        SpawnSonicBoom();
     }
 
-
+    //move at default speed
     public void Move()
     {
         moveSpeed = 1.5f;

@@ -46,7 +46,7 @@ public class PlayerGroundedState : PlayerState
         GameObject.Instantiate(player.launch, player.transform.position, Quaternion.identity);
         player.fuelBar.enabled = true;
         player.shadow.isActive = true;
-        player.audioManager.Play("BoostStart");
+        player.audioManager.PlaySFX("BoostStart", false);
     }
 
     public override void Transitions()
@@ -75,6 +75,7 @@ public class PlayerAirState : PlayerState
     {
         player.movement.MoveTowardsCursor();
 
+        //Switch between speeds when holding down left mouse button
         if (Input.GetMouseButton(0))
         {
             player.movement.SonicBoost();
@@ -84,9 +85,10 @@ public class PlayerAirState : PlayerState
             player.movement.Move();
         }
 
+        //play boost start sound on click
         if (Input.GetMouseButtonDown(0))
         {
-            player.audioManager.Play("BoostStart");
+            player.audioManager.PlaySFX("BoostStart", false);
         }
 
 
