@@ -73,24 +73,34 @@ public class PlayerAirState : PlayerState
 
     public override void StateUpdate()
     {
-        Move();
-        MoveTowardsCursor();
+        player.movement.MoveTowardsCursor();
+
+        if (Input.GetMouseButton(0))
+        {
+            player.movement.SonicBoost();
+        }
+        else
+        {
+            player.movement.Move();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            player.audioManager.Play("BoostStart");
+        }
+
+
         if (player.fuelBar.fuel == 0)
         {
             player.levelManager.failed = true;
         }
+        
         Transitions();
     }
 
-    public override void StateFixedUpdate()
-    {
+    public override void StateFixedUpdate(){}
 
-    }
-
-    public override void OnExit()
-    {
-
-    }
+    public override void OnExit(){}
 
     public override void Transitions()
     {
@@ -104,61 +114,6 @@ public class PlayerAirState : PlayerState
             player.TransitionToState(new PlayerWinState(player));
         }
     }
-
-    public void MoveTowardsCursor()
-    {
-        //Move towards mouse position
-        player.target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        player.transform.position = Vector3.MoveTowards(player.transform.position, player.target, player.moveSpeed * Time.deltaTime);
-
-        //Rotate towards mouse position
-        Vector3 direction = player.target - player.transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        player.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-
-        //Camera follow
-        Camera.main.transform.position = player.transform.position;
-    }
-
-    public void Move()
-    {
-        //Switch between speeds when holding down left mouse button
-        if (Input.GetMouseButton(0))    //Supersonic speed
-        {
-            player.moveSpeed = 3f;
-            player.audioManager.ToggleLoopingSFX("BoostLoop", true);
-
-            SpawnSonicBoom();
-        }
-        else   //Default speed
-        {
-            player.moveSpeed = 1.5f;
-            player.audioManager.ToggleLoopingSFX("BoostLoop", false);
-        }
-
-
-        //Play initial boost
-        if (Input.GetMouseButtonDown(0))
-        {
-            player.audioManager.Play("BoostStart");
-        }
-    }
-
-    //for sonic boom timer
-    float time = 0f;
-    float delay = 0.1f;
-
-    void SpawnSonicBoom()
-    {
-        time = time + 1f * Time.deltaTime;
-
-        if (time >= delay)
-        {
-            time = 0f;
-            GameObject.Instantiate(player.boom, player.transform.position, Quaternion.identity);
-        }
-    }
 }
 #endregion
 
@@ -170,29 +125,23 @@ public class PlayerFailState : PlayerState
 
     public override void OnEnter()
     {
+        Debug.Log("fail state entered");
         player.audioManager.ToggleLoopingSFX("BoostLoop", false);
         player.levelManager.Fail();
     }
 
     public override void StateUpdate()
     {
+        player.movement.MoveTowardsCursor();
+        player.movement.Move();
         Transitions();
     }
 
-    public override void StateFixedUpdate()
-    {
+    public override void StateFixedUpdate(){}
 
-    }
+    public override void OnExit(){}
 
-    public override void OnExit()
-    {
-
-    }
-
-    public override void Transitions()
-    {
-
-    }
+    public override void Transitions(){}
 }
 #endregion
 
@@ -204,6 +153,7 @@ public class PlayerWinState : PlayerState
 
     public override void OnEnter()
     {
+        Debug.Log("win state entered");
         player.shadow.isActive = false;
         player.audioManager.ToggleLoopingSFX("BoostLoop", false);
         player.levelManager.Finish();
@@ -215,19 +165,10 @@ public class PlayerWinState : PlayerState
         Transitions();
     }
 
-    public override void StateFixedUpdate()
-    {
+    public override void StateFixedUpdate(){}
 
-    }
+    public override void OnExit(){}
 
-    public override void OnExit()
-    {
-
-    }
-
-    public override void Transitions()
-    {
-
-    }
+    public override void Transitions(){}
 }
 #endregion

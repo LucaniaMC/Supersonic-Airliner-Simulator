@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    //For player movements
-    public float moveSpeed = 0f;
-    public Vector3 target;
-
     public GameObject overlay;
 
     //Instances
@@ -16,6 +12,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     [HideInInspector] public AudioManager audioManager;
     [HideInInspector] public LevelManager levelManager;
+    [HideInInspector] public PlayerMovement movement;
     [HideInInspector] public FuelBar fuelBar;
     [HideInInspector] public PlayerShadow shadow;
 
@@ -31,7 +28,8 @@ public class PlayerStateMachine : MonoBehaviour
         fuelBar = FindObjectOfType<FuelBar>();
         shadow = GetComponentInChildren<PlayerShadow>();
         levelManager = FindObjectOfType<LevelManager>();
-        
+        movement = FindObjectOfType<PlayerMovement>();
+
         InitializeStateMachine();
     }
 

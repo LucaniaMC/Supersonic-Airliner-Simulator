@@ -1041,6 +1041,7 @@ GameObject:
   - component: {fileID: 8429168692320197640}
   - component: {fileID: 8429168692320197635}
   - component: {fileID: 8429168692320197634}
+  - component: {fileID: 9028077791138579069}
   - component: {fileID: 1213971782138920430}
   - component: {fileID: 6860053019183158635}
   - component: {fileID: 7796092495961219411}
@@ -1120,6 +1121,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.65, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &9028077791138579069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8429168692320197643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eee50383c8faa14e8a62f94a2be43da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  target: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
 --- !u!114 &1213971782138920430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1132,14 +1148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb0e2680ab2cf749abee7da5cfda94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  target: {x: 0, y: 0, z: 0}
   overlay: {fileID: 0}
   boom: {fileID: 8564431319478455084, guid: ae2d5ba917fb0d64f9d495e4e4a9f663, type: 3}
   launch: {fileID: 778915846643892628, guid: a4c1348d75c6a774e8d9e15fc41b71b3, type: 3}
   confetti: {fileID: 1073120195597019897, guid: 2228b05487032784bb24c53cb99d6c4c, type: 3}
   audioManager: {fileID: 0}
   levelManager: {fileID: 0}
+  movement: {fileID: 0}
   fuelBar: {fileID: 0}
   shadow: {fileID: 0}
 --- !u!114 &6860053019183158635
@@ -1156,6 +1171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   failed: 0
   finished: 0
+  isNight: 0
   player: {fileID: 0}
   goal: {fileID: 0}
   audioManager: {fileID: 0}
