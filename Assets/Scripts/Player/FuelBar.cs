@@ -10,8 +10,6 @@ public class FuelBar : MonoBehaviour
     float time = 0f;
     float delay;
 
-    public PlayerFinishDeath other; //Get OnDeath method from the other script
-
     void Update() 
     {
         slider.value = fuel;
@@ -39,7 +37,6 @@ public class FuelBar : MonoBehaviour
         if (fuel <= 0) 
         {
             slider.value = 0;
-            other.OnDeath();
         }
     }
 }

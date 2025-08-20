@@ -6,13 +6,18 @@ public class PlayerStateMachine : MonoBehaviour
     public float moveSpeed = 0f;
     public Vector3 target;
 
-    [HideInInspector] public bool input = true; //For disabling input
+    public GameObject overlay;
 
     //Instances
     public GameObject boom;
     public GameObject launch;
+    public GameObject confetti;
+    
 
     [HideInInspector] public AudioManager audioManager;
+    [HideInInspector] public LevelManager levelManager;
+    [HideInInspector] public FuelBar fuelBar;
+    [HideInInspector] public PlayerShadow shadow;
 
 
     public PlayerState currentState { get; private set; }   
@@ -23,6 +28,10 @@ public class PlayerStateMachine : MonoBehaviour
     void Start() 
     {
         audioManager = FindObjectOfType<AudioManager>();
+        fuelBar = FindObjectOfType<FuelBar>();
+        shadow = GetComponentInChildren<PlayerShadow>();
+        levelManager = FindObjectOfType<LevelManager>();
+        
         InitializeStateMachine();
     }
 

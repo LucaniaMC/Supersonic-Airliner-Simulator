@@ -932,7 +932,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 8429168693632522081}
-  script1: {fileID: 0}
 --- !u!1 &8429168692223993338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,11 +1042,10 @@ GameObject:
   - component: {fileID: 8429168692320197635}
   - component: {fileID: 8429168692320197634}
   - component: {fileID: 1213971782138920430}
+  - component: {fileID: 6860053019183158635}
+  - component: {fileID: 7796092495961219411}
   - component: {fileID: 8429168692320197644}
-  - component: {fileID: 8429168692320197647}
-  - component: {fileID: 8429168692320197646}
   - component: {fileID: 8429168692320197632}
-  - component: {fileID: 8429168692320197641}
   - component: {fileID: 8429168692320197633}
   m_Layer: 0
   m_Name: Player
@@ -1136,10 +1134,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   target: {x: 0, y: 0, z: 0}
-  input: 1
+  overlay: {fileID: 0}
   boom: {fileID: 8564431319478455084, guid: ae2d5ba917fb0d64f9d495e4e4a9f663, type: 3}
   launch: {fileID: 778915846643892628, guid: a4c1348d75c6a774e8d9e15fc41b71b3, type: 3}
+  confetti: {fileID: 1073120195597019897, guid: 2228b05487032784bb24c53cb99d6c4c, type: 3}
   audioManager: {fileID: 0}
+  levelManager: {fileID: 0}
+  fuelBar: {fileID: 0}
+  shadow: {fileID: 0}
+--- !u!114 &6860053019183158635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8429168692320197643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db87838ea2c6fbe48b1dc45f23b0b83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failed: 0
+  finished: 0
+  player: {fileID: 0}
+  goal: {fileID: 0}
+  audioManager: {fileID: 0}
+  fuelBar: {fileID: 0}
+  overlay: {fileID: 8429168692223993338}
+  animator: {fileID: 8429168692223993336}
+--- !u!114 &7796092495961219411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8429168692320197643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4433a3c3b7aa8ae428750f2ef79867f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 0}
 --- !u!114 &8429168692320197644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,49 +1182,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8429168692320197643}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f01b398c02ec488469cea389bdaf1060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 8429168693643408004}
   fuel: 100
-  other: {fileID: 8429168692320197647}
---- !u!114 &8429168692320197647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8429168692320197643}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4433a3c3b7aa8ae428750f2ef79867f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 8429168692223993336}
-  controller: {fileID: 0}
-  fuelBar: {fileID: 0}
-  confetti: {fileID: 0}
-  overlay: {fileID: 8429168692223993338}
---- !u!114 &8429168692320197646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8429168692320197643}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e515425731380b42b5977e43e0bc16c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  fuelBar: {fileID: 8429168692320197644}
-  shadow: {fileID: 8429168693530980494}
-  self: {fileID: 8429168692320197646}
-  launch: {fileID: 778915846643892628, guid: a4c1348d75c6a774e8d9e15fc41b71b3, type: 3}
-  overlay: {fileID: 8429168692223993338}
 --- !u!114 &8429168692320197632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1203,102 +1202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingametext: {fileID: 8429168692816595031}
---- !u!82 &8429168692320197641
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8429168692320197643}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9e4e9b2cb887f804bb6995d886ff8b7d, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 1
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &8429168692320197633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2253,6 +2156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8429168692320197643}
   offset: {x: 0.2, y: -0.2, z: 12}
+  isActive: 0
 --- !u!1 &8429168693576241812
 GameObject:
   m_ObjectHideFlags: 0

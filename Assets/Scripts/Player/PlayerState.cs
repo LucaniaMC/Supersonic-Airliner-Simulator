@@ -29,6 +29,9 @@ public class PlayerGroundedState : PlayerState
     public override void OnEnter()
     {
         Debug.Log("ground state entered");
+
+        player.fuelBar.enabled = false;
+        player.shadow.isActive = false;
     }
 
     public override void StateUpdate()
@@ -41,6 +44,8 @@ public class PlayerGroundedState : PlayerState
     public override void OnExit()
     {
         GameObject.Instantiate(player.launch, player.transform.position, Quaternion.identity);
+        player.fuelBar.enabled = true;
+        player.shadow.isActive = true;
         player.audioManager.Play("BoostStart");
     }
 
@@ -63,12 +68,17 @@ public class PlayerAirState : PlayerState
     public override void OnEnter()
     {
         Debug.Log("air state entered");
+        player.shadow.isActive = true;
     }
 
     public override void StateUpdate()
     {
         Move();
         MoveTowardsCursor();
+        if (player.fuelBar.fuel == 0)
+        {
+            player.levelManager.failed = true;
+        }
         Transitions();
     }
 
@@ -84,7 +94,15 @@ public class PlayerAirState : PlayerState
 
     public override void Transitions()
     {
+        if (player.levelManager.failed == true)
+        {
+            player.TransitionToState(new PlayerFailState(player));
+        }
 
+        if (player.levelManager.finished == true)
+        {
+            player.TransitionToState(new PlayerWinState(player));
+        }
     }
 
     public void MoveTowardsCursor()
@@ -106,7 +124,7 @@ public class PlayerAirState : PlayerState
     public void Move()
     {
         //Switch between speeds when holding down left mouse button
-        if (Input.GetMouseButton(0) & player.input == true)    //Supersonic speed
+        if (Input.GetMouseButton(0))    //Supersonic speed
         {
             player.moveSpeed = 3f;
             player.audioManager.ToggleLoopingSFX("BoostLoop", true);
@@ -121,7 +139,7 @@ public class PlayerAirState : PlayerState
 
 
         //Play initial boost
-        if (Input.GetMouseButtonDown(0) & player.input == true)
+        if (Input.GetMouseButtonDown(0))
         {
             player.audioManager.Play("BoostStart");
         }
@@ -152,7 +170,8 @@ public class PlayerFailState : PlayerState
 
     public override void OnEnter()
     {
-
+        player.audioManager.ToggleLoopingSFX("BoostLoop", false);
+        player.levelManager.Fail();
     }
 
     public override void StateUpdate()
@@ -185,7 +204,10 @@ public class PlayerWinState : PlayerState
 
     public override void OnEnter()
     {
-
+        player.shadow.isActive = false;
+        player.audioManager.ToggleLoopingSFX("BoostLoop", false);
+        player.levelManager.Finish();
+        GameObject.Instantiate(player.confetti, player.levelManager.goal.transform.position, Quaternion.identity);
     }
 
     public override void StateUpdate()

@@ -6,10 +6,19 @@ public class PlayerShadow : MonoBehaviour
 
     public Vector3 offset;
 
-    void Update()
+    public bool isActive = false;
 
+    void Update()
     {
-        transform.position = player.transform.position + offset;
         transform.rotation = player.transform.rotation;
+
+        if (isActive)
+        {
+            transform.position = player.transform.position + offset;
+        }
+        else
+        {
+            transform.position = player.transform.position;
+        }
     }
 }

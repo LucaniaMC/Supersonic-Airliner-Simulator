@@ -36,7 +36,7 @@ public class SonicBoom : MonoBehaviour
         if (collision == true) 
         {
             GameObject other = GameObject.Find("Player");
-            other.GetComponent<PlayerFinishDeath>().OnDeath();
+            other.GetComponent<LevelManager>().failed = true;
             collision = false;
         }
     }

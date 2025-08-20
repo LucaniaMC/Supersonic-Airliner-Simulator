@@ -6,7 +6,6 @@ public class PauseMenu : MonoBehaviour
     public static bool paused = false;
 
     public GameObject pauseMenu;
-    public PlayerController script1;
 
     private AudioManager audioManager;
 
@@ -43,7 +42,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         paused = true;
-        script1.input = false;
     }
 
     public void PauseButton() 
@@ -56,7 +54,6 @@ public class PauseMenu : MonoBehaviour
     public void ResumeButton() 
     {
         audioManager.PlaySFX("Click", true);
-        script1.input = true;
         Resume();
     }
 
