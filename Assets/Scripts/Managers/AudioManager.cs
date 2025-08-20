@@ -33,6 +33,12 @@ public class AudioManager : MonoBehaviour
     }
 
 
+    void Start()
+    {
+        ApplyVolumeSettings(); //Fixes volumes not updating on start
+    }
+
+
     //Initialization, create audiosource components from array
     void InitializeSounds()
     {
