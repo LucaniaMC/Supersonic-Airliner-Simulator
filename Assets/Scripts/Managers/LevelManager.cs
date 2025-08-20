@@ -11,16 +11,16 @@ public class LevelManager : MonoBehaviour
         Finished
     }
 
-    public LevelStatus status = LevelStatus.InProgress;
+    public LevelStatus status = LevelStatus.InProgress; //Current status of the level
     public bool isNight = false; //Is the level a night level
     public string BGMName;  //BGM that plays in the level
 
     [HideInInspector] public GameObject player;
     [HideInInspector] public GameObject goal;
-
-    [HideInInspector] public FuelBar fuelBar;
+    private FuelBar fuelBar;
 
     bool hasrun = false; //Stupid way to make the code run only once
+
     private GameObject overlay;
     private Animator overlayAnimator;
 
