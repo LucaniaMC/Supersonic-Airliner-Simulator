@@ -46,7 +46,7 @@ public class PlayerGroundedState : PlayerState
         GameObject.Instantiate(player.launch, player.transform.position, Quaternion.identity);
         player.fuelBar.enabled = true;
         player.shadow.isActive = true;
-        player.audioManager.PlaySFX("BoostStart", false);
+        AudioManager.instance.PlaySFX("BoostStart", false);
     }
 
     public override void Transitions()
@@ -88,7 +88,7 @@ public class PlayerAirState : PlayerState
         //play boost start sound on click
         if (Input.GetMouseButtonDown(0))
         {
-            player.audioManager.PlaySFX("BoostStart", false);
+            AudioManager.instance.PlaySFX("BoostStart", false);
         }
 
 
@@ -128,7 +128,7 @@ public class PlayerFailState : PlayerState
     public override void OnEnter()
     {
         Debug.Log("fail state entered");
-        player.audioManager.ToggleLoopingSFX("BoostLoop", false);
+        AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
         player.levelManager.Fail();
     }
 
@@ -157,7 +157,7 @@ public class PlayerWinState : PlayerState
     {
         Debug.Log("win state entered");
         player.shadow.isActive = false;
-        player.audioManager.ToggleLoopingSFX("BoostLoop", false);
+        AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
         player.levelManager.Finish();
         GameObject.Instantiate(player.confetti, player.levelManager.goal.transform.position, Quaternion.identity);
     }

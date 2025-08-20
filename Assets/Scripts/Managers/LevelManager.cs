@@ -11,7 +11,6 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public GameObject player;
     [HideInInspector] public GameObject goal;
 
-    [HideInInspector] public AudioManager audioManager;
     [HideInInspector] public FuelBar fuelBar;
 
     bool hasrun = false; //Stupid way to make the code run only once
@@ -21,34 +20,23 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
         fuelBar = FindObjectOfType<FuelBar>();
         goal = GameObject.FindWithTag("Finish");
         player = GameObject.FindWithTag("Player");
     }
-
-
-    //Fix for audio manager not referenced correctly
-    void Update()
-    {
-        if (audioManager == null)
-        {
-            audioManager = FindObjectOfType<AudioManager>();
-        }
-    }
-    
+  
 
     public void Finish()
     {
         fuelBar.enabled = false;
         overlay.SetActive(true);
 
-        audioManager.ToggleLoopingSFX("BoostLoop", false); //Fix boost audio continue playing when finished
+        AudioManager.instance.ToggleLoopingSFX("BoostLoop", false); //Fix boost audio continue playing when finished
         //This is now causing a null reference error
         hasrun = true; //Set death to true to fix death happening after victory
         animator.SetBool("Finish", true);
 
-        audioManager.PlaySFX("Finish", false);
+        AudioManager.instance.PlaySFX("Finish", false);
 
         Invoke("NextScene", 2f);
     }
@@ -84,7 +72,7 @@ public class LevelManager : MonoBehaviour
         
             Invoke ("ReloadScene", 2f);  
 
-            audioManager.PlaySFX("Fail", false); //Failsound
+            AudioManager.instance.PlaySFX("Fail", false); //Failsound
             hasrun = true;
         }
     }

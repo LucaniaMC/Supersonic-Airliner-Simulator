@@ -11,13 +11,9 @@ public class TitleScreen : MonoBehaviour
 
     private string levelName;
 
-    private AudioManager audioManager;
-
 
     void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
-
         Invoke("DisableOverlay", 1f);
         optionsMenu.SetActive(false);
         levelMenu.SetActive(false);
@@ -30,31 +26,31 @@ public class TitleScreen : MonoBehaviour
 
     public void StartButton() 
     {
-        audioManager.PlaySFX("Click", true);
+        AudioManager.instance.PlaySFX("Click", true);
         levelMenu.SetActive(true);
     }
 
     public void ExitStart() 
     {
-        audioManager.PlaySFX("Click", true);
+        AudioManager.instance.PlaySFX("Click", true);
         levelMenu.SetActive(false);
     }
 
     public void OptionsButton() 
     {
-        audioManager.PlaySFX("Click", true);
+        AudioManager.instance.PlaySFX("Click", true);
         optionsMenu.SetActive(true);
     }
 
     public void ExitOptions() 
     {
-        audioManager.PlaySFX("Click", true);
+        AudioManager.instance.PlaySFX("Click", true);
         optionsMenu.SetActive(false);
     }
 
     public void OpenLevel (int levelID) 
     {
-        audioManager.PlaySFX("Click", true);
+        AudioManager.instance.PlaySFX("Click", true);
         levelName = "Level " + levelID;
         StartCoroutine(StartLevel());
     }

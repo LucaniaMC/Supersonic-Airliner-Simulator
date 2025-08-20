@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     public void SonicBoost()
     {
         moveSpeed = 3f;
-        player.audioManager.ToggleLoopingSFX("BoostLoop", true);
+        AudioManager.instance.ToggleLoopingSFX("BoostLoop", true);
 
         SpawnSonicBoom();
     }
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     public void Move()
     {
         moveSpeed = 1.5f;
-        player.audioManager.ToggleLoopingSFX("BoostLoop", false);
+        AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
     }
 
 

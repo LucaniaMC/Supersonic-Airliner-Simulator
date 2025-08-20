@@ -7,11 +7,9 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenu;
 
-    private AudioManager audioManager;
 
     void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
         pauseMenu.SetActive(false);
     }
     
@@ -47,27 +45,27 @@ public class PauseMenu : MonoBehaviour
     public void PauseButton() 
     {
         Pause();
-        audioManager.PlaySFX("Click", true);
+        AudioManager.instance.PlaySFX("Click", true);
     }
 
 
     public void ResumeButton() 
     {
-        audioManager.PlaySFX("Click", true);
+        AudioManager.instance.PlaySFX("Click", true);
         Resume();
     }
 
     public void MenuButton() 
     {
         Resume();
-        audioManager.PlaySFX("Click", true);
+        AudioManager.instance.PlaySFX("Click", true);
         SceneManager.LoadScene("TitleScreen");
     }
 
     public void RestartButton()
     {
         Resume();
-        audioManager.PlaySFX("Click", true);
+        AudioManager.instance.PlaySFX("Click", true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -10,7 +10,6 @@ public class PlayerStateMachine : MonoBehaviour
     public GameObject confetti;
     
 
-    [HideInInspector] public AudioManager audioManager;
     [HideInInspector] public LevelManager levelManager;
     [HideInInspector] public PlayerMovement movement;
     [HideInInspector] public FuelBar fuelBar;
@@ -24,7 +23,6 @@ public class PlayerStateMachine : MonoBehaviour
     #region Loop
     void Start() 
     {
-        audioManager = FindObjectOfType<AudioManager>();
         fuelBar = FindObjectOfType<FuelBar>();
         shadow = GetComponentInChildren<PlayerShadow>();
         levelManager = FindObjectOfType<LevelManager>();
@@ -36,12 +34,6 @@ public class PlayerStateMachine : MonoBehaviour
 
     void Update() 
     {
-        //Fix for audio manager not referenced correctly
-        if (audioManager == null)
-        {
-            audioManager = FindObjectOfType<AudioManager>();
-        }
-
         currentState.StateUpdate();
     }
 
