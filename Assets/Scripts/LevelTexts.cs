@@ -74,7 +74,7 @@ public class LevelTexts : MonoBehaviour
     private IEnumerator Text4()
     {
         yield return new WaitForSeconds(1f);
-        ingametext.text = "Supersonic speed consumes less fuel, but generates sonic booms.";
+        ingametext.text = "";
         yield return new WaitForSeconds(3f);
         ingametext.text = "";
         StartCoroutine(Text5());
@@ -83,7 +83,7 @@ public class LevelTexts : MonoBehaviour
     private IEnumerator Text5()
     {
         yield return new WaitForSeconds(1f);
-        ingametext.text = "Avoid the red no-fly zones.";
+        ingametext.text = "";
         yield return new WaitForSeconds(3f);
         ingametext.text = "";
     }
@@ -99,7 +99,7 @@ public class LevelTexts : MonoBehaviour
     private IEnumerator Text7()
     {
         yield return new WaitForSeconds(1f);
-        ingametext.text = "Reach the destination before fuel runs out.";
+        ingametext.text = "";
         yield return new WaitForSeconds(3f);
         ingametext.text = "";
     }
