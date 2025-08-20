@@ -3,10 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public bool failed = false;
-    public bool finished = false;
+    public bool failed = false;     //Has the player failed
+    public bool finished = false;   //Has the player reached the goal
 
-    public bool isNight = false;
+    public bool isNight = false; //Is the level a night level
+    public string BGM;  //BGM that plays in the level
 
     [HideInInspector] public GameObject player;
     [HideInInspector] public GameObject goal;
@@ -31,12 +32,8 @@ public class LevelManager : MonoBehaviour
         fuelBar.enabled = false;
         overlay.SetActive(true);
 
-        AudioManager.instance.ToggleLoopingSFX("BoostLoop", false); //Fix boost audio continue playing when finished
-        //This is now causing a null reference error
-        hasrun = true; //Set death to true to fix death happening after victory
+        hasrun = true;
         animator.SetBool("Finish", true);
-
-        AudioManager.instance.PlaySFX("Finish", false);
 
         Invoke("NextScene", 2f);
     }
@@ -47,7 +44,7 @@ public class LevelManager : MonoBehaviour
         //if in test scene, reload the scene
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
-            Invoke("ReloadScene", 2f);
+            Invoke("ReloadScene", 0f);
             return;
         }
         //if next scene index doesn't exist, go back to title screen
@@ -72,7 +69,6 @@ public class LevelManager : MonoBehaviour
         
             Invoke ("ReloadScene", 2f);  
 
-            AudioManager.instance.PlaySFX("Fail", false); //Failsound
             hasrun = true;
         }
     }

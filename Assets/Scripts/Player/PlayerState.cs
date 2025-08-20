@@ -129,6 +129,7 @@ public class PlayerFailState : PlayerState
     {
         Debug.Log("fail state entered");
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
+        AudioManager.instance.PlaySFX("Fail", false); //Failsound
         player.levelManager.Fail();
     }
 
@@ -158,6 +159,7 @@ public class PlayerWinState : PlayerState
         Debug.Log("win state entered");
         player.shadow.isActive = false;
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
+        AudioManager.instance.PlaySFX("Finish", false);
         player.levelManager.Finish();
         GameObject.Instantiate(player.confetti, player.levelManager.goal.transform.position, Quaternion.identity);
     }
