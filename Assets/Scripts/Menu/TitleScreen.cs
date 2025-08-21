@@ -8,6 +8,7 @@ public class TitleScreen : MonoBehaviour
     [SerializeField] GameObject overlay;
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject levelMenu;
+    [SerializeField] GameObject settingsMenu;
 
     private string levelName;
 
@@ -48,8 +49,20 @@ public class TitleScreen : MonoBehaviour
         AudioManager.instance.PlaySFX("Click", true);
         optionsMenu.SetActive(false);
     }
+    
+    public void SettingsButton() 
+    {
+        AudioManager.instance.PlaySFX("Click", true);
+        settingsMenu.SetActive(true);
+    }
 
-    public void OpenLevel (string levelNumber) 
+    public void ExitSettings() 
+    {
+        AudioManager.instance.PlaySFX("Click", true);
+        settingsMenu.SetActive(false);
+    }
+
+    public void OpenLevel(string levelNumber)
     {
         AudioManager.instance.PlaySFX("Click", true);
         levelName = "Level " + levelNumber;
