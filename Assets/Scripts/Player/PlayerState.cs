@@ -30,7 +30,6 @@ public class PlayerGroundedState : PlayerState
     {
         Debug.Log("ground state entered");
 
-        player.fuelBar.enabled = false;
         player.shadow.isActive = false;
     }
 
@@ -44,7 +43,6 @@ public class PlayerGroundedState : PlayerState
     public override void OnExit()
     {
         GameObject.Instantiate(player.launch, player.transform.position, Quaternion.identity);
-        player.fuelBar.enabled = true;
         player.shadow.isActive = true;
         AudioManager.instance.PlaySFX("BoostStart", false);
     }
@@ -79,10 +77,12 @@ public class PlayerAirState : PlayerState
         if (Input.GetMouseButton(0))
         {
             player.movement.SonicBoost();
+            player.fuelBar.DecreaseFuel(1f);
         }
         else
         {
             player.movement.Move();
+            player.fuelBar.DecreaseFuel(0.5f);
         }
 
         //play boost start sound on click

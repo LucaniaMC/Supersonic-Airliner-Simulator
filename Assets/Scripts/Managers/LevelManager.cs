@@ -17,7 +17,6 @@ public class LevelManager : MonoBehaviour
 
     [HideInInspector] public GameObject player;
     [HideInInspector] public GameObject goal;
-    private FuelBar fuelBar;
 
     bool hasrun = false; //Stupid way to make the code run only once
 
@@ -27,7 +26,6 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        fuelBar = GameObject.FindObjectOfType<FuelBar>();
         goal = GameObject.FindWithTag("Finish");
         player = GameObject.FindWithTag("Player");
         overlay = GameObject.Find("Overlay");
@@ -38,7 +36,6 @@ public class LevelManager : MonoBehaviour
 
     public void Finish()
     {
-        fuelBar.enabled = false;
         overlay.SetActive(true);
 
         hasrun = true;
@@ -74,7 +71,6 @@ public class LevelManager : MonoBehaviour
         {
             overlay.SetActive(true);
             overlayAnimator.SetBool("OnDeath", true);
-            fuelBar.enabled = false;
 
             Invoke("ReloadScene", 2f);
 

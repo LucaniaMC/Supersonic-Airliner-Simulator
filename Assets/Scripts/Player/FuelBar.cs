@@ -5,17 +5,22 @@ public class FuelBar : MonoBehaviour
 {
     public Slider slider;
 
-    public int fuel = 100;
+    public int fuel { get; private set; } = 100;
 
     float time = 0f;
-    float delay;
 
-    void Update() 
+
+    void Start()
     {
         slider.value = fuel;
-        
+    }
+
+
+    //Decrease the fuel over time, delay is 1 when boosting, and 0.5 when not boosting
+    public void DecreaseFuel(float delay)
+    {
         //Fuel Decrease over time Timer
-        time += Time.deltaTime; 
+        time += Time.deltaTime;
 
         if (time >= delay)
         {
@@ -23,18 +28,26 @@ public class FuelBar : MonoBehaviour
             fuel--;
         }
 
-        //Change of speed
-        if (Input.GetMouseButton(0))
-        {
-            delay = 1f;
-        }
-        else
-        {
-            delay = 0.5f;
-        }
+        UpdateFuel();
+    }
+
+
+    //Increase the fuel for a given amount
+    public void IncreaseFuel(int amount)
+    {
+        fuel += amount;
+        UpdateFuel();
+    }
+
+
+    //Update slider appearance
+    void UpdateFuel()
+    {
+        //change slider value
+        slider.value = fuel;
 
         //Out of fuel death
-        if (fuel <= 0) 
+        if (fuel <= 0)
         {
             slider.value = 0;
         }
