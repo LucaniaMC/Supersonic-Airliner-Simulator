@@ -26,4 +26,11 @@ public class SettingsMenu : MonoBehaviour
     {
         AudioManager.instance.ApplyVolumeSettings();
     }
+
+
+    //Called in sliders for them to have a click sound
+    public void ClickSound()
+    {
+        AudioManager.instance.PlaySFX("Click", true);
+    }
 }
