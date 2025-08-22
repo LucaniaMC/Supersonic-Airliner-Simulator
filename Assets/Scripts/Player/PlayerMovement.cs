@@ -3,20 +3,24 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //For player movements
-    public float moveSpeed = 0f;
-    public Vector3 target;
+    private float moveSpeed = 0f;
+
+    public Vector3 target; //mouse position that the player points to
     public PlayerStateMachine player;
+    private Camera mainCamera;
+
 
     void Start()
     {
         player = FindObjectOfType<PlayerStateMachine>();
+        mainCamera = Camera.main;
     }
 
 
     public void MoveTowardsCursor()
     {
         //Move towards mouse position
-        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        target = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         player.transform.position = Vector3.MoveTowards(player.transform.position, target, moveSpeed * Time.deltaTime);
 
         //Rotate towards mouse position
@@ -26,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         //Camera follow
-        Camera.main.transform.position = player.transform.position;
+        mainCamera.transform.position = player.transform.position;
     }
 
 
@@ -50,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
     //for sonic boom timer
     float time = 0f;
     float delay = 0.1f;
+
 
     void SpawnSonicBoom()
     {
