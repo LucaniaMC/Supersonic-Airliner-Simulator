@@ -247,16 +247,16 @@ MonoBehaviour:
   shadowRenderer: {fileID: 741869280162628239}
   houseSkins:
   - type: 0
-    sprite: {fileID: 21300000, guid: fee0ea0200182aa4ab4880a55fbf47e2, type: 3}
+    mainSprite: {fileID: 21300000, guid: fee0ea0200182aa4ab4880a55fbf47e2, type: 3}
     shadowSprite: {fileID: 21300000, guid: f8bee3bb5b3ff1145a6cc9e02cf36dbc, type: 3}
   - type: 1
-    sprite: {fileID: 21300000, guid: 126f7eaaba8f25b42a4cc11b4c904adf, type: 3}
+    mainSprite: {fileID: 21300000, guid: 126f7eaaba8f25b42a4cc11b4c904adf, type: 3}
     shadowSprite: {fileID: 21300000, guid: 52c4df0d244c66148b82bd45fc8cdbe3, type: 3}
   - type: 2
-    sprite: {fileID: 21300000, guid: 90bcf8d26b6da624b86a436e307545df, type: 3}
+    mainSprite: {fileID: 21300000, guid: 90bcf8d26b6da624b86a436e307545df, type: 3}
     shadowSprite: {fileID: 21300000, guid: f8bee3bb5b3ff1145a6cc9e02cf36dbc, type: 3}
   - type: 3
-    sprite: {fileID: 21300000, guid: a18671aeef3558140bf8eeec7f54b289, type: 3}
+    mainSprite: {fileID: 21300000, guid: a18671aeef3558140bf8eeec7f54b289, type: 3}
     shadowSprite: {fileID: 21300000, guid: f8bee3bb5b3ff1145a6cc9e02cf36dbc, type: 3}
 --- !u!1 &1568187472506181149
 GameObject:

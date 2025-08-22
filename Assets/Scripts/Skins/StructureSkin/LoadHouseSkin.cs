@@ -1,10 +1,6 @@
 using UnityEngine;
 
 
-//All house variant names
-public enum HouseType { Default, Water, Desert, Snow }
-
-
 [ExecuteInEditMode]
 public class LoadHouseSkin : MonoBehaviour
 {
@@ -35,19 +31,17 @@ public class LoadHouseSkin : MonoBehaviour
     //Match skin based on HouseType
     void ApplySkin()
     {
+        //no skins?
         if (houseSkins == null || houseSkins.Length == 0) return;
 
-        if (houseSkins != null)
+        foreach (var skin in houseSkins)
         {
-            foreach (var variant in houseSkins)
-        {
-            if (variant.type == selectedType)
+            if (skin.type == selectedType)
             {
-                if (mainRenderer != null) mainRenderer.sprite = variant.sprite;
-                if (shadowRenderer != null) shadowRenderer.sprite = variant.shadowSprite;
+                if (mainRenderer != null) mainRenderer.sprite = skin.mainSprite;
+                if (shadowRenderer != null) shadowRenderer.sprite = skin.shadowSprite;
                 return;
             }
-        }
         }
     }
 }
