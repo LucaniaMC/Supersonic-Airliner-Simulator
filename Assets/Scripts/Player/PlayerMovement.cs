@@ -4,8 +4,17 @@ public class PlayerMovement : MonoBehaviour
 {
     //For player movements
     private float moveSpeed = 0f;
+    readonly float normalSpeed = 1.5f;
+    readonly float boostSpeed = 3f;
 
-    public Vector3 target; //mouse position that the player points to
+    //for sonic boom timer
+    float time = 0f;
+    readonly float delay = 0.1f;
+
+    //mouse position that the player points to
+    Vector3 target;
+
+    //references
     public PlayerStateMachine player;
     private Camera mainCamera;
 
@@ -37,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     //move at supersonic speed
     public void SonicBoost()
     {
-        moveSpeed = 3f;
+        moveSpeed = boostSpeed;
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", true);
 
         SpawnSonicBoom();
@@ -46,14 +55,9 @@ public class PlayerMovement : MonoBehaviour
     //move at default speed
     public void Move()
     {
-        moveSpeed = 1.5f;
+        moveSpeed = normalSpeed;
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
     }
-
-
-    //for sonic boom timer
-    float time = 0f;
-    float delay = 0.1f;
 
 
     void SpawnSonicBoom()
