@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelTexts : MonoBehaviour
 {
-    public Text ingametext;
+    public TextMeshProUGUI ingametext;
 
     bool text1played = false;
     bool text3played = false;
