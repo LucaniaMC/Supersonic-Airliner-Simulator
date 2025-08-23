@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
     //mouse position that the player points to
     Vector3 target;
 
+    //wind
+    public Vector2 windDirection = Vector2.zero; // normalized direction
+    public float windStrength = 0f;              // speed of wind
+
     //references
     public PlayerStateMachine player;
     private Camera mainCamera;
@@ -28,15 +32,23 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveTowardsCursor()
     {
-        //Move towards mouse position
+        //mouse target position
         target = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        player.transform.position = Vector3.MoveTowards(player.transform.position, target, moveSpeed * Time.deltaTime);
+
+        //Player's own movement
+        Vector3 newPos = Vector3.MoveTowards(player.transform.position, target, moveSpeed * Time.deltaTime);
+
+        //Add wind offset
+        Vector3 windOffset = Time.deltaTime * windStrength * windDirection.normalized;
+        newPos += windOffset;
+
+        //Calculate composite player position to move to
+        player.transform.position = newPos;
 
         //Rotate towards mouse position
         Vector3 direction = target - player.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         player.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
 
         //Camera follow
         mainCamera.transform.position = player.transform.position;
