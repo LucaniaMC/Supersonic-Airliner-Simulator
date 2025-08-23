@@ -12,50 +12,50 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
     }
-    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (paused) 
+            if (paused)
             {
                 Resume();
-            } 
-            else 
+            }
+            else
             {
                 Pause();
             }
         }
     }
 
-    void Resume() 
+    void Resume()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
     }
 
-    void Pause() 
+    void Pause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         paused = true;
     }
 
-    public void PauseButton() 
+    public void PauseButton()
     {
         Pause();
         AudioManager.instance.PlaySFX("Click", true);
     }
 
 
-    public void ResumeButton() 
+    public void ResumeButton()
     {
         AudioManager.instance.PlaySFX("Click", true);
         Resume();
     }
 
-    public void MenuButton() 
+    public void MenuButton()
     {
         Resume();
         AudioManager.instance.PlaySFX("Click", true);

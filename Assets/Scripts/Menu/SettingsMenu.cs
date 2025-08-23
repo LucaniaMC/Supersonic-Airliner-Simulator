@@ -26,4 +26,11 @@ public class SettingsMenu : MonoBehaviour
     {
         AudioManager.instance.ApplyVolumeSettings();
     }
+
+
+    //For handle buttons
+    public void ClickSound()
+    {
+        AudioManager.instance.PlaySFX("Click", true);
+    }
 }

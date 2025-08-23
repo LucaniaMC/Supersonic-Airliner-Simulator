@@ -1440,7 +1440,6 @@ GameObject:
   m_Component:
   - component: {fileID: 339340618}
   - component: {fileID: 339340619}
-  - component: {fileID: 339340621}
   - component: {fileID: 339340620}
   m_Layer: 5
   m_Name: SFXSlider
@@ -1491,7 +1490,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1501,8 +1500,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: b68f71dd5b94e564ab0a0fe0060ba8b6, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: b68f71dd5b94e564ab0a0fe0060ba8b6, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -1512,7 +1511,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1483113401}
   m_FillRect: {fileID: 643187840}
   m_HandleRect: {fileID: 1483113400}
   m_Direction: 0
@@ -1548,13 +1547,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 3
+  - eventID: 4
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 339340621}
-          m_TargetAssemblyTypeName: SliderHandleClick, Assembly-CSharp
-          m_MethodName: SliderUp
+        - m_Target: {fileID: 2079664092}
+          m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+          m_MethodName: ClickSound
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1564,69 +1563,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 339340621}
-          m_TargetAssemblyTypeName: SliderHandleClick, Assembly-CSharp
-          m_MethodName: SliderDown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 339340621}
-          m_TargetAssemblyTypeName: SliderHandleClick, Assembly-CSharp
-          m_MethodName: SliderHover
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 339340621}
-          m_TargetAssemblyTypeName: SliderHandleClick, Assembly-CSharp
-          m_MethodName: SliderReset
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &339340621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339340617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18509406683fa0e4997b85a2a3e48370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetImage: {fileID: 1483113401}
-  defaultSprite: {fileID: 21300000, guid: 552a0a4091f8d4a4b91e49e6d77272a6, type: 3}
-  holdSprite: {fileID: 21300000, guid: b68f71dd5b94e564ab0a0fe0060ba8b6, type: 3}
 --- !u!1 &364912829
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,7 +3099,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963857756}
   - component: {fileID: 963857757}
-  - component: {fileID: 963857759}
   - component: {fileID: 963857758}
   m_Layer: 5
   m_Name: MusicSlider
@@ -3214,7 +3149,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -3224,8 +3159,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: b68f71dd5b94e564ab0a0fe0060ba8b6, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: b68f71dd5b94e564ab0a0fe0060ba8b6, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -3235,7 +3170,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 364912831}
   m_FillRect: {fileID: 1211038163}
   m_HandleRect: {fileID: 364912830}
   m_Direction: 0
@@ -3271,13 +3206,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 3
+  - eventID: 4
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 963857759}
-          m_TargetAssemblyTypeName: SliderHandleClick, Assembly-CSharp
-          m_MethodName: SliderUp
+        - m_Target: {fileID: 2079664092}
+          m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+          m_MethodName: ClickSound
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3287,69 +3222,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 963857759}
-          m_TargetAssemblyTypeName: SliderHandleClick, Assembly-CSharp
-          m_MethodName: SliderDown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 963857759}
-          m_TargetAssemblyTypeName: SliderHandleClick, Assembly-CSharp
-          m_MethodName: SliderHover
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 963857759}
-          m_TargetAssemblyTypeName: SliderHandleClick, Assembly-CSharp
-          m_MethodName: SliderReset
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &963857759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963857755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18509406683fa0e4997b85a2a3e48370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetImage: {fileID: 364912831}
-  defaultSprite: {fileID: 21300000, guid: 552a0a4091f8d4a4b91e49e6d77272a6, type: 3}
-  holdSprite: {fileID: 21300000, guid: b68f71dd5b94e564ab0a0fe0060ba8b6, type: 3}
 --- !u!1 &979303391
 GameObject:
   m_ObjectHideFlags: 0
