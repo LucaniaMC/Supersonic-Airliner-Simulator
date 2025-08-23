@@ -21,14 +21,14 @@ public class SettingsMenu : MonoBehaviour
     }
 
 
-    //I just like it
+    //Called in back button event
     public void ExitSettings()
     {
         AudioManager.instance.ApplyVolumeSettings();
     }
 
 
-    //For handle buttons
+    //For handle buttons to play sounds
     public void ClickSound()
     {
         AudioManager.instance.PlaySFX("Click", true);

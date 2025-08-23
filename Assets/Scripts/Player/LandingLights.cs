@@ -5,16 +5,18 @@ public class LandingLights : MonoBehaviour
     GameObject pos1;
     GameObject pos2;
     
-    public float distanceToGoal;
-    public float distanceToSpawn;
+    float distanceToGoal;
+    float distanceToSpawn;
 
-    public Animator animator;
+    [SerializeField] Animator animator;
+
 
     void Start()
     {
         pos1 = GameObject.Find("Player");
         pos2 = GameObject.Find("Goal");
     }
+
 
     // Update is called once per frame
     void Update()

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Audio;
 using System;
 
 //A singleton instance that plays audio from an array, which can be set up in the inspector
@@ -11,9 +10,9 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)] public float SFXVolume = 1f; //volume multiplier for SFX
     [Range(0f, 1f)] public float musicVolume = 1f; //Volume multiplier for music
 
-    public Sound[] sounds;
+    public Sound[] sounds;  //collection of all sounds, modified in editor
 
-    private Sound currentMusic;
+    private Sound currentMusic; //Currently playing music
 
 
     void Awake()
@@ -90,6 +89,7 @@ public class AudioManager : MonoBehaviour
     }
 
 
+    //Turn a looping SFX on or off
     public void ToggleLoopingSFX(string name, bool play)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name && sound.type == SoundType.SFX);
@@ -119,6 +119,7 @@ public class AudioManager : MonoBehaviour
     }
 
 
+    //Plays looping music
     public void PlayMusic(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name && sound.type == SoundType.Music);
@@ -158,7 +159,7 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    //for future UI buttons
+    //For volume slider buttons, called in events
     public void SetSFXVolume(float value)
     {
         SFXVolume = value;

@@ -1,16 +1,16 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class TitleScreen : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] GameObject overlay;
+    
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject levelMenu;
     [SerializeField] GameObject settingsMenu;
-
-    private string levelName;
 
 
     void Start()
@@ -18,63 +18,77 @@ public class TitleScreen : MonoBehaviour
         Invoke("DisableOverlay", 1f);
         optionsMenu.SetActive(false);
         levelMenu.SetActive(false);
+        settingsMenu.SetActive(false);
         AudioManager.instance.PlayMusic("MenuMusic");
     }
 
-    void DisableOverlay() 
+
+    //turns off overlay to prevent it from blocking clicks
+    void DisableOverlay()
     {
         overlay.SetActive(false);
     }
 
-    public void StartButton() 
+
+    #region Button Functions
+    public void StartButton()
     {
         AudioManager.instance.PlaySFX("Click", true);
         levelMenu.SetActive(true);
     }
 
-    public void ExitStart() 
+
+    public void ExitStart()
     {
         AudioManager.instance.PlaySFX("Click", true);
         levelMenu.SetActive(false);
     }
 
-    public void OptionsButton() 
+
+    public void OptionsButton()
     {
         AudioManager.instance.PlaySFX("Click", true);
         optionsMenu.SetActive(true);
     }
 
-    public void ExitOptions() 
+
+    public void ExitOptions()
     {
         AudioManager.instance.PlaySFX("Click", true);
         optionsMenu.SetActive(false);
     }
-    
-    public void SettingsButton() 
+
+
+    public void SettingsButton()
     {
         AudioManager.instance.PlaySFX("Click", true);
         settingsMenu.SetActive(true);
     }
 
-    public void ExitSettings() 
+
+    public void ExitSettings()
     {
         AudioManager.instance.PlaySFX("Click", true);
         settingsMenu.SetActive(false);
     }
+    #endregion
 
+
+    #region Level Loading
     public void OpenLevel(string levelNumber)
     {
         AudioManager.instance.PlaySFX("Click", true);
-        levelName = "Level " + levelNumber;
-        StartCoroutine(StartLevel());
+        string levelName = "Level " + levelNumber;
+        StartCoroutine(StartLevel(levelName));
     }
 
-    public IEnumerator StartLevel()
+
+    public IEnumerator StartLevel(string levelName)
     {
         overlay.SetActive(true);
-        animator.SetBool("FadeIn",true);
+        animator.SetBool("FadeIn", true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(levelName);
     }
-
+    #endregion
 }

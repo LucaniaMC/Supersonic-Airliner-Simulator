@@ -23,11 +23,12 @@ public class PlayerSkinManager : MonoBehaviour
         UpdateSkin(selectedOption);
     }
 
+
     public void NextOption() //switch to next skin
     {
         selectedOption++;
 
-        if (selectedOption >= playerSkinDatabase.SkinCount) 
+        if (selectedOption >= playerSkinDatabase.SkinCount)
         {
             selectedOption = 0;
         }
@@ -36,11 +37,12 @@ public class PlayerSkinManager : MonoBehaviour
         FindObjectOfType<AudioManager>().PlaySFX("Click", true);
     }
 
+
     public void BackOption() //switch to previous skin
     {
         selectedOption--;
 
-        if (selectedOption < 0) 
+        if (selectedOption < 0)
         {
             selectedOption = playerSkinDatabase.SkinCount - 1;
         }
@@ -49,18 +51,21 @@ public class PlayerSkinManager : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Click");
     }
 
-    private void UpdateSkin (int selectedOption) 
+
+    private void UpdateSkin(int selectedOption)
     {
         PlayerSkin playerSkin = playerSkinDatabase.GetSkin(selectedOption);
         artworkSprite.sprite = playerSkin.playerSprite;
     }
     
-    public void LoadSkin() 
+    
+    public void LoadSkin()
     {
         selectedOption = PlayerPrefs.GetInt("skin");
     }
 
-    public void SaveSkin() 
+
+    public void SaveSkin()
     {
         PlayerPrefs.SetInt("skin", selectedOption);
     }

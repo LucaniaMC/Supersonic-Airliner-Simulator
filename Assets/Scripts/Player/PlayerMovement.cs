@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float windStrength = 0f;              // speed of wind
 
     //references
-    public PlayerStateMachine player;
+    private PlayerStateMachine player;
     private Camera mainCamera;
 
 

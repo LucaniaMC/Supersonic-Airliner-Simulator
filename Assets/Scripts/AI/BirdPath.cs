@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//For birds to patrol back and forth between its initial position and the position of a target object
 public class BirdPath : MonoBehaviour
 {
     public float speed = 1f; //Speed
@@ -12,15 +14,15 @@ public class BirdPath : MonoBehaviour
     //For bird flip
     float lastpos;
     public SpriteRenderer sprite;
-    
+
     public GameObject target;
 
-    void Start() 
+    void Start()
     {
         pos1 = transform.position;
         pos2 = target.transform.position;
     }
- 
+
     void Update()
     {
         //Bird moves back and forth

@@ -1,20 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SonicBoom : MonoBehaviour
 {
-
     //Self destruct after 0.75 sec
-    private IEnumerator CountdownDeath()
-    {
-        yield return new WaitForSeconds(0.75f);
-        Destroy(gameObject);
-    }
-
     void Start()
     {
-        StartCoroutine(CountdownDeath());  
+        Destroy(gameObject, 0.75f); 
     }
     
 
@@ -26,6 +17,7 @@ public class SonicBoom : MonoBehaviour
             collision = true;  
         }
     }
+
 
     //Call OnDeath from Player death script
     //I hate how this works

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool paused = false;
+    public static bool paused = false;  //Is the game paused
 
     public GameObject pauseMenu;
 
@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
+
+    //Toggle between pause and unpause when pressing ESC
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -28,6 +30,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    #region Pause Functions
     void Resume()
     {
         pauseMenu.SetActive(false);
@@ -35,13 +38,18 @@ public class PauseMenu : MonoBehaviour
         paused = false;
     }
 
+
     void Pause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         paused = true;
     }
+    #endregion
 
+
+    #region Button Functions
+    //Called in pause button event
     public void PauseButton()
     {
         Pause();
@@ -49,12 +57,15 @@ public class PauseMenu : MonoBehaviour
     }
 
 
+    //Called in resume button event
     public void ResumeButton()
     {
         AudioManager.instance.PlaySFX("Click", true);
         Resume();
     }
 
+
+    //Called in menu button event
     public void MenuButton()
     {
         Resume();
@@ -62,10 +73,13 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("TitleScreen");
     }
 
+
+    //Called in restart button event
     public void RestartButton()
     {
         Resume();
         AudioManager.instance.PlaySFX("Click", true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    #endregion
 }

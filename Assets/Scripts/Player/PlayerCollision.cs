@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour
 {
-    [HideInInspector] public LevelManager levelManager;
+    private LevelManager levelManager;
 
 
     void Start() 

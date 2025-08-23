@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class FuelBar : MonoBehaviour
 {
-    public Slider slider;
+    [SerializeField] Slider slider;
 
     public int fuel { get; private set; } = 100;
 
@@ -36,6 +36,13 @@ public class FuelBar : MonoBehaviour
     public void IncreaseFuel(int amount)
     {
         fuel += amount;
+        UpdateFuel();
+    }
+
+
+    public void ResetFuel()
+    {
+        fuel = 100;
         UpdateFuel();
     }
 
