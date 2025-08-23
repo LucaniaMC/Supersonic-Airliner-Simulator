@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 target;
 
     //wind
-    public Vector2 windDirection = Vector2.zero; // normalized direction
+    public float windAngle = 0f;      // wind angle in degrees
     public float windStrength = 0f;              // speed of wind
 
     //references
@@ -37,6 +37,9 @@ public class PlayerMovement : MonoBehaviour
 
         //Player's own movement
         Vector3 newPos = Vector3.MoveTowards(player.transform.position, target, moveSpeed * Time.deltaTime);
+
+        //Calculate wind direction as Vector2 from wind angle
+        Vector2 windDirection = new Vector2(Mathf.Cos(windAngle * Mathf.Deg2Rad),Mathf.Sin(windAngle * Mathf.Deg2Rad));
 
         //Add wind offset
         Vector3 windOffset = Time.deltaTime * windStrength * windDirection.normalized;
