@@ -75,3 +75,6 @@ crashlytics-build.properties
 /ExtraAssets/
 /ExtraAudios/
 
+# TextMeshPRO
+/[Aa]ssets/TextMesh?Pro/** linguist-generated
+
