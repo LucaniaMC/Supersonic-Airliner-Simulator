@@ -9,10 +9,13 @@ public class FuelBar : MonoBehaviour
 
     float time = 0f;
 
+    public Gradient gradient; //Colors that the slider change to when decreasing
+    public Image fill; //Reference to the slider image to change its color
+
 
     void Start()
     {
-        slider.value = fuel;
+        UpdateFuel();
     }
 
 
@@ -58,5 +61,7 @@ public class FuelBar : MonoBehaviour
         {
             slider.value = 0;
         }
+
+        fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 }
