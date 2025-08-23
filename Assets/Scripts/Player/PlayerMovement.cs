@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 newPos = Vector3.MoveTowards(player.transform.position, target, moveSpeed * Time.deltaTime);
 
         //only calculates wind if it exists
-        if (windStrength != 0f)
+        if (windStrength > 0f)
         {
             //Calculate wind direction as Vector2 from wind angle
             Vector2 windDirection = new Vector2(Mathf.Cos(windAngle * Mathf.Deg2Rad), Mathf.Sin(windAngle * Mathf.Deg2Rad));
