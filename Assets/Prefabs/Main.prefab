@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 6489706444828358000}
   m_Layer: 5
   m_Name: Fill
-  m_TagString: Untagged
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2446,6 +2446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 412979924941145504}
+  - component: {fileID: 6578090191133392988}
   m_Layer: 5
   m_Name: ScoreMenu
   m_TagString: Untagged
@@ -2486,6 +2487,19 @@ RectTransform:
   m_AnchoredPosition: {x: -50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &6578090191133392988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6803908784236975035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab4db49c06ee3b4988319879435fea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starRating: 1
 --- !u!1 &7241969388789770205
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,7 +2681,7 @@ GameObject:
   - component: {fileID: 6829073474966859866}
   m_Layer: 5
   m_Name: Fill
-  m_TagString: Untagged
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4951,7 +4965,7 @@ GameObject:
   - component: {fileID: 3642389093732297924}
   m_Layer: 5
   m_Name: Fill
-  m_TagString: Untagged
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private GameObject[] stars;    //array of all three star fill objects
+    [Range(1, 3)] public int starRating = 3; //The star rating the player can have from 1-3 stars
+
+
     void Start()
     {
-        
+        stars = GameObject.FindGameObjectsWithTag("Star");
+
+        for (int i = 0; i < stars.Length; i++)
+        {
+            stars[i].SetActive(false);
+        }
+
+        DisplayStarRating();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    //Activate the number of stars correspond to star rating
+    void DisplayStarRating()
     {
-        
+        for (int i = 0; i < starRating; i++)
+        {
+            stars[i].SetActive(true);
+        }
     }
 }
