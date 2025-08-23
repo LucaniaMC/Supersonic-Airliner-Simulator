@@ -996,9 +996,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8429168692175345060}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 6578090191133392988}
+        m_TargetAssemblyTypeName: ScoreMenu, Assembly-CSharp
+        m_MethodName: NextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1429,8 +1429,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8429168692175345060}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 6578090191133392988}
+        m_TargetAssemblyTypeName: ScoreMenu, Assembly-CSharp
         m_MethodName: MenuButton
         m_Mode: 1
         m_Arguments:
@@ -1535,7 +1535,7 @@ GameObject:
   - component: {fileID: 135761888030526838}
   - component: {fileID: 754478645535867190}
   m_Layer: 5
-  m_Name: OptionsBackground
+  m_Name: RatingBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1916,8 +1916,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8429168692175345060}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 6578090191133392988}
+        m_TargetAssemblyTypeName: ScoreMenu, Assembly-CSharp
         m_MethodName: RestartButton
         m_Mode: 1
         m_Arguments:

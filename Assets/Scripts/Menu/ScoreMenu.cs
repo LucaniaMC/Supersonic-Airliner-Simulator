@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreMenu : MonoBehaviour
@@ -27,5 +28,29 @@ public class ScoreMenu : MonoBehaviour
         {
             stars[i].SetActive(true);
         }
+    }
+
+
+    //Called in menu button event
+    public void MenuButton()
+    {
+        AudioManager.instance.PlaySFX("Click", true);
+        SceneManager.LoadScene("TitleScreen");
+    }
+
+
+    //Called in restart button event
+    public void RestartButton()
+    {
+        AudioManager.instance.PlaySFX("Click", true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+
+    //Called in restart button event
+    public void NextButton()
+    {
+        AudioManager.instance.PlaySFX("Click", true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
