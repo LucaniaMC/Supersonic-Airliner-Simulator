@@ -38,12 +38,16 @@ public class PlayerMovement : MonoBehaviour
         //Player's own movement
         Vector3 newPos = Vector3.MoveTowards(player.transform.position, target, moveSpeed * Time.deltaTime);
 
-        //Calculate wind direction as Vector2 from wind angle
-        Vector2 windDirection = new Vector2(Mathf.Cos(windAngle * Mathf.Deg2Rad),Mathf.Sin(windAngle * Mathf.Deg2Rad));
+        //only calculates wind if it exists
+        if (windStrength != 0f)
+        {
+            //Calculate wind direction as Vector2 from wind angle
+            Vector2 windDirection = new Vector2(Mathf.Cos(windAngle * Mathf.Deg2Rad), Mathf.Sin(windAngle * Mathf.Deg2Rad));
 
-        //Add wind offset
-        Vector3 windOffset = Time.deltaTime * windStrength * windDirection.normalized;
-        newPos += windOffset;
+            //Add wind offset
+            Vector3 windOffset = Time.deltaTime * windStrength * windDirection.normalized;
+            newPos += windOffset;
+        }
 
         //Calculate composite player position to move to
         player.transform.position = newPos;
