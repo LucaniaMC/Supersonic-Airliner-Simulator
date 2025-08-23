@@ -193,11 +193,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9028077791138579069, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
       propertyPath: windAngle
-      value: 45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9028077791138579069, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
       propertyPath: windStrength
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
@@ -461,7 +461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &801672372
 ParticleSystemRenderer:
   serializedVersion: 6
