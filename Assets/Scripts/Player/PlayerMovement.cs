@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 target;
 
     //wind
-    public float windAngle = 0f;      // wind angle in degrees
+    [Range(0f, 360f)] public float windAngle = 0f;      // wind angle in degrees
     public float windStrength = 0f;              // speed of wind
 
     //references
