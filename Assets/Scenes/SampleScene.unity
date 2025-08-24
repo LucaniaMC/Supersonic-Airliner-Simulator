@@ -5577,7 +5577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 882424970727961555, guid: 64e3de9e7ed082f48a5612f161ad7943, type: 3}
       propertyPath: pullRadius
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 882424970727961555, guid: 64e3de9e7ed082f48a5612f161ad7943, type: 3}
       propertyPath: pullStrength
