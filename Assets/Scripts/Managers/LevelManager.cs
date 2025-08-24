@@ -47,14 +47,18 @@ public class LevelManager : MonoBehaviour
 
         hasrun = true;
         //overlayAnimator.SetBool("Finish", true);
+        Invoke("ActivateScorePanel", 1.5f);
+        //Invoke("NextScene", 2f);
+    }
 
+
+    void ActivateScorePanel()
+    {
         scoreMenu.SetActive(true);
         timeTaken = Time.timeSinceLevelLoad;
         fuelRemaining = fuelBar.fuel;
 
         Debug.Log("Fuel: " + fuelRemaining + ", " + "Time: " + timeTaken);
-
-        //Invoke("NextScene", 2f);
     }
 
 
