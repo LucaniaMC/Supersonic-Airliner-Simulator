@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour
     public int fuelRemaining = 0;
     public float timeTaken = 0f;
 
+    float startTime = 0f;   //when the player started flying, used to calculate time taken
+
     public GameObject player { get; private set; }
     public GameObject goal { get; private set; }
     private FuelBar fuelBar;
@@ -52,10 +54,17 @@ public class LevelManager : MonoBehaviour
     }
 
 
+    //called when the player starts flying
+    public void SetStartTime()
+    {
+        startTime = Time.time;
+    }
+
+
     void ActivateScorePanel()
     {
         scoreMenu.SetActive(true);
-        timeTaken = Time.timeSinceLevelLoad;
+        timeTaken = Time.time - startTime;
         fuelRemaining = fuelBar.fuel;
 
         Debug.Log("Fuel: " + fuelRemaining + ", " + "Time: " + timeTaken);

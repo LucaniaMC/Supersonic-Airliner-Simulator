@@ -67,6 +67,7 @@ public class PlayerAirState : PlayerState
     {
         Debug.Log("air state entered");
         player.shadow.isActive = true;
+        player.levelManager.SetStartTime();
     }
 
     public override void StateUpdate()
