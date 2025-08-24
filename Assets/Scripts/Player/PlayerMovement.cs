@@ -49,6 +49,13 @@ public class PlayerMovement : MonoBehaviour
             newPos += windOffset;
         }
 
+        //Calculate black hole pulls
+        foreach (BlackHole blackHole in FindObjectsOfType<BlackHole>())
+        {
+            Vector3 pull = blackHole.GetPullForce(player.transform.position);
+            newPos += pull * Time.deltaTime;
+        }
+
         //Calculate composite player position to move to
         player.transform.position = newPos;
 
