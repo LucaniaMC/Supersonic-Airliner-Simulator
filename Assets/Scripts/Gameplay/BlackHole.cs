@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BlackHole : MonoBehaviour
 {
@@ -41,5 +42,13 @@ public class BlackHole : MonoBehaviour
         force = Mathf.Min(force, forceLimit);
 
         return dir.normalized * force;
+    }
+
+
+    //Displays pull radius in editor
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, pullRadius);
     }
 }
