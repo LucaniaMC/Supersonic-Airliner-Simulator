@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5052967593728597213}
   m_Layer: 0
   m_Name: LevelManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +47,5 @@ MonoBehaviour:
   status: 0
   isNight: 0
   BGMName: 
-  player: {fileID: 0}
-  goal: {fileID: 0}
-  fuelBar: {fileID: 0}
+  fuelRemaining: 0
+  timeTaken: 0

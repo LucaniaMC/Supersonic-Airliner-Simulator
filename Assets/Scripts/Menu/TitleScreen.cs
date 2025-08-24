@@ -2,11 +2,14 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using TMPro;
 
 public class TitleScreen : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] GameObject overlay;
+
+    [SerializeField] TextMeshProUGUI versionNumberText;
     
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject levelMenu;
@@ -19,6 +22,7 @@ public class TitleScreen : MonoBehaviour
         optionsMenu.SetActive(false);
         levelMenu.SetActive(false);
         settingsMenu.SetActive(false);
+        versionNumberText.text = "V " + Application.version;
         AudioManager.instance.PlayMusic("MenuMusic");
     }
 

@@ -15,19 +15,26 @@ public class LevelManager : MonoBehaviour
     public bool isNight = false; //Is the level a night level
     public string BGMName;  //BGM that plays in the level
 
-    [HideInInspector] public GameObject player;
-    [HideInInspector] public GameObject goal;
+    //Player stats on completion
+    public int fuelRemaining = 0;
+    public float timeTaken = 0f;
+
+    public GameObject player { get; private set; }
+    public GameObject goal { get; private set; }
+    private FuelBar fuelBar;
 
     bool hasrun = false; //Stupid way to make the code run only once
 
     private GameObject overlay;
     private Animator overlayAnimator;
+    [SerializeField] private GameObject scoreMenu;
 
 
     void Start()
     {
         goal = GameObject.FindWithTag("Finish");
         player = GameObject.FindWithTag("Player");
+        fuelBar = FindObjectOfType<FuelBar>();
         overlay = GameObject.Find("Overlay");
         overlayAnimator = overlay.GetComponent<Animator>();
         AudioManager.instance.PlayMusic(BGMName);
@@ -39,13 +46,19 @@ public class LevelManager : MonoBehaviour
         overlay.SetActive(true);
 
         hasrun = true;
-        overlayAnimator.SetBool("Finish", true);
+        //overlayAnimator.SetBool("Finish", true);
 
-        Invoke("NextScene", 2f);
+        scoreMenu.SetActive(true);
+        timeTaken = Time.timeSinceLevelLoad;
+        fuelRemaining = fuelBar.fuel;
+
+        Debug.Log("Fuel: " + fuelRemaining + ", " + "Time: " + timeTaken);
+
+        //Invoke("NextScene", 2f);
     }
 
 
-    void NextScene()
+    public void NextScene()
     {
         //if in test scene, reload the scene
         if (SceneManager.GetActiveScene().name == "SampleScene")

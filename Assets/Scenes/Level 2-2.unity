@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: BGMName
       value: NightMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 5052967593728597213, guid: 085fed0a5957fa6498e08e82cc71faff, type: 3}
+      propertyPath: scoreMenu
+      value: 
+      objectReference: {fileID: 988306848}
     - target: {fileID: 5052967593728597214, guid: 085fed0a5957fa6498e08e82cc71faff, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -371,6 +375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
+--- !u!1 &988306848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6803908784236975035, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
+  m_PrefabInstance: {fileID: 988306847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1092334268
 GameObject:
   m_ObjectHideFlags: 0

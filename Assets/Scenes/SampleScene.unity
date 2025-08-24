@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &119158130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6803908784236975035, guid: f66aa543180a9ee4e9fce35bc2e96942, type: 3}
+  m_PrefabInstance: {fileID: 343797590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &222080451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6830661507713041457, guid: 20466551ca4b5514185c469208cfecc8, type: 3}
@@ -5688,6 +5693,10 @@ PrefabInstance:
       propertyPath: BGMName
       value: NightMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 5052967593728597213, guid: 085fed0a5957fa6498e08e82cc71faff, type: 3}
+      propertyPath: scoreMenu
+      value: 
+      objectReference: {fileID: 119158130}
     - target: {fileID: 5052967593728597214, guid: 085fed0a5957fa6498e08e82cc71faff, type: 3}
       propertyPath: m_RootOrder
       value: 8
