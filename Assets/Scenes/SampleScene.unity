@@ -5575,6 +5575,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 882424970727961555, guid: 64e3de9e7ed082f48a5612f161ad7943, type: 3}
+      propertyPath: pullRadius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 882424970727961555, guid: 64e3de9e7ed082f48a5612f161ad7943, type: 3}
+      propertyPath: pullStrength
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 882424970727961557, guid: 64e3de9e7ed082f48a5612f161ad7943, type: 3}
       propertyPath: m_Name
       value: BlackHole

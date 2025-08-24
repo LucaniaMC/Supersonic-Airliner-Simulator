@@ -20,8 +20,12 @@ public class BlackHole : MonoBehaviour
             return Vector3.zero;
         }
 
-        // Stronger pull when closer
-        float force = pullStrength / distance;
+        // Stronger pull towards center
+        // Normalize distance relative to center, t = 0 at outer edge, t = 1 at center
+        float force = pullStrength * Mathf.InverseLerp(pullRadius, 0f, distance);
+
+        // Linear falloff scaled down to 0 at radius
+        // float force = (pullStrength / distance) * Mathf.InverseLerp(pullRadius, 0f, distance);
 
         // Clamp so it never exceeds max
         force = Mathf.Min(force, forceLimit);
