@@ -6,7 +6,17 @@ public class BlackHole : MonoBehaviour
     public float pullRadius = 5f;   // how far it affects the player
 
     float forceLimit = 10f;
-    float innerRadius = 0.2f;
+    float innerRadius = 0.2f;   //The radius in which gravity pull stops to prevent extreme behavior, and kills player
+
+    CircleCollider2D innerCollider;
+
+
+    void Start()
+    {
+        // Set inner collider radius the same as the black hole's inner radius
+        innerCollider = GetComponent<CircleCollider2D>();
+        innerCollider.radius = innerRadius;
+    }
 
 
     public Vector3 GetPullForce(Vector3 playerPos)
