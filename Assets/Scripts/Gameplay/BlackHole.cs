@@ -29,11 +29,11 @@ public class BlackHole : MonoBehaviour
 
         //set trail length according to particle speed, slower speed equals to shorter trail
         ParticleSystem.TrailModule trail = particles.trails;
-        trail.lifetime = Mathf.Max(-0.02f * pullStrength + 0.15f, 0.05f);
+        trail.lifetime = Mathf.Max(-0.015f * pullStrength + 0.2f, 0.05f);
 
         //set emission rate according to black hole radius, larger radieu equals to higher rate
         ParticleSystem.EmissionModule emission = particles.emission;
-        emission.rateOverTime = 7.5f * pullRadius;
+        emission.rateOverTime = 7.5f * pullRadius * (pullStrength / 5);
     }
 
 
