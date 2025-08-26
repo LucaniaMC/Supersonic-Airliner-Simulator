@@ -1,22 +1,40 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class BlackHole : MonoBehaviour
 {
     public float pullStrength = 5f;  // base strength
     public float pullRadius = 5f;   // how far it affects the player
+    public float innerRadius = 0.2f;   //The radius in which gravity pull stops to prevent extreme behavior, and kills player
 
-    float forceLimit = 10f;
-    float innerRadius = 0.2f;   //The radius in which gravity pull stops to prevent extreme behavior, and kills player
+    float forceLimit = 50f;
+    
 
     CircleCollider2D innerCollider;
+    ParticleSystem particles;
 
 
     void Start()
     {
         // Set inner collider radius the same as the black hole's inner radius
         innerCollider = GetComponent<CircleCollider2D>();
+        particles = GetComponentInChildren<ParticleSystem>();
         innerCollider.radius = innerRadius;
+
+        //Set particle emission radius to pull radius
+        ParticleSystem.ShapeModule shape = particles.shape;
+        shape.radius = pullRadius;
+
+        //set particle speed to pull strength
+        var main = particles.main;
+        main.startSpeed = -pullStrength;
+
+        //set trail length according to particle speed, slower speed equals to shorter trail
+        ParticleSystem.TrailModule trail = particles.trails;
+        trail.lifetime = Mathf.Max(-0.02f * pullStrength + 0.15f, 0.05f);
+
+        //set emission rate according to black hole radius, larger radieu equals to higher rate
+        ParticleSystem.EmissionModule emission = particles.emission;
+        emission.rateOverTime = 7.5f * pullRadius;
     }
 
 
