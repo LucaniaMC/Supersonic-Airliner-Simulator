@@ -4,20 +4,19 @@ using UnityEngine.SceneManagement;
 //Manages dynamic level information, place the prefab in scenes
 public class LevelManager : MonoBehaviour
 {
-    public enum LevelStatus
-    {
-        InProgress,
-        Failed,
-        Finished
-    }
+    public enum LevelStatus {InProgress, Failed, Finished}
+
+    public enum LevelWorld {Day, Night, Ocean, Desert, Snow, Space}
 
     public LevelStatus status = LevelStatus.InProgress; //Current status of the level
+
+    public LevelWorld world = LevelWorld.Day; //What world is this level in
     public bool isNight = false; //Is the level a night level
     public string BGMName;  //BGM that plays in the level
 
     //Player stats on completion
-    public int fuelRemaining = 0;
-    public float timeTaken = 0f;
+    public int fuelRemaining { get; private set; } = 0;
+    public float timeTaken { get; private set; } = 0f;
 
     float startTime = 0f;   //when the player started flying, used to calculate time taken
 
