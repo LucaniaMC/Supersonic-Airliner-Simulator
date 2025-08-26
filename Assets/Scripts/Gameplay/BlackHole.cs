@@ -6,11 +6,10 @@ public class BlackHole : MonoBehaviour
     public float pullRadius = 5f;   // how far it affects the player
     public float innerRadius = 0.2f;   //The radius in which gravity pull stops to prevent extreme behavior, and kills player
 
-    float forceLimit = 50f;
-    
+    float forceLimit = 50f; //Maximum force allowed
 
-    CircleCollider2D innerCollider;
-    ParticleSystem particles;
+    CircleCollider2D innerCollider; //collider for the black hole's inner radius
+    ParticleSystem particles;   //The black hole's particle system
 
 
     void Start()
