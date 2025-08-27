@@ -1,14 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
 
 //Manages dynamic level information, place the prefab in scenes
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager instance;
+    public static LevelManager instance;    //Singleton self reference
 
-    public enum LevelStatus { InProgress, Failed, Finished }
-
+    public enum LevelStatus { InProgress, Failed, Finished }    //All possible level status
     public LevelStatus status = LevelStatus.InProgress; //Current status of the level
 
     [SerializeField] private LevelDatabase levelDatabase;
@@ -22,15 +20,12 @@ public class LevelManager : MonoBehaviour
     public int fuelRemaining { get; private set; } = 0;
     public float timeTaken { get; private set; } = 0f;
 
-    float startTime = 0f;   //when the player started flying, used to calculate time taken
+    float startTime = 0f;   //Logged when the player started flying, used to calculate time taken
 
-    //Scene objects
+    //Object References
     public GameObject player { get; private set; }
     public GameObject goal { get; private set; }
     private FuelBar fuelBar;
-
-    bool hasrun = false; //Stupid way to make the code run only once
-
     private GameObject overlay;
     private Animator overlayAnimator;
     private GameObject scoreMenu;
@@ -59,7 +54,6 @@ public class LevelManager : MonoBehaviour
     //Level setup when new scene loads
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        hasrun = false;
         status = LevelStatus.InProgress;
 
         // Skip setup if this is the Title Screen
@@ -108,7 +102,6 @@ public class LevelManager : MonoBehaviour
     {
         overlay.SetActive(true);
 
-        hasrun = true;
         //overlayAnimator.SetBool("Finish", true);
         Invoke("ActivateScorePanel", 1.5f);
         //Invoke("NextScene", 2f);
@@ -154,15 +147,10 @@ public class LevelManager : MonoBehaviour
 
     public void Fail()
     {
-        if (hasrun == false)
-        {
-            overlay.SetActive(true);
-            overlayAnimator.SetBool("OnDeath", true);
+        overlay.SetActive(true);
+        overlayAnimator.SetBool("OnDeath", true);
 
-            Invoke("ReloadScene", 2f);
-
-            hasrun = true;
-        }
+        Invoke("ReloadScene", 2f);
     }
 
 
