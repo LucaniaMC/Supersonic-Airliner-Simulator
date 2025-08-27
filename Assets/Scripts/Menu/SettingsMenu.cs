@@ -1,10 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingsMenu : MonoBehaviour
+public class SettingsMenu : UIMenu
 {
     public Slider SFXslider;
     public Slider musicSlider;
+
+
+    //Set slide values
+    public void Initialize()
+    {
+        SFXslider.value = AudioManager.instance.SFXVolume;
+        musicSlider.value = AudioManager.instance.musicVolume;
+    }
 
 
     //Called in SFX slider button event
@@ -25,12 +33,5 @@ public class SettingsMenu : MonoBehaviour
     public void ExitSettings()
     {
         AudioManager.instance.ApplyVolumeSettings();
-    }
-
-
-    //For handle buttons to play sounds
-    public void ClickSound()
-    {
-        AudioManager.instance.PlaySFX("Click", true);
     }
 }

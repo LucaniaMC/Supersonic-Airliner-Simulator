@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour
     private FuelBar fuelBar;
     private GameObject overlay;
     private Animator overlayAnimator;
-    private GameObject scoreMenu;
+    private ScoreMenu scoreMenu;
 
 
     void Awake()
@@ -71,7 +71,7 @@ public class LevelManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         fuelBar = FindObjectOfType<FuelBar>();
         overlay = GameObject.Find("Overlay");
-        scoreMenu = GameObject.Find("ScoreMenu");
+        scoreMenu = FindObjectOfType<ScoreMenu>();
         overlayAnimator = overlay != null ? overlay.GetComponent<Animator>() : null;
 
         AudioManager.instance.PlayMusic(BGMName);
@@ -100,6 +100,12 @@ public class LevelManager : MonoBehaviour
     }
 
 
+    public bool IsInLevel()
+    {
+        return SceneManager.GetActiveScene().name != "TitleScreen";
+    }
+
+
     public void Finish()
     {
         overlay.SetActive(true);
@@ -119,9 +125,10 @@ public class LevelManager : MonoBehaviour
 
     void ActivateScorePanel()
     {
-        scoreMenu.SetActive(true);
+        scoreMenu.Show();
         timeTaken = Time.time - startTime;
         fuelRemaining = fuelBar.fuel;
+        scoreMenu.Initialize();
 
         Debug.Log("Fuel: " + fuelRemaining + ", " + "Time: " + timeTaken);
     }

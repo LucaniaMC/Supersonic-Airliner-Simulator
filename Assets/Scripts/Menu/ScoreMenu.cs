@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ScoreMenu : MonoBehaviour
+public class ScoreMenu : UIMenu
 {
     private GameObject[] stars;    //array of all three star fill objects
 
@@ -17,7 +17,7 @@ public class ScoreMenu : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeText;
 
 
-    void Start()
+    public void Initialize()
     {
         stars = GameObject.FindGameObjectsWithTag("Star");
 
@@ -86,7 +86,6 @@ public class ScoreMenu : MonoBehaviour
     //Called in menu button event
     public void MenuButton()
     {
-        AudioManager.instance.PlaySFX("Click", true);
         SceneManager.LoadScene("TitleScreen");
     }
 
@@ -94,7 +93,6 @@ public class ScoreMenu : MonoBehaviour
     //Called in restart button event
     public void RestartButton()
     {
-        AudioManager.instance.PlaySFX("Click", true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -102,7 +100,6 @@ public class ScoreMenu : MonoBehaviour
     //Called in restart button event
     public void NextButton()
     {
-        AudioManager.instance.PlaySFX("Click", true);
         LevelManager.instance.NextScene();
     }
 }
