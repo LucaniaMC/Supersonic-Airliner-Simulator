@@ -34,7 +34,7 @@ public class PlayerSkinManager : MonoBehaviour
         }
 
         UpdateSkin(selectedOption);
-        FindObjectOfType<AudioManager>().PlaySFX("Click", true);
+        AudioManager.instance.PlaySFX("Click", true);
     }
 
 
@@ -48,7 +48,7 @@ public class PlayerSkinManager : MonoBehaviour
         }
 
         UpdateSkin(selectedOption);
-        FindObjectOfType<AudioManager>().Play("Click");
+        AudioManager.instance.PlaySFX("Click", true);
     }
 
 
