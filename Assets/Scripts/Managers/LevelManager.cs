@@ -16,6 +16,8 @@ public class LevelManager : MonoBehaviour
     public bool isNight = false; //Is the level a night level
     public string BGMName;  //BGM that plays in the level
 
+    public static bool paused = false;  //Is the game paused
+
     //Player stats on completion
     public int fuelRemaining { get; private set; } = 0;
     public float timeTaken { get; private set; } = 0f;
@@ -158,5 +160,19 @@ public class LevelManager : MonoBehaviour
     {
         Scene reloadscene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(reloadscene.name);
+    }
+
+
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+        paused = false;
+    }
+
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        paused = true;
     }
 }

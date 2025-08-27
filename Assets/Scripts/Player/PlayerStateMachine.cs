@@ -10,7 +10,6 @@ public class PlayerStateMachine : MonoBehaviour
     public GameObject confetti;
     
 
-    [HideInInspector] public LevelManager levelManager;
     [HideInInspector] public PlayerMovement movement;
     [HideInInspector] public FuelBar fuelBar;
     [HideInInspector] public PlayerShadow shadow;
@@ -25,7 +24,6 @@ public class PlayerStateMachine : MonoBehaviour
     {
         fuelBar = FindObjectOfType<FuelBar>();
         shadow = GetComponentInChildren<PlayerShadow>();
-        levelManager = FindObjectOfType<LevelManager>();
         movement = FindObjectOfType<PlayerMovement>();
 
         InitializeStateMachine();

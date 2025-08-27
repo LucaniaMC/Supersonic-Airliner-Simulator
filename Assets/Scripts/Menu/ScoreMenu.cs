@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class ScoreMenu : MonoBehaviour
 {
     private GameObject[] stars;    //array of all three star fill objects
-    private LevelManager levelManager;
 
     [Range(1, 3)] public int starRating = 3; //The star rating the player can have from 1-3 stars
 
@@ -20,7 +19,6 @@ public class ScoreMenu : MonoBehaviour
 
     void Start()
     {
-        levelManager = FindObjectOfType<LevelManager>();
         stars = GameObject.FindGameObjectsWithTag("Star");
 
         //Disable all stars
@@ -30,7 +28,7 @@ public class ScoreMenu : MonoBehaviour
         }
 
         //calculate and displays star rating
-        starRating = CalculateStarRating(levelManager.fuelRemaining);
+        starRating = CalculateStarRating(LevelManager.instance.fuelRemaining);
         Debug.Log("Star Rating:" + starRating);
         DisplayStarRating();
 
@@ -71,15 +69,15 @@ public class ScoreMenu : MonoBehaviour
     //displays fuel in text as percentage
     void DisplayFuel()
     {
-        fuelText.text = levelManager.fuelRemaining + "%";
+        fuelText.text = LevelManager.instance.fuelRemaining + "%";
     }
 
 
     //displays time in text in minute:second format
     void DisplayTimeTaken()
     {
-        int minutes = Mathf.FloorToInt(levelManager.timeTaken / 60);
-        int seconds = Mathf.FloorToInt(levelManager.timeTaken % 60);
+        int minutes = Mathf.FloorToInt(LevelManager.instance.timeTaken / 60);
+        int seconds = Mathf.FloorToInt(LevelManager.instance.timeTaken % 60);
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
@@ -105,6 +103,6 @@ public class ScoreMenu : MonoBehaviour
     public void NextButton()
     {
         AudioManager.instance.PlaySFX("Click", true);
-        levelManager.NextScene();
+        LevelManager.instance.NextScene();
     }
 }

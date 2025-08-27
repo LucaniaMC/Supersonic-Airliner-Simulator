@@ -67,7 +67,7 @@ public class PlayerAirState : PlayerState
     {
         Debug.Log("air state entered");
         player.shadow.isActive = true;
-        player.levelManager.SetStartTime();
+        LevelManager.instance.SetStartTime();
     }
 
     public override void StateUpdate()
@@ -95,7 +95,7 @@ public class PlayerAirState : PlayerState
 
         if (player.fuelBar.fuel == 0)
         {
-            player.levelManager.status = LevelManager.LevelStatus.Failed;
+            LevelManager.instance.status = LevelManager.LevelStatus.Failed;
         }
         
         Transitions();
@@ -107,12 +107,12 @@ public class PlayerAirState : PlayerState
 
     public override void Transitions()
     {
-        if (player.levelManager.status == LevelManager.LevelStatus.Failed)
+        if (LevelManager.instance.status == LevelManager.LevelStatus.Failed)
         {
             player.TransitionToState(new PlayerFailState(player));
         }
 
-        if (player.levelManager.status == LevelManager.LevelStatus.Finished)
+        if (LevelManager.instance.status == LevelManager.LevelStatus.Finished)
         {
             player.TransitionToState(new PlayerWinState(player));
         }
@@ -131,7 +131,7 @@ public class PlayerFailState : PlayerState
         Debug.Log("fail state entered");
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
         AudioManager.instance.PlaySFX("Fail", false); //Failsound
-        player.levelManager.Fail();
+        LevelManager.instance.Fail();
     }
 
     public override void StateUpdate()
@@ -161,8 +161,8 @@ public class PlayerWinState : PlayerState
         player.shadow.isActive = false;
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
         AudioManager.instance.PlaySFX("Finish", false);
-        player.levelManager.Finish();
-        GameObject.Instantiate(player.confetti, player.levelManager.goal.transform.position, Quaternion.identity);
+        LevelManager.instance.Finish();
+        GameObject.Instantiate(player.confetti, LevelManager.instance.goal.transform.position, Quaternion.identity);
     }
 
     public override void StateUpdate()

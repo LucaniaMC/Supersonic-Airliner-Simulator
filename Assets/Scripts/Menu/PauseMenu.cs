@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool paused = false;  //Is the game paused
 
     public GameObject pauseMenu;
 
@@ -19,7 +18,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (paused)
+            if (LevelManager.paused)
             {
                 Resume();
             }
@@ -30,20 +29,19 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+
     #region Pause Functions
     void Resume()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        paused = false;
+        LevelManager.instance.Resume();
     }
 
 
     void Pause()
     {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        paused = true;
+        LevelManager.instance.Pause();
     }
     #endregion
 
