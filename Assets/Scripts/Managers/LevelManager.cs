@@ -1,15 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 //Manages dynamic level information, place the prefab in scenes
 public class LevelManager : MonoBehaviour
 {
-    public enum LevelStatus {InProgress, Failed, Finished}
+    public static LevelManager instance;
 
-    public enum LevelWorld {Day, Night, Ocean, Desert, Snow, Space}
+    public enum LevelStatus { InProgress, Failed, Finished }
 
     public LevelStatus status = LevelStatus.InProgress; //Current status of the level
 
+    [SerializeField] private LevelDatabase levelDatabase;
+
+    //Current Level Data
     public LevelWorld world = LevelWorld.Day; //What world is this level in
     public bool isNight = false; //Is the level a night level
     public string BGMName;  //BGM that plays in the level
@@ -20,6 +24,7 @@ public class LevelManager : MonoBehaviour
 
     float startTime = 0f;   //when the player started flying, used to calculate time taken
 
+    //Scene objects
     public GameObject player { get; private set; }
     public GameObject goal { get; private set; }
     private FuelBar fuelBar;
@@ -28,17 +33,74 @@ public class LevelManager : MonoBehaviour
 
     private GameObject overlay;
     private Animator overlayAnimator;
-    [SerializeField] private GameObject scoreMenu;
+    private GameObject scoreMenu;
 
 
-    void Start()
+    void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+
+    //Level setup when new scene loads
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        hasrun = false;
+        status = LevelStatus.InProgress;
+
+        // Skip setup if this is the Title Screen
+        if (scene.name == "TitleScreen")
+        {
+            Debug.Log("LevelManager: Non-level scene loaded. Skipping level setup.");
+            return;
+        }
+
+        LoadLevelData("Level " + scene.name);
+
         goal = GameObject.FindWithTag("Finish");
         player = GameObject.FindWithTag("Player");
         fuelBar = FindObjectOfType<FuelBar>();
         overlay = GameObject.Find("Overlay");
-        overlayAnimator = overlay.GetComponent<Animator>();
+        scoreMenu = GameObject.Find("ScoreMenu");
+        overlayAnimator = overlay != null ? overlay.GetComponent<Animator>() : null;
+
         AudioManager.instance.PlayMusic(BGMName);
+    }
+
+
+    //Update level information according to corresponding data 
+    void LoadLevelData(string sceneName)
+    {
+        LevelData data = levelDatabase.GetLevelData(sceneName);
+
+
+        if (data != null)   //Update variables with database data
+        {
+            world = data.world;
+            isNight = data.isNight;
+            BGMName = data.BGMName;
+        }
+        else    //Fallback data if the scene has no data in database
+        {
+            Debug.LogWarning("No level data found for scene: " + sceneName);
+            world = LevelWorld.Day;
+            isNight = false;
+            BGMName = "";
+        }
     }
 
 

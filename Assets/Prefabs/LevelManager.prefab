@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: 0
+  levelDatabase: {fileID: 11400000, guid: 55d425acf10207a43963517d1dd92369, type: 2}
+  world: 0
   isNight: 0
   BGMName: 
-  fuelRemaining: 0
-  timeTaken: 0
+  scoreMenu: {fileID: 0}
