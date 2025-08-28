@@ -9,28 +9,28 @@ public class RandomMovement : MonoBehaviour
     public float turnSpeed; //Speed to rotate towards target
     public float speed;     //The plane's movement speed
 
-    Vector3 randomTarget;   //Random targets the airplane choose to fly to
-    Vector3 center;         //Airplane's initial position and the center of its range
+    Vector2 currentTarget;   //Random targets the airplane choose to fly to
+    Vector2 center;         //Airplane's initial position and the center of its range
 
 
     void Start()
     {
         center = transform.position;
-        randomTarget = center + new Vector3(Random.Range(-range.x, range.x), Random.Range(-range.y, range.y), transform.position.z);
+        PickNewTarget();
     }
 
 
     void Update()
     {
         //Moves at a constant rate
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
+        transform.position += transform.right * speed * Time.deltaTime;
 
-        float distance = Vector3.Distance(transform.position, randomTarget);
+        float distance = Vector3.Distance(transform.position, currentTarget);
 
         //Rotate towards target
         if (distance >= 0.1f)
         {
-            Vector3 direction = randomTarget - transform.position;
+            Vector2 direction = currentTarget - (Vector2)transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), turnSpeed * Time.deltaTime);
@@ -40,8 +40,14 @@ public class RandomMovement : MonoBehaviour
         //If distance and turn speed is too low, it'll keep spinning without changing target
         if (distance < 1f)
         {
-            randomTarget = center + new Vector3(Random.Range(-range.x, range.x), Random.Range(-range.y, range.y), transform.position.z);
+            PickNewTarget();
         }
+    }
+
+
+    void PickNewTarget()
+    {
+        currentTarget = center + new Vector2(Random.Range(-range.x, range.x), Random.Range(-range.y, range.y));
     }
 
 }
