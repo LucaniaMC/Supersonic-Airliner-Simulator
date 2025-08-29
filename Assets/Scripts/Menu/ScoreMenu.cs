@@ -8,10 +8,6 @@ public class ScoreMenu : UIMenu
 
     [Range(1, 3)] public int starRating = 3; //The star rating the player can have from 1-3 stars
 
-    //Threshold for star rating
-    public int threeStarThreshold = 50; //fuel needed for 3 stars
-    public int twoStarThreshold = 25;   //fuel needed for 2 stars
-
 
     [SerializeField] TextMeshProUGUI fuelText;
     [SerializeField] TextMeshProUGUI timeText;
@@ -41,11 +37,11 @@ public class ScoreMenu : UIMenu
     //Returns star rating stats in the range of 1-3 depending on player's fuel remaining
     int CalculateStarRating(int score)
     {
-        if (score >= threeStarThreshold)
+        if (score >= LevelManager.instance.threeStarThreshold)
         {
             return 3;
         }
-        else if (score >= twoStarThreshold)
+        else if (score >= LevelManager.instance.twoStarThreshold)
         {
             return 2;
         }

@@ -24,6 +24,10 @@ public class LevelManager : MonoBehaviour
 
     float startTime = 0f;   //Logged when the player started flying, used to calculate time taken
 
+    //Threshold for star rating
+    public int threeStarThreshold; //fuel needed for 3 stars
+    public int twoStarThreshold;   //fuel needed for 2 stars
+
     //Object References
     public GameObject player { get; private set; }
     public GameObject goal { get; private set; }
@@ -89,6 +93,9 @@ public class LevelManager : MonoBehaviour
             world = data.world;
             isNight = data.isNight;
             BGMName = data.BGMName;
+
+            threeStarThreshold = data.threeStarThreshold;
+            twoStarThreshold = data.twoStarThreshold;
         }
         else    //Fallback data if the scene has no data in database
         {
@@ -96,6 +103,9 @@ public class LevelManager : MonoBehaviour
             world = LevelWorld.Day;
             isNight = false;
             BGMName = "";
+
+            threeStarThreshold = 50;
+            twoStarThreshold = 25;
         }
     }
 
