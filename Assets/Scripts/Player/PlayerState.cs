@@ -28,7 +28,7 @@ public class PlayerGroundedState : PlayerState
 
     public override void OnEnter()
     {
-        Debug.Log("ground state entered");
+        Debug.Log("Player: ground state entered");
 
         player.shadow.isActive = false;
     }
@@ -65,7 +65,7 @@ public class PlayerAirState : PlayerState
 
     public override void OnEnter()
     {
-        Debug.Log("air state entered");
+        Debug.Log("Player: air state entered");
         player.shadow.isActive = true;
         LevelManager.instance.SetStartTime();
     }
@@ -128,7 +128,7 @@ public class PlayerFailState : PlayerState
 
     public override void OnEnter()
     {
-        Debug.Log("fail state entered");
+        Debug.Log("Player: fail state entered");
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
         AudioManager.instance.PlaySFX("Fail", false); //Failsound
         LevelManager.instance.Fail();
@@ -157,7 +157,7 @@ public class PlayerWinState : PlayerState
 
     public override void OnEnter()
     {
-        Debug.Log("win state entered");
+        Debug.Log("Player: win state entered");
         player.shadow.isActive = false;
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
         AudioManager.instance.PlaySFX("Finish", false);

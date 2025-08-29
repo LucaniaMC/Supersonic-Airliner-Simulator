@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour
         //Warning if there is no sound
         if (s == null)
         {
-            Debug.LogWarning("Sound not found: " + name);
+            Debug.LogWarning("AudioManager: Sound not found: " + name);
             return;
         }
 
@@ -76,7 +76,7 @@ public class AudioManager : MonoBehaviour
         //Warning if there is no sound
         if (s == null)
         {
-            Debug.LogWarning("SFX not found: " + name);
+            Debug.LogWarning("AudioManager: SFX not found: " + name);
             return;
         }
 
@@ -96,13 +96,13 @@ public class AudioManager : MonoBehaviour
         //Warning if there is no sound
         if (s == null)
         {
-            Debug.LogWarning("SFX not found: " + name);
+            Debug.LogWarning("AudioManager: SFX not found: " + name);
             return;
         }
         //Warning if SFX isn't a looping type
         if (s.source.loop == false)
         {
-            Debug.LogWarning("SFX: " + name + " isn't set to looping");
+            Debug.LogWarning("AudioManager: SFX " + name + " isn't set to looping");
             return;
         }
 
@@ -126,7 +126,7 @@ public class AudioManager : MonoBehaviour
         //Warning if there is no sound
         if (s == null)
         {
-            Debug.LogWarning("Music not found: " + name);
+            Debug.LogWarning("AudioManager: Music not found: " + name);
             return;
         }
 

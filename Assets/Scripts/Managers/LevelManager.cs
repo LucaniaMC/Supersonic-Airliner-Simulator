@@ -92,7 +92,7 @@ public class LevelManager : MonoBehaviour
         }
         else    //Fallback data if the scene has no data in database
         {
-            Debug.LogWarning("No level data found for scene: " + sceneName);
+            Debug.LogWarning("LevelManager: No level data found for scene: " + sceneName);
             world = LevelWorld.Day;
             isNight = false;
             BGMName = "";
@@ -145,6 +145,7 @@ public class LevelManager : MonoBehaviour
         //if next scene index doesn't exist, go back to title screen
         if (SceneManager.GetActiveScene().buildIndex + 1 > SceneManager.sceneCountInBuildSettings - 1)
         {
+            Debug.LogWarning("LevelManager: No further scene available. Return to title screen");
             SceneManager.LoadScene("TitleScreen");
         }
         else    //load next scene
