@@ -451,7 +451,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5668457060312996143}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSkinDatabase: {fileID: 11400000, guid: 67ee304976c49504c8e15b073c8bc53e, type: 2}
-  artworkSprite: {fileID: 5668457060689416728}
+  skinSprite: {fileID: 5668457060689416728}
 --- !u!1 &5668457060394288413
 GameObject:
   m_ObjectHideFlags: 0

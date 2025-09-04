@@ -5,7 +5,7 @@ public class CustomizeMenu : UIMenu
 {
     public PlayerSkinDatabase playerSkinDatabase;
 
-    public Image artworkSprite;
+    public Image skinSprite;
     public Image artSprite;
 
     public GameObject skinTab;
@@ -29,7 +29,10 @@ public class CustomizeMenu : UIMenu
 
         foreach (PlayerSkin skins in playerSkinDatabase.playerSkin)
         {
-            Instantiate(skinTab, skinTabGroup.transform);
+            GameObject tab = Instantiate(skinTab, skinTabGroup.transform);
+            SkinTab tabInstance = tab.GetComponent<SkinTab>();
+            tabInstance.skinSprite = skins.playerSprite;
+            tabInstance.UpdateTab();
         }
     }
 
@@ -45,7 +48,7 @@ public class CustomizeMenu : UIMenu
     {
         PlayerSkin playerSkin = playerSkinDatabase.GetSkin(selectedOption);
         artSprite.sprite = playerSkin.artSprite;
-        //artworkSprite.sprite = playerSkin.playerSprite;
+        //skinSprite.sprite = playerSkin.playerSprite;
     }
     
     

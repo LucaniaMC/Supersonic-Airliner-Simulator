@@ -5,7 +5,7 @@ public class PlayerSkinManager : MonoBehaviour
 {
     public PlayerSkinDatabase playerSkinDatabase;
 
-    public Image artworkSprite;
+    public Image skinSprite;
 
     private int selectedOption = 0;
 
@@ -55,7 +55,7 @@ public class PlayerSkinManager : MonoBehaviour
     private void UpdateSkin(int selectedOption)
     {
         PlayerSkin playerSkin = playerSkinDatabase.GetSkin(selectedOption);
-        artworkSprite.sprite = playerSkin.playerSprite;
+        skinSprite.sprite = playerSkin.playerSprite;
     }
     
     
