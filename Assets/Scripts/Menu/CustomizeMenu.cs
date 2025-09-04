@@ -8,6 +8,9 @@ public class CustomizeMenu : UIMenu
     public Image artworkSprite;
     public Image artSprite;
 
+    public GameObject skinTab;
+    public GameObject skinTabGroup;
+
     private int selectedOption = 0;
 
     void Start()
@@ -23,7 +26,11 @@ public class CustomizeMenu : UIMenu
 
         UpdateSkin(selectedOption);
 
-        //load skin menu
+
+        foreach (PlayerSkin skins in playerSkinDatabase.playerSkin)
+        {
+            Instantiate(skinTab, skinTabGroup.transform);
+        }
     }
 
 
