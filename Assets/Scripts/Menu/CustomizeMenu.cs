@@ -6,6 +6,7 @@ public class CustomizeMenu : UIMenu
     public PlayerSkinDatabase playerSkinDatabase;
 
     public Image artworkSprite;
+    public Image artSprite;
 
     private int selectedOption = 0;
 
@@ -36,6 +37,7 @@ public class CustomizeMenu : UIMenu
     private void UpdateSkin(int selectedOption)
     {
         PlayerSkin playerSkin = playerSkinDatabase.GetSkin(selectedOption);
+        artSprite.sprite = playerSkin.artSprite;
         //artworkSprite.sprite = playerSkin.playerSprite;
     }
     

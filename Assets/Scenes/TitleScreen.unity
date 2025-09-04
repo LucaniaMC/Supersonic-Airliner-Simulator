@@ -350,6 +350,7 @@ MonoBehaviour:
   window: {fileID: 1364559826}
   playerSkinDatabase: {fileID: 11400000, guid: 67ee304976c49504c8e15b073c8bc53e, type: 2}
   artworkSprite: {fileID: 0}
+  artSprite: {fileID: 1622010463}
 --- !u!1 &191060936
 GameObject:
   m_ObjectHideFlags: 0
