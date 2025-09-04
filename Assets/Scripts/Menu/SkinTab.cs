@@ -5,6 +5,7 @@ public class SkinTab : MonoBehaviour
 {
     public Sprite skinSprite;
     public Image targetImage;
+    CustomizeMenu customizeMenu;
 
     public int skinIndex;
 
@@ -12,11 +13,12 @@ public class SkinTab : MonoBehaviour
     public void UpdateTab()
     {
         targetImage.sprite = skinSprite;
+        customizeMenu = GetComponentInParent<CustomizeMenu>();
     }
 
 
-    public void UpdateSkin()
+    public void UpdateSelectedSkin()
     {
-
+        customizeMenu.SelectSkin(skinIndex);
     }
 }
