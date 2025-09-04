@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: pos2.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 507460828968631852, guid: 4745fa25621990442821792b6bdd21d6, type: 3}
+      propertyPath: pathMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 507460828968631853, guid: 4745fa25621990442821792b6bdd21d6, type: 3}
       propertyPath: m_Name
       value: Bird1
