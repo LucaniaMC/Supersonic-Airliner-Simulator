@@ -11,6 +11,8 @@ public class CustomizeMenu : UIMenu
     public GameObject skinTab;
     public GameObject skinTabGroup;
 
+    private int tabGroupSize = 12;
+
     private int selectedOption = 0;
 
     void Start()
@@ -27,12 +29,14 @@ public class CustomizeMenu : UIMenu
         UpdateSkin(selectedOption);
 
 
-        foreach (PlayerSkin skins in playerSkinDatabase.playerSkin)
+        for (int i = 0; i < tabGroupSize; i++)
         {
+            PlayerSkin skins = playerSkinDatabase.playerSkin[i];
             GameObject tab = Instantiate(skinTab, skinTabGroup.transform);
             SkinTab tabInstance = tab.GetComponent<SkinTab>();
             tabInstance.skinSprite = skins.playerSprite;
             tabInstance.UpdateTab();
+            tabInstance.skinIndex = i; // index of current iteration
         }
     }
 
