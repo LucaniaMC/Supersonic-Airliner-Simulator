@@ -2072,6 +2072,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 632407987}
     m_Modifications:
+    - target: {fileID: 5668457060065342552, guid: 486a6d34a917fa64f98f536d9fd0bc06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5668457060312996142, guid: 486a6d34a917fa64f98f536d9fd0bc06, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2159,6 +2163,10 @@ PrefabInstance:
     - target: {fileID: 5668457060312996143, guid: 486a6d34a917fa64f98f536d9fd0bc06, type: 3}
       propertyPath: m_Name
       value: SkinMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668457060312996143, guid: 486a6d34a917fa64f98f536d9fd0bc06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 486a6d34a917fa64f98f536d9fd0bc06, type: 3}
