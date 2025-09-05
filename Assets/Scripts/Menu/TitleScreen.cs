@@ -1,7 +1,4 @@
-﻿using UnityEngine.SceneManagement;
-using UnityEngine;
-using System.Collections;
-using System;
+﻿using UnityEngine;
 using TMPro;
 
 public class TitleScreen : MonoBehaviour

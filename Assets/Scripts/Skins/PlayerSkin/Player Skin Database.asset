@@ -32,10 +32,10 @@ MonoBehaviour:
     artSprite: {fileID: 21300000, guid: 97187af052193f341a7eeaeb59aefdb3, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: ff94f9404575fd34a80417d9edfe5ff1, type: 3}
-    artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
+    artSprite: {fileID: 21300000, guid: 890228b2f8322f34294614ad099e2644, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: 7544ea03b6b335844b3325d963f25891, type: 3}
-    artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
+    artSprite: {fileID: 21300000, guid: bca9c81a5531ed64da95a898da9f3579, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: cc1e929d62ea98a498b45c644c464151, type: 3}
     artSprite: {fileID: 21300000, guid: 449e6b4d60e2dd143a2e8a9b48f11e79, type: 3}
@@ -44,7 +44,7 @@ MonoBehaviour:
     artSprite: {fileID: 21300000, guid: 1ff3a4df765a8ec4fb964cc384afc852, type: 3}
     description: Imagine how hot this is gonna get.
   - playerSprite: {fileID: 21300000, guid: f03ff95e8f938ea46b8fab6bb2a6c27b, type: 3}
-    artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
+    artSprite: {fileID: 21300000, guid: bec67c341a7ea044fb1294f60af484ba, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: 9478ec14024d2d648bd64135628f2c62, type: 3}
     artSprite: {fileID: 21300000, guid: 19713b2e6677a6a41b21e461baa3d4fe, type: 3}
