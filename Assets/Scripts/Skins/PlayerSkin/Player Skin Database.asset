@@ -38,7 +38,7 @@ MonoBehaviour:
     artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: cc1e929d62ea98a498b45c644c464151, type: 3}
-    artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
+    artSprite: {fileID: 21300000, guid: 449e6b4d60e2dd143a2e8a9b48f11e79, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: 900f760d681d9b74bb1610bc8cc2d7db, type: 3}
     artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
