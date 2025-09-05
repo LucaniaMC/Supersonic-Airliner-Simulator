@@ -28,4 +28,10 @@ public class SkinTab : MonoBehaviour
     {
         customizeMenu.SelectSkin(skinIndex);
     }
+
+
+    public void PlayClickSound()
+    {
+        if (toggle.isOn) AudioManager.instance.PlaySFX("Click", true);
+    }
 }
