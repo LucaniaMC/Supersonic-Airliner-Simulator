@@ -229,4 +229,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skinSprite: {fileID: 0}
   targetImage: {fileID: 8491753764980729709}
+  toggle: {fileID: 8491753765361079265}
   skinIndex: 0

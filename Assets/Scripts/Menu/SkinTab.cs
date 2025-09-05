@@ -5,6 +5,7 @@ public class SkinTab : MonoBehaviour
 {
     public Sprite skinSprite;
     public Image targetImage;
+    public Toggle toggle;
     CustomizeMenu customizeMenu;
 
     public int skinIndex;

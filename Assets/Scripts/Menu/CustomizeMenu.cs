@@ -48,7 +48,7 @@ public class CustomizeMenu : UIMenu
         if (pageIndex < 0 || pageIndex > maxPage)
             return;
 
-        Debug.Log("Page Flipped");
+        Debug.Log("Customize Menu: New Page Loaded");
 
         //Destroy old instances
         foreach (Transform child in skinTabGroup.transform)
@@ -62,11 +62,11 @@ public class CustomizeMenu : UIMenu
 
         // Spawn instances for the skins for the current page
         for (int i = startIndex; i < endIndex; i++)
-        {  
+        {
             //Instantiate the object
             PlayerSkin skins = playerSkinDatabase.playerSkin[i];
             GameObject tab = Instantiate(skinTab, skinTabGroup.transform);
-            
+
             //Update tab appearance
             SkinTab tabInstance = tab.GetComponent<SkinTab>();
             tabInstance.skinSprite = skins.playerSprite;
@@ -74,6 +74,10 @@ public class CustomizeMenu : UIMenu
 
             //Update tab index
             tabInstance.skinIndex = i;
+            if (i == selectedOption)
+            {
+                tabInstance.toggle.isOn = true;
+            }
         }
     }
 
