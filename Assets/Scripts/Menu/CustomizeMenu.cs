@@ -5,13 +5,12 @@ public class CustomizeMenu : UIMenu
 {
     public PlayerSkinDatabase playerSkinDatabase;
 
-    public Image skinSprite;    //Target sprite for skins
-    public Image artSprite;     //Target sprite for skin splash arts
-
-    [SerializeField] private int selectedOption = 0; //The skin currectly selected by the player
-
+    public Image artSprite;     //Target image for skin splash arts
     public GameObject skinTab;  //Prefab for the skin tab
     public GameObject skinTabGroup; //The parent game object to summon skin tab prefabs under
+    public ToggleGroup toggleGroup; //The toggle group for all tabs
+
+    [SerializeField] private int selectedOption = 0; //The skin currectly selected by the player
 
     [SerializeField] private int currentPage = 0;
     [SerializeField] private int tabsPerPage = 12;  //maximum number of tabs per page
@@ -74,19 +73,21 @@ public class CustomizeMenu : UIMenu
 
             //Update tab index
             tabInstance.skinIndex = i;
-            if (i == selectedOption)
-            {
-                tabInstance.toggle.isOn = true;
-            }
+            
+            // Add it to the ToggleGroup
+            tabInstance.toggle.group = toggleGroup;
+
+            // Sync selection
+            tabInstance.toggle.SetIsOnWithoutNotify(i == selectedOption);
         }
     }
 
 
+    //Update current skin display to a given index
     private void UpdateSkin(int selectedOption)
     {
         PlayerSkin playerSkin = playerSkinDatabase.GetSkin(selectedOption);
         artSprite.sprite = playerSkin.artSprite;
-        //skinSprite.sprite = playerSkin.playerSprite;
     }
 
 

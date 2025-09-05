@@ -273,11 +273,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   window: {fileID: 1364559826}
   playerSkinDatabase: {fileID: 11400000, guid: 67ee304976c49504c8e15b073c8bc53e, type: 2}
-  skinSprite: {fileID: 0}
   artSprite: {fileID: 1622010463}
   selectedOption: 0
   skinTab: {fileID: 8491753765361078813, guid: 6b37a22206b6a92419d0e8f0d3b997ce, type: 3}
   skinTabGroup: {fileID: 2038202026}
+  toggleGroup: {fileID: 2038202029}
   currentPage: 0
   tabsPerPage: 12
 --- !u!1 &191060936
@@ -2812,6 +2812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2038202027}
   - component: {fileID: 2038202028}
+  - component: {fileID: 2038202029}
   m_Layer: 5
   m_Name: Skins
   m_TagString: Untagged
@@ -2863,6 +2864,19 @@ MonoBehaviour:
   m_Spacing: {x: 4, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 4
+--- !u!114 &2038202029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038202026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowSwitchOff: 1
 --- !u!1 &2055525918
 GameObject:
   m_ObjectHideFlags: 0

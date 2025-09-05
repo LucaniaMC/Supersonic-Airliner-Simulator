@@ -3,18 +3,24 @@ using UnityEngine.UI;
 
 public class SkinTab : MonoBehaviour
 {
-    public Sprite skinSprite;
-    public Image targetImage;
-    public Toggle toggle;
+    public Sprite skinSprite;   //The sprite of the player skin
+    public Image targetImage;   //Target image for player skin in each tab
+    public Toggle toggle;       //The toggle component
     CustomizeMenu customizeMenu;
 
-    public int skinIndex;
+    public int skinIndex;   //Which skin does this tab correspond to
 
 
+    void Start()
+    {
+        customizeMenu = GetComponentInParent<CustomizeMenu>();
+    }
+
+
+    //Set the skin image in tab to the corresponding skin sprite
     public void UpdateTab()
     {
         targetImage.sprite = skinSprite;
-        customizeMenu = GetComponentInParent<CustomizeMenu>();
     }
 
 
