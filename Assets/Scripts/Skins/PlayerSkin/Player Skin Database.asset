@@ -23,13 +23,13 @@ MonoBehaviour:
     artSprite: {fileID: 21300000, guid: fe086d4a405e5e64bbce9c4a3c6c2059, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: 3c80f2655b4dd3d44a167dc3a9cf8c62, type: 3}
-    artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
+    artSprite: {fileID: 21300000, guid: 16bf2ee05691daf4f978936301e35f3e, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: 985226670d1df764bb95170ce0176397, type: 3}
-    artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
+    artSprite: {fileID: 21300000, guid: 616439ed26a30834191ae6e7d495c74d, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: 8d6942a4888e1804994650dca052dcaa, type: 3}
-    artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
+    artSprite: {fileID: 21300000, guid: 97187af052193f341a7eeaeb59aefdb3, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: ff94f9404575fd34a80417d9edfe5ff1, type: 3}
     artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
@@ -47,7 +47,7 @@ MonoBehaviour:
     artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: 9478ec14024d2d648bd64135628f2c62, type: 3}
-    artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
+    artSprite: {fileID: 21300000, guid: 19713b2e6677a6a41b21e461baa3d4fe, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: e9cde7094c3100b47b6064a7f9c6de84, type: 3}
     artSprite: {fileID: 21300000, guid: 5f94c22a5d3626346ae2dd7ffd28f63f, type: 3}
