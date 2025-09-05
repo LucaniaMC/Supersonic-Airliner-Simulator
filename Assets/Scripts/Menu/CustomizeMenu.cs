@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ public class CustomizeMenu : UIMenu
     public PlayerSkinDatabase playerSkinDatabase;
 
     public Image artSprite;     //Target image for skin splash arts
+    public TextMeshProUGUI description;
     public GameObject skinTab;  //Prefab for the skin tab
     public GameObject skinTabGroup; //The parent game object to summon skin tab prefabs under
     public ToggleGroup toggleGroup; //The toggle group for all tabs
@@ -88,6 +90,7 @@ public class CustomizeMenu : UIMenu
     {
         PlayerSkin playerSkin = playerSkinDatabase.GetSkin(selectedOption);
         artSprite.sprite = playerSkin.artSprite;
+        description.text = playerSkin.description;
     }
 
 

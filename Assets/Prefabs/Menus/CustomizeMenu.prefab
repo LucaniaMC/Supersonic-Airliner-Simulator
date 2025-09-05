@@ -338,7 +338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -32}
+  m_AnchoredPosition: {x: -55, y: -32}
   m_SizeDelta: {x: 85, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6263800147749238026
@@ -491,6 +491,7 @@ MonoBehaviour:
   window: {fileID: 6263800149207554222}
   playerSkinDatabase: {fileID: 11400000, guid: 67ee304976c49504c8e15b073c8bc53e, type: 2}
   artSprite: {fileID: 6263800148383921443}
+  description: {fileID: 6263800147749238025}
   skinTab: {fileID: 8491753765361078813, guid: 6b37a22206b6a92419d0e8f0d3b997ce, type: 3}
   skinTabGroup: {fileID: 6263800148806590934}
   toggleGroup: {fileID: 6263800148806590929}

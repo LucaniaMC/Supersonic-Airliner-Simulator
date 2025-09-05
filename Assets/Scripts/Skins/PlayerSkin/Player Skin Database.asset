@@ -15,7 +15,7 @@ MonoBehaviour:
   playerSkin:
   - playerSprite: {fileID: 21300000, guid: 8f462765fbc8eb14cb7a1f073f8df9ab, type: 3}
     artSprite: {fileID: 21300000, guid: fef5d976b87826d44932a8305cdf2fbe, type: 3}
-    description: 
+    description: Lemme do it for you
   - playerSprite: {fileID: 21300000, guid: 9ec8ab46b4664084fb60f31dd9e39ab2, type: 3}
     artSprite: {fileID: 21300000, guid: 9a57af4cd3a160f41a9cae450100945c, type: 3}
     description: 
@@ -39,10 +39,10 @@ MonoBehaviour:
     description: 
   - playerSprite: {fileID: 21300000, guid: cc1e929d62ea98a498b45c644c464151, type: 3}
     artSprite: {fileID: 21300000, guid: 449e6b4d60e2dd143a2e8a9b48f11e79, type: 3}
-    description: 
+    description: Quack.
   - playerSprite: {fileID: 21300000, guid: 900f760d681d9b74bb1610bc8cc2d7db, type: 3}
     artSprite: {fileID: 21300000, guid: 1ff3a4df765a8ec4fb964cc384afc852, type: 3}
-    description: 
+    description: Imagine how hot this is gonna get.
   - playerSprite: {fileID: 21300000, guid: f03ff95e8f938ea46b8fab6bb2a6c27b, type: 3}
     artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
     description: 
@@ -51,7 +51,7 @@ MonoBehaviour:
     description: 
   - playerSprite: {fileID: 21300000, guid: e9cde7094c3100b47b6064a7f9c6de84, type: 3}
     artSprite: {fileID: 21300000, guid: 5f94c22a5d3626346ae2dd7ffd28f63f, type: 3}
-    description: 
+    description: Your true form.
   - playerSprite: {fileID: 21300000, guid: 4052ddaec00db08469efc047677b46a8, type: 3}
     artSprite: {fileID: 21300000, guid: 5b9f7bc9c093c744e9831e9a0ba38b89, type: 3}
-    description: 
+    description: Where do you put the passengers? In the payload?
