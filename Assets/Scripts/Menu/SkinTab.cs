@@ -34,4 +34,11 @@ public class SkinTab : MonoBehaviour
     {
         if (toggle.isOn) AudioManager.instance.PlaySFX("Click", true);
     }
+
+
+    //force toggle to stay on when clicked without the toogle group setting so it's possible for no tabs to be selected
+    public void ToggleOn()
+    {
+        toggle.SetIsOnWithoutNotify(true);
+    }
 }
