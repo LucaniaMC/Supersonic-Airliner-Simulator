@@ -20,7 +20,7 @@ MonoBehaviour:
     artSprite: {fileID: 21300000, guid: 9a57af4cd3a160f41a9cae450100945c, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: 77cd03df78ad20d4baa787091d8de4af, type: 3}
-    artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
+    artSprite: {fileID: 21300000, guid: fe086d4a405e5e64bbce9c4a3c6c2059, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: 3c80f2655b4dd3d44a167dc3a9cf8c62, type: 3}
     artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
@@ -41,7 +41,7 @@ MonoBehaviour:
     artSprite: {fileID: 21300000, guid: 449e6b4d60e2dd143a2e8a9b48f11e79, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: 900f760d681d9b74bb1610bc8cc2d7db, type: 3}
-    artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
+    artSprite: {fileID: 21300000, guid: 1ff3a4df765a8ec4fb964cc384afc852, type: 3}
     description: 
   - playerSprite: {fileID: 21300000, guid: f03ff95e8f938ea46b8fab6bb2a6c27b, type: 3}
     artSprite: {fileID: 21300000, guid: 2ffcfd1973afdc9448d13249cede10bf, type: 3}
