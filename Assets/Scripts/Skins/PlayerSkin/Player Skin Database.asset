@@ -18,40 +18,40 @@ MonoBehaviour:
     description: Lemme do it for you
   - playerSprite: {fileID: 21300000, guid: 9ec8ab46b4664084fb60f31dd9e39ab2, type: 3}
     artSprite: {fileID: 21300000, guid: 9a57af4cd3a160f41a9cae450100945c, type: 3}
-    description: 
+    description: Blue
   - playerSprite: {fileID: 21300000, guid: 77cd03df78ad20d4baa787091d8de4af, type: 3}
     artSprite: {fileID: 21300000, guid: fe086d4a405e5e64bbce9c4a3c6c2059, type: 3}
-    description: 
+    description: Red
   - playerSprite: {fileID: 21300000, guid: 3c80f2655b4dd3d44a167dc3a9cf8c62, type: 3}
     artSprite: {fileID: 21300000, guid: 16bf2ee05691daf4f978936301e35f3e, type: 3}
-    description: 
+    description: Skyline
   - playerSprite: {fileID: 21300000, guid: 985226670d1df764bb95170ce0176397, type: 3}
     artSprite: {fileID: 21300000, guid: 616439ed26a30834191ae6e7d495c74d, type: 3}
-    description: 
+    description: Yellow
   - playerSprite: {fileID: 21300000, guid: 8d6942a4888e1804994650dca052dcaa, type: 3}
     artSprite: {fileID: 21300000, guid: 97187af052193f341a7eeaeb59aefdb3, type: 3}
-    description: 
+    description: Green
   - playerSprite: {fileID: 21300000, guid: ff94f9404575fd34a80417d9edfe5ff1, type: 3}
     artSprite: {fileID: 21300000, guid: 890228b2f8322f34294614ad099e2644, type: 3}
-    description: 
+    description: Striped
   - playerSprite: {fileID: 21300000, guid: 7544ea03b6b335844b3325d963f25891, type: 3}
     artSprite: {fileID: 21300000, guid: bca9c81a5531ed64da95a898da9f3579, type: 3}
-    description: 
+    description: Golurple
   - playerSprite: {fileID: 21300000, guid: cc1e929d62ea98a498b45c644c464151, type: 3}
     artSprite: {fileID: 21300000, guid: 449e6b4d60e2dd143a2e8a9b48f11e79, type: 3}
-    description: Quack.
+    description: Quack
   - playerSprite: {fileID: 21300000, guid: 900f760d681d9b74bb1610bc8cc2d7db, type: 3}
     artSprite: {fileID: 21300000, guid: 1ff3a4df765a8ec4fb964cc384afc852, type: 3}
-    description: Imagine how hot this is gonna get.
+    description: Blackgold
   - playerSprite: {fileID: 21300000, guid: f03ff95e8f938ea46b8fab6bb2a6c27b, type: 3}
     artSprite: {fileID: 21300000, guid: bec67c341a7ea044fb1294f60af484ba, type: 3}
-    description: 
+    description: Clownfish
   - playerSprite: {fileID: 21300000, guid: 9478ec14024d2d648bd64135628f2c62, type: 3}
     artSprite: {fileID: 21300000, guid: 19713b2e6677a6a41b21e461baa3d4fe, type: 3}
-    description: 
+    description: Desert
   - playerSprite: {fileID: 21300000, guid: e9cde7094c3100b47b6064a7f9c6de84, type: 3}
     artSprite: {fileID: 21300000, guid: 5f94c22a5d3626346ae2dd7ffd28f63f, type: 3}
-    description: Your true form.
+    description: Tupolev
   - playerSprite: {fileID: 21300000, guid: 4052ddaec00db08469efc047677b46a8, type: 3}
     artSprite: {fileID: 21300000, guid: 5b9f7bc9c093c744e9831e9a0ba38b89, type: 3}
-    description: Where do you put the passengers? In the payload?
+    description: Space Shuttle
