@@ -60,6 +60,8 @@ public class LevelManager : MonoBehaviour
     //Level setup when new scene loads
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        CancelInvoke();
+
         status = LevelStatus.InProgress;
 
         // Skip setup if this is the Title Screen
@@ -121,7 +123,7 @@ public class LevelManager : MonoBehaviour
         overlay.SetActive(true);
 
         //overlayAnimator.SetBool("Finish", true);
-        Invoke("ActivateScorePanel", 1.5f);
+        Invoke(nameof(ActivateScorePanel), 1.5f);
         //Invoke("NextScene", 2f);
     }
 
@@ -149,9 +151,10 @@ public class LevelManager : MonoBehaviour
         //if in test scene, reload the scene
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
-            Invoke("ReloadScene", 0f);
+            ReloadScene();
             return;
         }
+        
         //if next scene index doesn't exist, go back to title screen
         if (SceneManager.GetActiveScene().buildIndex + 1 > SceneManager.sceneCountInBuildSettings - 1)
         {
@@ -170,7 +173,7 @@ public class LevelManager : MonoBehaviour
         overlay.SetActive(true);
         overlayAnimator.SetBool("OnDeath", true);
 
-        Invoke("ReloadScene", 2f);
+        Invoke(nameof(ReloadScene), 2f);
     }
 
 
