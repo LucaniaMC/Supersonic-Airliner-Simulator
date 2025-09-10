@@ -125,8 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d613fefa51df2e843ac35ad2ba55bbd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelNumber: 
-  starRating: 0
+  levelDatabase: {fileID: 11400000, guid: 55d425acf10207a43963517d1dd92369, type: 2}
+  button: {fileID: 5205445293043569586}
+  text: {fileID: 5205445294756128689}
+  levelNumber: 
   starInstance: {fileID: 1636344343323607151, guid: b87d6361f6db9d842993899450d1f976, type: 3}
   starParent: {fileID: 786595941554823023}
 --- !u!114 &5205445293043569587

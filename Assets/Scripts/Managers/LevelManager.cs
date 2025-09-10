@@ -87,7 +87,7 @@ public class LevelManager : MonoBehaviour
     //Update level information according to corresponding data 
     void LoadLevelData(string sceneName)
     {
-        LevelData data = levelDatabase.GetLevelData(sceneName);
+        LevelData data = levelDatabase.GetLevelDataFromScene(sceneName);
 
 
         if (data != null)   //Update variables with database data
