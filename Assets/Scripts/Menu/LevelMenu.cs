@@ -11,8 +11,14 @@ public class LevelMenu : UIMenu
     [SerializeField] private GameObject[] pages;    //reference for all page objects
 
 
+    void Start()
+    {
+        ShowPage(currentPage);    
+    }
+
+
     public void NextPage()
-    { 
+    {
         if (currentPage < pages.Length - 1)
         {
             currentPage++;
@@ -33,7 +39,7 @@ public class LevelMenu : UIMenu
 
     void ShowPage(int index)
     { 
-        // Hide all pages first
+        // Go through each page and set the current one active
         for (int i = 0; i < pages.Length; i++)
         {
             pages[i].SetActive(i == index);
@@ -49,7 +55,7 @@ public class LevelMenu : UIMenu
     }
 
 
-    public IEnumerator StartLevel(string levelName)
+    IEnumerator StartLevel(string levelName)
     {
         overlay.SetActive(true);
         animator.SetBool("FadeIn", true);
