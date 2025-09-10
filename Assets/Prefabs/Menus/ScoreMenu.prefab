@@ -432,9 +432,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   window: {fileID: 7135564093194795651}
+  stars:
+  - {fileID: 9028077342381773828}
+  - {fileID: 1748433462295324732}
+  - {fileID: 1214620406289706953}
   starRating: 1
-  threeStarThreshold: 50
-  twoStarThreshold: 25
   fuelText: {fileID: 5568092034039594140}
   timeText: {fileID: 9203735474532995294}
 --- !u!1 &4794299636706497961

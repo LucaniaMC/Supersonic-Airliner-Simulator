@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class ScoreMenu : UIMenu
 {
-    private GameObject[] stars;    //array of all three star fill objects
+    [SerializeField] private GameObject[] stars;    //array of all three star fill objects
 
     [Range(1, 3)] public int starRating = 3; //The star rating the player can have from 1-3 stars
 
@@ -15,8 +15,6 @@ public class ScoreMenu : UIMenu
 
     public void Initialize()
     {
-        stars = GameObject.FindGameObjectsWithTag("Star");
-
         //Disable all stars
         for (int i = 0; i < stars.Length; i++)
         {
