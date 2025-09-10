@@ -56,11 +56,20 @@ public class LevelDatabase : ScriptableObject
     }
 
 
-    public void ResetLevelUnlock()
+    public void SetAllLevelUnlock(bool unlocked)
+    {
+        foreach (var level in levels)
+        {
+            level.unlocked = unlocked;
+        }
+    }
+    
+
+    public void ResetAllStars()
     { 
         foreach (var level in levels)
         {
-            level.unlocked = false;
+            level.starRating = 0;
         }
     }
 }

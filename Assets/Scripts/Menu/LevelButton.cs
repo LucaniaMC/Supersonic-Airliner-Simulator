@@ -26,7 +26,7 @@ public class LevelButton : MonoBehaviour
 
         if (data == null)
         {
-            Debug.Log("Level Button: No Level Data Available");
+            Debug.Log("LevelButton: No level data available for " + levelNumber);
             return;
         }
 

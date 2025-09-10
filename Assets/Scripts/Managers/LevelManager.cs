@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Manages dynamic level information, place the prefab in scenes
+//Manages dynamic level information and functions, place the prefab in scenes
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;    //Singleton self reference
@@ -12,10 +12,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private LevelDatabase levelDatabase;
 
     //Current Level Data
-    public LevelWorld world = LevelWorld.Day; //What world is this level in
-    public bool isNight = false; //Is the level a night level
-    public string BGMName;  //BGM that plays in the level
-
+    public LevelData currentLevelData { get; private set; }
     public static bool paused = false;  //Is the game paused
 
     //Player stats on completion
@@ -65,13 +62,14 @@ public class LevelManager : MonoBehaviour
         status = LevelStatus.InProgress;
 
         // Skip setup if this is the Title Screen
-        if (scene.name == "TitleScreen")
+        if (!IsInLevel())
         {
             Debug.Log("LevelManager: Non-level scene loaded. Skipping level setup.");
             return;
         }
 
-        LoadLevelData("Level " + scene.name);
+        LoadLevelData(scene.name);
+        Debug.Log("LevelManager: Loaded " + scene.name);
 
         goal = GameObject.FindWithTag("Finish");
         player = GameObject.FindWithTag("Player");
@@ -80,41 +78,34 @@ public class LevelManager : MonoBehaviour
         scoreMenu = FindObjectOfType<ScoreMenu>();
         overlayAnimator = overlay != null ? overlay.GetComponent<Animator>() : null;
 
-        AudioManager.instance.PlayMusic(BGMName);
+        if (currentLevelData != null) AudioManager.instance.PlayMusic(currentLevelData.BGMName);
     }
 
 
-    //Update level information according to corresponding data 
+    //Loads corresponding level data from the name of the current scene
     void LoadLevelData(string sceneName)
     {
-        LevelData data = levelDatabase.GetLevelDataFromScene(sceneName);
+        currentLevelData = levelDatabase.GetLevelDataFromScene(sceneName);
 
 
-        if (data != null)   //Update variables with database data
+        if (currentLevelData != null)   //Update variables with database data
         {
-            world = data.world;
-            isNight = data.isNight;
-            BGMName = data.BGMName;
-
-            threeStarThreshold = data.threeStarThreshold;
-            twoStarThreshold = data.twoStarThreshold;
+            threeStarThreshold = currentLevelData.threeStarThreshold;
+            twoStarThreshold = currentLevelData.twoStarThreshold;
         }
         else    //Fallback data if the scene has no data in database
         {
             Debug.LogWarning("LevelManager: No level data found for scene: " + sceneName);
-            world = LevelWorld.Day;
-            isNight = false;
-            BGMName = "";
-
             threeStarThreshold = 50;
             twoStarThreshold = 25;
         }
     }
 
 
+    //Is the current scene a level
     public bool IsInLevel()
     {
-        return SceneManager.GetActiveScene().name != "TitleScreen";
+        return SceneManager.GetActiveScene().name.StartsWith("Level ");
     }
 
 
