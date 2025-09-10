@@ -17,4 +17,16 @@ public class LevelDatabase : ScriptableObject
         }
         return null;
     }
+
+
+    public void UnlockLevel(string levelName)
+    {
+
+    }
+
+
+    public void SetStars(string levelName, int amount)
+    { 
+        
+    }
 }
