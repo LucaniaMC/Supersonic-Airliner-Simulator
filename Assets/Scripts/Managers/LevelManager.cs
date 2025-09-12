@@ -114,6 +114,8 @@ public class LevelManager : MonoBehaviour
     {
         Invoke(nameof(ActivateScorePanel), 1.5f);
         UpdateStars();
+        UnlockLevels(currentLevelData.nextLevels);
+        GameManager.instance.SaveProgress();
     }
 
 
@@ -157,14 +159,23 @@ public class LevelManager : MonoBehaviour
     //Update the highest star information in level data
     void UpdateStars()
     {
-        if (currentLevelData != null) levelDatabase.SetStars(currentLevelData.sceneNumber, starRating);
+        if (currentLevelData == null || GameManager.instance.GetLevelProgress(currentLevelData.sceneNumber) == null)
+            return;
+
+        if (starRating > GameManager.instance.GetLevelProgress(currentLevelData.sceneNumber).stars)
+        {
+            GameManager.instance.SetStars(currentLevelData.sceneNumber, starRating);
+        }
     }
 
 
     //Unlock the next levels in sequence
-    void UnlockLevels(string[] levels)
-    { 
-
+    void UnlockLevels(string[] levelNumbers)
+    {
+        foreach (var levelNumber in levelNumbers)
+        {
+            GameManager.instance.UnlockLevel(levelNumber);
+        }
     }
 
 

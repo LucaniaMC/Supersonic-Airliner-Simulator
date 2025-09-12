@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class LevelButton : MonoBehaviour
 {
-    public LevelDatabase levelDatabase;
     public Button button;
     public TextMeshProUGUI text;
 
@@ -22,18 +21,18 @@ public class LevelButton : MonoBehaviour
 
     void LoadLevelData(string levelNumber)
     {
-        LevelData data = levelDatabase.GetLevelData(levelNumber);
+        LevelProgress progress = GameManager.instance.GetLevelProgress(levelNumber);
 
-        if (data == null)
+        if (progress == null)
         {
             Debug.Log("LevelButton: No level data available for " + levelNumber);
             return;
         }
 
-        if (data.unlocked == true)
+        if (progress.unlocked == true)
         {
             button.interactable = true;
-            DisplayStars(data.starRating);
+            DisplayStars(progress.stars);
         }
         else
         {

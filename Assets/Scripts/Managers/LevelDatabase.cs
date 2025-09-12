@@ -30,46 +30,4 @@ public class LevelDatabase : ScriptableObject
         }
         return null;
     }
-
-
-    public void UnlockLevel(string levelNumber)
-    {
-        foreach (var level in levels)
-        {
-            if (level.sceneNumber == levelNumber)
-            {
-                level.unlocked = true;
-            }
-        }
-    }
-
-
-    public void SetStars(string levelNumber, int amount)
-    {
-        foreach (var level in levels)
-        {
-            if (level.sceneNumber == levelNumber)
-            {
-                level.starRating = amount;
-            }
-        }
-    }
-
-
-    public void SetAllLevelUnlock(bool unlocked)
-    {
-        foreach (var level in levels)
-        {
-            level.unlocked = unlocked;
-        }
-    }
-    
-
-    public void ResetAllStars()
-    { 
-        foreach (var level in levels)
-        {
-            level.starRating = 0;
-        }
-    }
 }
