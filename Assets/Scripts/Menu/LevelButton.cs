@@ -26,6 +26,8 @@ public class LevelButton : MonoBehaviour
         if (progress == null)
         {
             Debug.Log("LevelButton: No level data available for " + levelNumber);
+            button.interactable = false;
+            text.enabled = false;
             return;
         }
 

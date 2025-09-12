@@ -49,7 +49,6 @@ public class LevelMenu : UIMenu
 
     public void OpenLevel(string levelNumber)
     {
-        AudioManager.instance.PlaySFX("Click", true);
         string levelName = "Level " + levelNumber;
         StartCoroutine(StartLevel(levelName));
     }
