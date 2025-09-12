@@ -113,6 +113,7 @@ public class LevelManager : MonoBehaviour
     public void Finish()
     {
         Invoke(nameof(ActivateScorePanel), 1.5f);
+        UpdateStars();
     }
 
 
@@ -154,9 +155,9 @@ public class LevelManager : MonoBehaviour
 
 
     //Update the highest star information in level data
-    void UpdateStars(int amount)
-    { 
-        
+    void UpdateStars()
+    {
+        if (currentLevelData != null) levelDatabase.SetStars(currentLevelData.sceneNumber, starRating);
     }
 
 
