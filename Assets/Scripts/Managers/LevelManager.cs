@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     //Player stats on completion
     public int fuelRemaining { get; private set; } = 0;
     public float timeTaken { get; private set; } = 0f;
+    public int starRating { get; private set; } = 0;
 
     float startTime = 0f;   //Logged when the player started flying, used to calculate time taken
 
@@ -111,15 +112,11 @@ public class LevelManager : MonoBehaviour
 
     public void Finish()
     {
-        overlay.SetActive(true);
-
-        //overlayAnimator.SetBool("Finish", true);
         Invoke(nameof(ActivateScorePanel), 1.5f);
-        //Invoke("NextScene", 2f);
     }
 
 
-    //called when the player starts flying
+    //Record when the player starts flying
     public void SetStartTime()
     {
         startTime = Time.time;
@@ -131,9 +128,50 @@ public class LevelManager : MonoBehaviour
         scoreMenu.Show();
         timeTaken = Time.time - startTime;
         fuelRemaining = fuelBar.fuel;
+        starRating = CalculateStarRating(fuelRemaining);
         scoreMenu.Initialize();
 
         Debug.Log("Fuel: " + fuelRemaining + ", " + "Time: " + timeTaken);
+    }
+
+
+    //Returns star rating stats in the range of 1-3 depending on player's fuel remaining
+    int CalculateStarRating(int score)
+    {
+        if (score >= threeStarThreshold)
+        {
+            return 3;
+        }
+        else if (score >= twoStarThreshold)
+        {
+            return 2;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+
+
+    //Update the highest star information in level data
+    void UpdateStars(int amount)
+    { 
+        
+    }
+
+
+    //Unlock the next levels in sequence
+    void UnlockLevels(string[] levels)
+    { 
+
+    }
+
+
+    public void NextButton()
+    { 
+        overlay.SetActive(true);
+        overlayAnimator.SetBool("Finish", true);
+        Invoke("NextScene", 2f);
     }
 
 
@@ -145,7 +183,7 @@ public class LevelManager : MonoBehaviour
             ReloadScene();
             return;
         }
-        
+
         //if next scene index doesn't exist, go back to title screen
         if (SceneManager.GetActiveScene().buildIndex + 1 > SceneManager.sceneCountInBuildSettings - 1)
         {

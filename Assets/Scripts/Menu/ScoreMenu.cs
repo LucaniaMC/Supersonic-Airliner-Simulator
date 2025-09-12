@@ -6,9 +6,6 @@ public class ScoreMenu : UIMenu
 {
     [SerializeField] private GameObject[] stars;    //array of all three star fill objects
 
-    [Range(1, 3)] public int starRating = 3; //The star rating the player can have from 1-3 stars
-
-
     [SerializeField] TextMeshProUGUI fuelText;
     [SerializeField] TextMeshProUGUI timeText;
 
@@ -21,9 +18,8 @@ public class ScoreMenu : UIMenu
             stars[i].SetActive(false);
         }
 
-        //calculate and displays star rating
-        starRating = CalculateStarRating(LevelManager.instance.fuelRemaining);
-        Debug.Log("Star Rating:" + starRating);
+        //Displays star rating
+        Debug.Log("Star Rating:" + LevelManager.instance.starRating);
         DisplayStarRating();
 
         //displays stats in texts
@@ -32,28 +28,10 @@ public class ScoreMenu : UIMenu
     }
 
 
-    //Returns star rating stats in the range of 1-3 depending on player's fuel remaining
-    int CalculateStarRating(int score)
-    {
-        if (score >= LevelManager.instance.threeStarThreshold)
-        {
-            return 3;
-        }
-        else if (score >= LevelManager.instance.twoStarThreshold)
-        {
-            return 2;
-        }
-        else
-        {
-            return 1;
-        }
-    }
-
-
     //Activate the number of stars correspond to star rating
     void DisplayStarRating()
     {
-        for (int i = 0; i < starRating; i++)
+        for (int i = 0; i < LevelManager.instance.starRating; i++)
         {
             stars[i].SetActive(true);
         }
