@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
     //Saves progress to json data in playerprefs
     public void SaveProgress()
     {
+        Debug.Log("GameManager: Progress Saved");
+        
         string json = JsonUtility.ToJson(gameData);
         PlayerPrefs.SetString("GameProgress", json);
         PlayerPrefs.Save();
@@ -66,6 +68,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadProgress()
     {
+        Debug.Log("GameManager: Progress Loaded");
+
         if (PlayerPrefs.HasKey("GameProgress"))
         {
             //load progress from playerperfs

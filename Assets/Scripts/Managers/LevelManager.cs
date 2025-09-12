@@ -113,6 +113,12 @@ public class LevelManager : MonoBehaviour
     public void Finish()
     {
         Invoke(nameof(ActivateScorePanel), 1.5f);
+
+        //Update level completion stats
+        timeTaken = Time.time - startTime;
+        fuelRemaining = fuelBar.fuel;
+        starRating = CalculateStarRating(fuelRemaining);
+
         UpdateStars();
         UnlockLevels(currentLevelData.nextLevels);
         GameManager.instance.SaveProgress();
@@ -129,9 +135,6 @@ public class LevelManager : MonoBehaviour
     void ActivateScorePanel()
     {
         scoreMenu.Show();
-        timeTaken = Time.time - startTime;
-        fuelRemaining = fuelBar.fuel;
-        starRating = CalculateStarRating(fuelRemaining);
         scoreMenu.Initialize();
 
         Debug.Log("Fuel: " + fuelRemaining + ", " + "Time: " + timeTaken);
