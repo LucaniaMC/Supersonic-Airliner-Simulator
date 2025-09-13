@@ -13,7 +13,7 @@ public class LevelMenu : UIMenu
 
     void Start()
     {
-        ShowPage(currentPage);    
+        ShowPage(currentPage);
     }
 
 
@@ -28,7 +28,7 @@ public class LevelMenu : UIMenu
 
 
     public void PreviousPage()
-    { 
+    {
         if (currentPage > 0)
         {
             currentPage--;
@@ -38,7 +38,7 @@ public class LevelMenu : UIMenu
 
 
     void ShowPage(int index)
-    { 
+    {
         // Go through each page and set the current one active
         for (int i = 0; i < pages.Length; i++)
         {
@@ -60,5 +60,12 @@ public class LevelMenu : UIMenu
         animator.SetBool("FadeIn", true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(levelName);
+    }
+
+
+    public void ResetButton()
+    {
+        GameManager.instance.ResetProgress();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

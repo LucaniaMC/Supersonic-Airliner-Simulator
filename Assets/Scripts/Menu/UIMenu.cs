@@ -5,13 +5,13 @@ public abstract class UIMenu : MonoBehaviour
     [SerializeField] protected GameObject window; //The window child object that gets enabled and disabled
 
 
-    public void Show()
+    public virtual void Show()
     {
         window.SetActive(true);
     }
 
 
-    public void Hide()
+    public virtual void Hide()
     {
         window.SetActive(false);
     }

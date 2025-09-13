@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         LoadProgress();
     }
 
+
     void OnApplicationQuit()
     {
         SaveProgress();
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour
     public void SaveProgress()
     {
         Debug.Log("GameManager: Progress Saved");
-        
+
         string json = JsonUtility.ToJson(gameData);
         PlayerPrefs.SetString("GameProgress", json);
         PlayerPrefs.Save();
@@ -95,6 +96,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     //Ensure progress matches database, add missing levels if database expanded
     void SyncWithDatabase()
     {
@@ -111,5 +113,12 @@ public class GameManager : MonoBehaviour
                 });
             }
         }
+    }
+
+
+    public void ResetProgress()
+    {
+        PlayerPrefs.DeleteKey("GameProgress");
+        LoadProgress();
     }
 }
