@@ -78,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         SpawnSonicBoom();
     }
 
+
     //move at default speed
     public void Move()
     {
@@ -95,5 +96,12 @@ public class PlayerMovement : MonoBehaviour
             time = 0f;
             GameObject.Instantiate(player.boom, player.transform.position, Quaternion.identity);
         }
+    }
+
+    
+    public void SetWind(float angle, float strength)
+    {
+        windAngle = angle;
+        windStrength = strength;
     }
 }
