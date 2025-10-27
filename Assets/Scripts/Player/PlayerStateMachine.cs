@@ -8,6 +8,8 @@ public class PlayerStateMachine : MonoBehaviour
     public GameObject boom;
     public GameObject launch;
     public GameObject confetti;
+
+    public GameObject windParticle;
     
 
     [HideInInspector] public PlayerMovement movement;

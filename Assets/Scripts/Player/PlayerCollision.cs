@@ -14,6 +14,7 @@ public class PlayerCollision : MonoBehaviour
         if (other.tag == "DeathZone" && LevelManager.instance.status == LevelManager.LevelStatus.InProgress) 
         {
             LevelManager.instance.status = LevelManager.LevelStatus.Failed;
+            Debug.Log("PlayerCollision: Failed by touching death zone " + other);
         }
     }
 }

@@ -103,5 +103,14 @@ public class PlayerMovement : MonoBehaviour
     {
         windAngle = angle;
         windStrength = strength;
+
+        if (strength > 0)
+        {
+            player.windParticle.SetActive(true);
+        }
+        else
+        {
+            player.windParticle.SetActive(false);
+        }
     }
 }

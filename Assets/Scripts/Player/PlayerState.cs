@@ -31,6 +31,7 @@ public class PlayerGroundedState : PlayerState
         Debug.Log("Player: ground state entered");
 
         player.shadow.isActive = false;
+        player.movement.SetWind(0, 0);
     }
 
     public override void StateUpdate()
@@ -96,6 +97,7 @@ public class PlayerAirState : PlayerState
         if (player.fuelBar.fuel == 0)
         {
             LevelManager.instance.status = LevelManager.LevelStatus.Failed;
+            Debug.Log("PlayerState: Failed by out of fuel");
         }
         
         Transitions();
