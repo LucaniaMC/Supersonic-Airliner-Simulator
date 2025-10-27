@@ -120,7 +120,7 @@ public class LevelManager : MonoBehaviour
         starRating = CalculateStarRating(fuelRemaining);
 
         UpdateStars();
-        UnlockLevels(currentLevelData.nextLevels);
+        if (currentLevelData != null) UnlockLevels(currentLevelData.nextLevels);
         GameManager.instance.SaveProgress();
     }
 
@@ -193,7 +193,7 @@ public class LevelManager : MonoBehaviour
     public void NextScene()
     {
         //if in test scene, reload the scene
-        if (SceneManager.GetActiveScene().name == "SampleScene")
+        if (SceneManager.GetActiveScene().name == "Level Test")
         {
             ReloadScene();
             return;
