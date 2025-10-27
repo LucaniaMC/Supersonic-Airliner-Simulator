@@ -31,7 +31,6 @@ public class PlayerGroundedState : PlayerState
         Debug.Log("Player: ground state entered");
 
         player.shadow.isActive = false;
-        player.movement.SetWind(0, 0);
     }
 
     public override void StateUpdate()

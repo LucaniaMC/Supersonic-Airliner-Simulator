@@ -9,7 +9,7 @@ public class PlayerStateMachine : MonoBehaviour
     public GameObject launch;
     public GameObject confetti;
 
-    public GameObject windParticle;
+    public WindParticleEffect windParticles;
     
 
     [HideInInspector] public PlayerMovement movement;

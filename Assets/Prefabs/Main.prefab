@@ -1383,7 +1383,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -4397,12 +4397,12 @@ ParticleSystem:
     minVertexDistance: 0.2
     textureMode: 0
     ribbonCount: 1
-    shadowBias: 0.5
+    shadowBias: 0
     worldSpace: 0
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
-    inheritParticleColor: 1
+    inheritParticleColor: 0
     generateLightingData: 0
     splitSubEmitterRibbons: 0
     attachRibbonsToTransform: 0
@@ -5172,8 +5172,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5f46083d0016e794fb9fbec92b2c5b1b, type: 3}
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ff7e78d4ea8c8bc4cab2ee6d776754b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5351,8 +5351,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6707758696065891761}
+  - component: {fileID: 5182458254381715209}
   - component: {fileID: 4536733684487900469}
-  - component: {fileID: 3950578275139064489}
   m_Layer: 0
   m_Name: WindParticles
   m_TagString: Untagged
@@ -5376,6 +5376,20 @@ Transform:
   m_Father: {fileID: 8429168693152847464}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5182458254381715209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532241347210298841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d04251b990f6c249a705a9a0f3210f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8429168692320197643}
+  windParticle: {fileID: 8340551801945909879}
 --- !u!61 &4536733684487900469
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5402,19 +5416,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 20}
   m_EdgeRadius: 0
---- !u!114 &3950578275139064489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4532241347210298841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f559dc7ca52bb9f4e8c7648a4a855711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 8429168692320197643}
 --- !u!1 &5790891941859674440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5946,7 +5947,7 @@ MonoBehaviour:
   boom: {fileID: 8564431319478455084, guid: ae2d5ba917fb0d64f9d495e4e4a9f663, type: 3}
   launch: {fileID: 778915846643892628, guid: a4c1348d75c6a774e8d9e15fc41b71b3, type: 3}
   confetti: {fileID: 1073120195597019897, guid: 2228b05487032784bb24c53cb99d6c4c, type: 3}
-  windParticle: {fileID: 4532241347210298841}
+  windParticles: {fileID: 5182458254381715209}
   movement: {fileID: 0}
   fuelBar: {fileID: 0}
   shadow: {fileID: 0}
