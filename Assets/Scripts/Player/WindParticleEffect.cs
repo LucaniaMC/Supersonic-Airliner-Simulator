@@ -7,13 +7,15 @@ public class WindParticleEffect : MonoBehaviour
     public GameObject player;
     public ParticleSystem windParticle;
 
-    float fadeSpeed = 2f;
-    float windSpeedMultiplier = 20f;
+    float fadeSpeed = 2f;               //Speed for the particle fade in and out
+    float windSpeedMultiplier = 20f;    //Speed multiplier for particles
 
-    private Coroutine fadeRoutine;
+    private Coroutine fadeRoutine;  //Coroutine reference for fading
 
+    //Particle system references
     ParticleSystem.TrailModule trail;
     ParticleSystem.MainModule main;
+    ParticleSystem.VelocityOverLifetimeModule velocity;
 
 
     void Start()
@@ -21,6 +23,7 @@ public class WindParticleEffect : MonoBehaviour
         //Set particle system references
         trail = windParticle.trails;
         main = windParticle.main;
+        velocity = windParticle.velocityOverLifetime;
 
         //turn off particles on start
         SetVisible(false);
@@ -45,12 +48,16 @@ public class WindParticleEffect : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            SetSpeed(Random.Range(1f, 3f));
+            float randomSpeed = Random.Range(0.5f, 3f);
+            Debug.Log("Set speed to: " + randomSpeed);
+            SetSpeed(randomSpeed);
         }
         
         if (Input.GetKeyDown(KeyCode.W))
         {
-            SetRotation(Random.Range(0f, 360f));
+            float randomRotation = Random.Range(0f, 360f);
+            Debug.Log("Set rotation to: " + randomRotation);
+            SetRotation(randomRotation);
         }
     }
 
@@ -65,10 +72,10 @@ public class WindParticleEffect : MonoBehaviour
     }
 
 
-    //Set the speed of the particles
+    //Set the speed of the particles with velocity over time
     public void SetSpeed(float speed)
     {
-        main.startSpeed = speed * windSpeedMultiplier;
+        velocity.z = speed * windSpeedMultiplier;
     }
 
 
@@ -86,6 +93,7 @@ public class WindParticleEffect : MonoBehaviour
         if (fadeRoutine != null)
             StopCoroutine(fadeRoutine);
 
+        //set alpha to 0 for invisible and 1 for visible 
         if (isVisible) trail.colorOverTrail = new Color(1f, 1f, 1f, 1f);
         else trail.colorOverTrail = new Color(1f, 1f, 1f, 0f);
     }
@@ -94,9 +102,9 @@ public class WindParticleEffect : MonoBehaviour
     //coroutine for fading particle trail color
     IEnumerator FadeTrail(bool fadeIn)
     {
-        float startAlpha = trail.colorOverTrail.color.a;
-        float targetAlpha = fadeIn ? 1f : 0f;
-        float alpha = startAlpha;
+        float startAlpha = trail.colorOverTrail.color.a;    //Start with current alpha to prevent jumps
+        float targetAlpha = fadeIn ? 1f : 0f;   //fade alpha to 1 if fadein, to 0 if fadeout
+        float alpha = startAlpha;   //current alpha
 
         //transition trail color alpha towards target alpha
         while (!Mathf.Approximately(alpha, targetAlpha))
