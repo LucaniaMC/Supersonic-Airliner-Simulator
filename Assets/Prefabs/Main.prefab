@@ -5944,10 +5944,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overlay: {fileID: 8429168692223993338}
+  windParticles: {fileID: 5182458254381715209}
   boom: {fileID: 8564431319478455084, guid: ae2d5ba917fb0d64f9d495e4e4a9f663, type: 3}
   launch: {fileID: 778915846643892628, guid: a4c1348d75c6a774e8d9e15fc41b71b3, type: 3}
   confetti: {fileID: 1073120195597019897, guid: 2228b05487032784bb24c53cb99d6c4c, type: 3}
-  windParticles: {fileID: 5182458254381715209}
   movement: {fileID: 0}
   fuelBar: {fileID: 0}
   shadow: {fileID: 0}
