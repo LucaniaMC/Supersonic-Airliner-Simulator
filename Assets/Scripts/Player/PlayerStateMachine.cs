@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    public GameObject overlay;
+    public GameObject overlay;      //overlay object on top of screen
+    public WindParticleEffect windParticles;    //wind particle script
 
     //Instances
     public GameObject boom;
     public GameObject launch;
     public GameObject confetti;
 
-    public WindParticleEffect windParticles;
-    
-
+    //References
     [HideInInspector] public PlayerMovement movement;
     [HideInInspector] public FuelBar fuelBar;
     [HideInInspector] public PlayerShadow shadow;

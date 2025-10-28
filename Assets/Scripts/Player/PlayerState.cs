@@ -92,7 +92,7 @@ public class PlayerAirState : PlayerState
             AudioManager.instance.PlaySFX("BoostStart", false);
         }
 
-
+        //fail if out of fuel
         if (player.fuelBar.fuel == 0)
         {
             LevelManager.instance.status = LevelManager.LevelStatus.Failed;
