@@ -3,16 +3,18 @@ using UnityEngine;
 //attach this script to an object for it to move in parallax
 public class Parallax : MonoBehaviour
 {
-    //How much the object moves in parallax, 0 = no parallax, 0-1 = background, -1-0 = foreground
+    //How much the object moves in parallax, 0 = no parallax, 0-1 = background, <0 = foreground
     [Range(-1f, 1f)] public float parallaxPercentage;
     public bool useOffset = true;
 
-    Transform cameraTransform;    //Camera transform reference
-    Vector3 startPos;             //Object starting position
-    private Vector3 cameraStartPos; //Camera starting position
+    protected Transform cameraTransform;    //Camera transform reference
+    protected Vector3 startPos;             //Object starting position
+    protected Vector3 cameraStartPos; //Camera starting position
 
-    Vector3 originOffset;  //offset the object at start, so it appears at its original position as the player approaches 
-    Vector3 cameraDelta;   //distance that the camera traveled
+    protected Vector3 originOffset;  //offset the object at start, so it appears at its original position as the player approaches 
+    protected Vector3 cameraDelta;   //distance that the camera traveled
+
+    protected Vector3 newPos;
 
 
     void Start()
@@ -35,11 +37,12 @@ public class Parallax : MonoBehaviour
     }
 
 
-    void Update()
+    protected virtual void Update()
     {
         cameraDelta = cameraTransform.position - cameraStartPos;
         Vector3 parallaxOffset = cameraDelta * parallaxPercentage;
 
-        transform.position = startPos + new Vector3(parallaxOffset.x, parallaxOffset.y, 0) - originOffset;
+        newPos = startPos + new Vector3(parallaxOffset.x, parallaxOffset.y, 0) - originOffset;
+        transform.position = newPos;
     }
 }
