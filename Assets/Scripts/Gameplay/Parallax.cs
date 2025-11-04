@@ -2,30 +2,36 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    public float percentX;      //How much the object moves on X axis. Positive values for background objects, negative values for foreground objects
-    public float percentY;      //How much the object moves on Y axis.
-    [SerializeField] private Camera cam;    //Reference camera
-    Vector3 camPrev;    //Camera origin position
+    //How much the object moves in parallax, 0 = no parallax
+    //Positive = background objects, negative = foreground objects
+    [Range(-1f, 1f)] public float parallaxPercentage;   
+    
+    Transform cameraTransform;    //Camera transform reference
+    Vector3 startPos;             //Object starting position
+    private Vector3 cameraStartPos; //Camera starting position
+
+    Vector3 originOffset;  //offset the object at start, so it appears at its original position as the player approaches 
+    Vector3 cameraDelta;   //distance that the camera traveled
 
 
     void Start()
     {
-        cam = Camera.main;
-        camPrev = cam.transform.position;
+        //set references
+        cameraTransform = Camera.main.transform;
+        startPos = transform.position;
+        cameraStartPos = cameraTransform.position;
+
+        originOffset = (transform.position - cameraTransform.position) * parallaxPercentage;
+        originOffset.z = 0; //reset z value (why are you doing this)
+        //Without camera starting position it's simply transform.position * parallaxPercentage
     }
 
 
-    void LateUpdate()
+    void Update()
     {
-        Vector3 camPos = cam.transform.position;
-        float deltaX = camPos.x - camPrev.x;
-        float deltaY = camPos.y - camPrev.y;
+        cameraDelta = cameraTransform.position - cameraStartPos;
+        Vector3 parallaxOffset = cameraDelta * parallaxPercentage;
 
-        float adjustX = deltaX * percentX;
-        float adjustY = deltaY * percentY;
-
-        transform.position = transform.position + new Vector3(adjustX, adjustY, 0);
-
-        camPrev = camPos;
+        transform.position = startPos + new Vector3(parallaxOffset.x, parallaxOffset.y, 0) - originOffset;
     }
 }
