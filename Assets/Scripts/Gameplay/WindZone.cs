@@ -1,5 +1,7 @@
 using UnityEngine;
 
+//Attach the script with a Collider2D for it to change wind on player enter/exit
+[RequireComponent(typeof(Collider2D))]
 public class WindZone : MonoBehaviour
 {
     public float windAngle;
@@ -14,8 +16,8 @@ public class WindZone : MonoBehaviour
     {
         player = FindObjectOfType<PlayerMovement>();
     }
-    
-    
+
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -24,7 +26,7 @@ public class WindZone : MonoBehaviour
         }
     }
 
-    
+
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player" && resetOnExit == true)

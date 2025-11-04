@@ -3,8 +3,7 @@ using UnityEngine;
 //attach this script to an object for it to move in parallax
 public class Parallax : MonoBehaviour
 {
-    //How much the object moves in parallax, 0 = no parallax
-    //Positive = background objects, negative = foreground objects
+    //How much the object moves in parallax, 0 = no parallax, 0-1 = background, -1-0 = foreground
     [Range(-1f, 1f)] public float parallaxPercentage;
     public bool useOffset = true;
 

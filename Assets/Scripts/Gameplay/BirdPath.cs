@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 //For birds to patrol back and forth between its initial position and the position of a target object
 public class BirdPath : MonoBehaviour
