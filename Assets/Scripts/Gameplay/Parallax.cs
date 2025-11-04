@@ -1,11 +1,13 @@
 using UnityEngine;
 
+//attach this script to an object for it to move in parallax
 public class Parallax : MonoBehaviour
 {
     //How much the object moves in parallax, 0 = no parallax
     //Positive = background objects, negative = foreground objects
-    [Range(-1f, 1f)] public float parallaxPercentage;   
-    
+    [Range(-1f, 1f)] public float parallaxPercentage;
+    public bool useOffset = true;
+
     Transform cameraTransform;    //Camera transform reference
     Vector3 startPos;             //Object starting position
     private Vector3 cameraStartPos; //Camera starting position
@@ -21,9 +23,16 @@ public class Parallax : MonoBehaviour
         startPos = transform.position;
         cameraStartPos = cameraTransform.position;
 
-        originOffset = (transform.position - cameraTransform.position) * parallaxPercentage;
-        originOffset.z = 0; //reset z value (why are you doing this)
-        //Without camera starting position it's simply transform.position * parallaxPercentage
+        //calculates offset if it's on
+        if (useOffset)
+        {
+            originOffset = (transform.position - cameraTransform.position) * parallaxPercentage;
+            originOffset.z = 0;
+        }
+        else
+        {
+            originOffset = Vector3.zero;
+        }
     }
 
 

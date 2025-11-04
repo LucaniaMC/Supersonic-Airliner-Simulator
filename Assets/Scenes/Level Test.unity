@@ -859,6 +859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxPercentage: -0.2
+  useOffset: 1
 --- !u!4 &2093545383
 Transform:
   m_ObjectHideFlags: 0
