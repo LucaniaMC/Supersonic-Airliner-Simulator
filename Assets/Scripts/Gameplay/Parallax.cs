@@ -1,0 +1,31 @@
+using UnityEngine;
+
+public class Parallax : MonoBehaviour
+{
+    public float percentX;      //How much the object moves on X axis. Positive values for background objects, negative values for foreground objects
+    public float percentY;      //How much the object moves on Y axis.
+    [SerializeField] private Camera cam;    //Reference camera
+    Vector3 camPrev;    //Camera origin position
+
+
+    void Start()
+    {
+        cam = Camera.main;
+        camPrev = cam.transform.position;
+    }
+
+
+    void LateUpdate()
+    {
+        Vector3 camPos = cam.transform.position;
+        float deltaX = camPos.x - camPrev.x;
+        float deltaY = camPos.y - camPrev.y;
+
+        float adjustX = deltaX * percentX;
+        float adjustY = deltaY * percentY;
+
+        transform.position = transform.position + new Vector3(adjustX, adjustY, 0);
+
+        camPrev = camPos;
+    }
+}
