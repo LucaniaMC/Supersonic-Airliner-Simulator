@@ -5845,6 +5845,7 @@ GameObject:
   - component: {fileID: 8429168692320197644}
   - component: {fileID: 8429168692320197632}
   - component: {fileID: 8429168692320197633}
+  - component: {fileID: 1789313187701441593}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6034,6 +6035,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skinSprite: {fileID: 0}
   playerSkinDatabase: {fileID: 11400000, guid: 67ee304976c49504c8e15b073c8bc53e, type: 2}
+--- !u!114 &1789313187701441593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8429168692320197643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429c5188194eb0240aee77e8ea4e9e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lights: {fileID: 7241969388789770205}
 --- !u!1 &8429168692816595025
 GameObject:
   m_ObjectHideFlags: 0
