@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    Transform player;
+    public Transform player;
 
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player").transform;
+        }
     }
 
 

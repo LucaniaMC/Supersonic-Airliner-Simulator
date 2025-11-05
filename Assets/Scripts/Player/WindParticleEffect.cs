@@ -1,10 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WindParticleEffect : MonoBehaviour
 {
-    public GameObject player;
     public ParticleSystem windParticle;
 
     float fadeSpeed = 2f;               //Speed for the particle fade in and out
@@ -14,7 +12,6 @@ public class WindParticleEffect : MonoBehaviour
 
     //Particle system references
     ParticleSystem.TrailModule trail;
-    ParticleSystem.MainModule main;
     ParticleSystem.VelocityOverLifetimeModule velocity;
 
 
@@ -22,43 +19,10 @@ public class WindParticleEffect : MonoBehaviour
     {
         //Set particle system references
         trail = windParticle.trails;
-        main = windParticle.main;
         velocity = windParticle.velocityOverLifetime;
 
         //turn off particles on start
         SetVisible(false);
-    }
-
-
-    void Update()
-    {
-        //follow player
-        transform.position = player.transform.position;
-
-        //Test input code
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ActivateWind(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            ActivateWind(false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            float randomSpeed = Random.Range(0.5f, 3f);
-            Debug.Log("Set speed to: " + randomSpeed);
-            SetSpeed(randomSpeed);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            float randomRotation = Random.Range(0f, 360f);
-            Debug.Log("Set rotation to: " + randomRotation);
-            SetRotation(randomRotation);
-        }
     }
 
 

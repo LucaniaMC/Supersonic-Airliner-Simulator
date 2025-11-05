@@ -5353,6 +5353,7 @@ GameObject:
   - component: {fileID: 6707758696065891761}
   - component: {fileID: 5182458254381715209}
   - component: {fileID: 4536733684487900469}
+  - component: {fileID: 3844945815572935857}
   m_Layer: 0
   m_Name: WindParticles
   m_TagString: Untagged
@@ -5416,6 +5417,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 20}
   m_EdgeRadius: 0
+--- !u!114 &3844945815572935857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4532241347210298841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef27e1c20fc760f42a1eded607cd1d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5790891941859674440
 GameObject:
   m_ObjectHideFlags: 0
@@ -6627,6 +6640,7 @@ GameObject:
   - component: {fileID: 8429168693576241813}
   - component: {fileID: 8429168693576241802}
   - component: {fileID: 2904957723507295719}
+  - component: {fileID: 7537167115310743437}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6734,6 +6748,18 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &7537167115310743437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8429168693576241812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef27e1c20fc760f42a1eded607cd1d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8429168693643408006
 GameObject:
   m_ObjectHideFlags: 0

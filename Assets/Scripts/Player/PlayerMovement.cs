@@ -32,11 +32,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveTowardsCursor()
     {
-        //mouse target position
+        // Get mouse position in world space
         target = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        target.z = transform.position.z; // keep same z depth
 
-        //Player's own movement
-        Vector3 newPos = Vector3.MoveTowards(player.transform.position, target, moveSpeed * Time.deltaTime);
+        // Move toward the mouse direction
+        Vector3 targetDirection = (target - transform.position).normalized;
+        Vector3 newPos = player.transform.position + targetDirection * moveSpeed * Time.deltaTime;
 
         //only calculates wind if it exists
         if (windStrength > 0f)
@@ -60,12 +62,8 @@ public class PlayerMovement : MonoBehaviour
         player.transform.position = newPos;
 
         //Rotate towards mouse position
-        Vector3 direction = target - player.transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        player.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        //Camera follow
-        mainCamera.transform.position = player.transform.position;
+        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+        player.transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
 
