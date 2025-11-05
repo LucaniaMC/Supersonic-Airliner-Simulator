@@ -960,6 +960,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537896f79750e5d49bd5fe0042a2fb63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1077229828166539757}
-  offset: {x: 0.2, y: -0.2, z: 12}
+  player: {fileID: 1077229828166539759}
+  offset: {x: 0.2, y: -0.2}
   isActive: 1

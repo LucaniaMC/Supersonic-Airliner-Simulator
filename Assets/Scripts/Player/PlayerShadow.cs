@@ -2,9 +2,9 @@
 
 public class PlayerShadow : MonoBehaviour
 {
-    public GameObject player;
+    public Transform player;
 
-    public Vector3 offset;
+    public Vector2 offset;
 
     public bool isActive = false;
 
@@ -14,11 +14,11 @@ public class PlayerShadow : MonoBehaviour
 
         if (isActive)
         {
-            transform.position = player.transform.position + offset;
+            transform.position = new Vector3(player.position.x + offset.x, player.position.y + offset.y, transform.position.z);
         }
         else
         {
-            transform.position = player.transform.position;
+            transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
         }
     }
 }
