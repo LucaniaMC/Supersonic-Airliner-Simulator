@@ -16,5 +16,6 @@ public class LevelData
     public int twoStarThreshold = 25;   //fuel needed for 2 stars
 
     [Header("Level Sequence")]
-    public string[] nextLevels; //Levels that will be unlocked when this level is completed
+    public string[] unlockLevels; //Number of levels that will be unlocked when this level is completed
+    public string nextLevel;    //Number of level that will be played next in sequence
 }

@@ -120,7 +120,7 @@ public class LevelManager : MonoBehaviour
         starRating = CalculateStarRating(fuelRemaining);
 
         UpdateStars();
-        if (currentLevelData != null) UnlockLevels(currentLevelData.nextLevels);
+        if (currentLevelData != null) UnlockLevels(currentLevelData.unlockLevels);
         GameManager.instance.SaveProgress();
     }
 
@@ -199,15 +199,15 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
-        //if next scene index doesn't exist, go back to title screen
-        if (SceneManager.GetActiveScene().buildIndex + 1 > SceneManager.sceneCountInBuildSettings - 1)
+        //if next level doesn't exist, go back to title screen
+        if (string.IsNullOrEmpty(currentLevelData.nextLevel))
         {
             Debug.LogWarning("LevelManager: No further scene available. Return to title screen");
             SceneManager.LoadScene("TitleScreen");
         }
-        else    //load next scene
+        else    //load next level
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("Level " + currentLevelData.nextLevel);
         }
     }
 
