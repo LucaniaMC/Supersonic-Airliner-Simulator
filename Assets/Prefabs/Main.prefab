@@ -5389,7 +5389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d04251b990f6c249a705a9a0f3210f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8429168692320197643}
   windParticle: {fileID: 8340551801945909879}
 --- !u!61 &4536733684487900469
 BoxCollider2D:
@@ -5429,6 +5428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef27e1c20fc760f42a1eded607cd1d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &5790891941859674440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5963,6 +5963,7 @@ MonoBehaviour:
   boom: {fileID: 8564431319478455084, guid: ae2d5ba917fb0d64f9d495e4e4a9f663, type: 3}
   launch: {fileID: 778915846643892628, guid: a4c1348d75c6a774e8d9e15fc41b71b3, type: 3}
   confetti: {fileID: 1073120195597019897, guid: 2228b05487032784bb24c53cb99d6c4c, type: 3}
+  boost: {fileID: 2546003374484257424, guid: 03fb201db4c5c51458581bfd110b3d01, type: 3}
   movement: {fileID: 0}
   fuelBar: {fileID: 0}
   shadow: {fileID: 0}
@@ -6760,6 +6761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef27e1c20fc760f42a1eded607cd1d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &8429168693643408006
 GameObject:
   m_ObjectHideFlags: 0

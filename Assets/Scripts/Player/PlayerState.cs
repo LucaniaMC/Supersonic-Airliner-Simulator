@@ -89,6 +89,7 @@ public class PlayerAirState : PlayerState
         //play boost start sound on click
         if (Input.GetMouseButtonDown(0))
         {
+            GameObject.Instantiate(player.boost, player.transform.position, player.transform.rotation);
             AudioManager.instance.PlaySFX("BoostStart", false);
         }
 
