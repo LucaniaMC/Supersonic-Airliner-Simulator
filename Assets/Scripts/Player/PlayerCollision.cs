@@ -14,24 +14,30 @@ public class PlayerCollision : MonoBehaviour
         }
 
         //Death scenarios
-        if (other.tag == "DeathZone" && LevelManager.instance.status == LevelManager.LevelStatus.InProgress)
+        if (LevelManager.instance.status == LevelManager.LevelStatus.InProgress)
         {
-            LevelManager.instance.Fail(DeathType.DeathZone);
-        }
+            switch (other.tag)
+            {
+                case "DeathZone":
+                    LevelManager.instance.Fail(DeathType.DeathZone);
+                    break;
 
-        if (other.tag == "Bird" && LevelManager.instance.status == LevelManager.LevelStatus.InProgress)
-        {
-            LevelManager.instance.Fail(DeathType.Bird);
-        }
+                case "Bird":
+                    LevelManager.instance.Fail(DeathType.Bird);
+                    break;
 
-        if (other.tag == "Obstacle" && LevelManager.instance.status == LevelManager.LevelStatus.InProgress)
-        {
-            LevelManager.instance.Fail(DeathType.Collision);
-        }
-        
-        if (other.tag == "BlackHole" && LevelManager.instance.status == LevelManager.LevelStatus.InProgress)
-        {
-            LevelManager.instance.Fail(DeathType.BlackHole);
+                case "Obstacle":
+                    LevelManager.instance.Fail(DeathType.Collision);
+                    break;
+
+                case "BlackHole":
+                    LevelManager.instance.Fail(DeathType.BlackHole);
+                    break;
+
+                default:
+                    LevelManager.instance.Fail(DeathType.None);
+                    break;
+            }
         }
     }
 }
