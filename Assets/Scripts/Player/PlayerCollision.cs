@@ -35,7 +35,7 @@ public class PlayerCollision : MonoBehaviour
                     break;
 
                 default:
-                    LevelManager.instance.Fail(DeathType.None);
+                    // not failing
                     break;
             }
         }
