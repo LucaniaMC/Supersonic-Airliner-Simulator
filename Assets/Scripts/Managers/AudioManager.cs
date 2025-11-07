@@ -135,7 +135,7 @@ public class AudioManager : MonoBehaviour
             currentMusic.source.Stop();
 
         currentMusic = s;
-        currentMusic.source.volume = s.volume; // reset in case it was faded
+        //currentMusic.source.volume = s.volume; // reset in case it was faded
         currentMusic.source.Play();
     }
 
