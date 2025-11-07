@@ -24,10 +24,12 @@ public class PlayerCollision : MonoBehaviour
 
                 case "Bird":
                     LevelManager.instance.Fail(DeathType.Bird);
+                    EffectManager.instance.InstantiateEffect("Smoke", transform);
                     break;
 
                 case "Obstacle":
                     LevelManager.instance.Fail(DeathType.Collision);
+                    EffectManager.instance.InstantiateEffect("Flames", transform);
                     break;
 
                 case "BlackHole":

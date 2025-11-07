@@ -154,7 +154,7 @@ public class PlayerFailState : PlayerState
                 break;
 
             case DeathType.Bird:
-                EffectManager.instance.InstantiateEffect("Smoke", player.transform);
+                // do something
                 break;
 
             case DeathType.BlackHole:
@@ -162,7 +162,7 @@ public class PlayerFailState : PlayerState
                 break;
 
             case DeathType.Collision:
-                EffectManager.instance.InstantiateEffect("Flames", player.transform);
+                // do something
                 break;
 
             default:
