@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 1077229828166539759}
   - component: {fileID: 1077229828166539758}
   - component: {fileID: 1077229828166539752}
+  - component: {fileID: 6494418082125549286}
   - component: {fileID: 245528794770617628}
   m_Layer: 0
   m_Name: Airliner
@@ -242,6 +243,21 @@ MonoBehaviour:
   range: {x: 0, y: 0}
   turnSpeed: 2
   speed: 1
+--- !u!114 &6494418082125549286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077229828166539757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9331b9fe55892b4a82b65d4a260c3c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectNames:
+  - Explosion2
+  destroySelf: 0
 --- !u!82 &245528794770617628
 AudioSource:
   m_ObjectHideFlags: 0

@@ -25,3 +25,5 @@ MonoBehaviour:
     prefab: {fileID: 778915846643892628, guid: a4c1348d75c6a774e8d9e15fc41b71b3, type: 3}
   - name: Explosion1
     prefab: {fileID: 3376998503924020913, guid: e3a8e2689685d7e46b612f1f84925c86, type: 3}
+  - name: Explosion2
+    prefab: {fileID: 3504476836272262335, guid: bd55846d9c1ba2141907185937d3046d, type: 3}

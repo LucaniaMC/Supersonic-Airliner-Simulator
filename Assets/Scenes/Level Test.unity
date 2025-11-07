@@ -1323,7 +1323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1077229828166539757, guid: a469377c28ce0144091ab47802499804, type: 3}
       propertyPath: m_Name
-      value: Enemy1
+      value: Airliner
       objectReference: {fileID: 0}
     - target: {fileID: 1077229828166539759, guid: a469377c28ce0144091ab47802499804, type: 3}
       propertyPath: m_RootOrder
