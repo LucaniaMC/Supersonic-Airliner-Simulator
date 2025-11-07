@@ -6,40 +6,36 @@ public class PlayerCollision : MonoBehaviour
     {
         if (LevelManager.instance.status != LevelManager.LevelStatus.InProgress)
             return;
-    
-        //Reach goal finish game
-        if (other.tag == "Finish" && LevelManager.instance.status == LevelManager.LevelStatus.InProgress) 
+
+        switch (other.tag)
         {
-            LevelManager.instance.Finish();
-        }
+            //Reach goal finish game
+            case "Finish":
+                LevelManager.instance.Finish();
+                break;
 
-        //Death scenarios
-        if (LevelManager.instance.status == LevelManager.LevelStatus.InProgress)
-        {
-            switch (other.tag)
-            {
-                case "DeathZone":
-                    LevelManager.instance.Fail(DeathType.DeathZone);
-                    break;
+            //Deaths
+            case "DeathZone":
+                LevelManager.instance.Fail(DeathType.DeathZone);
+                break;
 
-                case "Bird":
-                    LevelManager.instance.Fail(DeathType.Bird);
-                    EffectManager.instance.InstantiateEffect("Smoke", transform);
-                    break;
+            case "Bird":
+                LevelManager.instance.Fail(DeathType.Bird);
+                EffectManager.instance.InstantiateEffect("Smoke", transform);
+                break;
 
-                case "Obstacle":
-                    LevelManager.instance.Fail(DeathType.Collision);
-                    EffectManager.instance.InstantiateEffect("Flames", transform);
-                    break;
+            case "Obstacle":
+                LevelManager.instance.Fail(DeathType.Collision);
+                EffectManager.instance.InstantiateEffect("Flames", transform);
+                break;
 
-                case "BlackHole":
-                    LevelManager.instance.Fail(DeathType.BlackHole);
-                    break;
+            case "BlackHole":
+                LevelManager.instance.Fail(DeathType.BlackHole);
+                break;
 
-                default:
-                    // not failing
-                    break;
-            }
+            default:
+                // not failing
+                break;
         }
     }
 }
