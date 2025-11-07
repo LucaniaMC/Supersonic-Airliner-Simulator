@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ExplodeOnContact : MonoBehaviour
 {
-    public string[] effectNames;
+    public ExplosionEffect[] effects;
     bool exploded = false;
     public bool destroySelf = false;
 
@@ -14,11 +14,23 @@ public class ExplodeOnContact : MonoBehaviour
             if (exploded == false)
             {
                 // Loop through each effect name and instantiate it
-                foreach (string effectName in effectNames)
+                foreach (var effect in effects)
                 {
-                    if (!string.IsNullOrEmpty(effectName))
+                    if (!string.IsNullOrEmpty(effect.name))
                     {
-                        EffectManager.instance.InstantiateEffect(effectName, transform.position, Quaternion.identity);
+                        Quaternion rotation = Quaternion.identity;
+
+                        if (effect.rotateTowardsSelf) rotation = transform.rotation;
+
+                        if (effect.instantiateAsChild)
+                        {
+                            EffectManager.instance.InstantiateEffect(effect.name, transform);
+                        }
+                        else
+                        {
+                            EffectManager.instance.InstantiateEffect(effect.name, transform.position, rotation);
+                        }
+                            
                         AudioManager.instance.PlaySFX("Explosion", true);
                     }
                 }
@@ -31,4 +43,13 @@ public class ExplodeOnContact : MonoBehaviour
             }
         }
     }
+}
+
+
+[System.Serializable]
+public class ExplosionEffect
+{
+    public string name;
+    public bool instantiateAsChild = false;
+    public bool rotateTowardsSelf = false;
 }

@@ -488,8 +488,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9331b9fe55892b4a82b65d4a260c3c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectNames:
-  - Explosion1
+  effects:
+  - name: Explosion1
+    instantiateAsChild: 0
+    rotateTowardsSelf: 0
+  - name: SmallPlanePieces
+    instantiateAsChild: 0
+    rotateTowardsSelf: 1
   destroySelf: 1
 --- !u!1 &5138553881953376246
 GameObject:

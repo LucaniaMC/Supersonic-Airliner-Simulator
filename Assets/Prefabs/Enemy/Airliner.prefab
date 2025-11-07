@@ -255,8 +255,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9331b9fe55892b4a82b65d4a260c3c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectNames:
-  - Explosion2
+  effects:
+  - name: Explosion2
+    instantiateAsChild: 0
+    rotateTowardsSelf: 0
+  - name: Flames
+    instantiateAsChild: 1
+    rotateTowardsSelf: 0
+  - name: PlanePieces
+    instantiateAsChild: 0
+    rotateTowardsSelf: 0
   destroySelf: 0
 --- !u!82 &245528794770617628
 AudioSource:
