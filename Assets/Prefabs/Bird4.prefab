@@ -51,6 +51,7 @@ MonoBehaviour:
   pathMode: 0
   speed: 1
   offset: 0
+  feathers: {fileID: 1800180154445907167, guid: 891856b93b961f7489ab58b71ce53411, type: 3}
   sprite: {fileID: 1726118780629163335}
   target: {fileID: 3691186551099316254}
 --- !u!61 &595274258423063965

@@ -11,6 +11,8 @@ public class BirdPath : MonoBehaviour
     Vector3 pos2; //Position 2
     public float offset; //Start time offset
 
+    public GameObject feathers;
+
     //For bird flip
     float lastpos;
     public SpriteRenderer sprite;
@@ -36,7 +38,7 @@ public class BirdPath : MonoBehaviour
         }
 
         if (pathMode == PathMode.Speed)
-        { 
+        {
             if (journeyLength <= 0.001f)
             {
                 transform.position = pos1;
@@ -67,6 +69,16 @@ public class BirdPath : MonoBehaviour
         {
             sprite.flipX = true;
             lastpos = transform.position.x;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            AudioManager.instance.PlaySFX("Honk", true);
+            GameObject.Instantiate(feathers, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 

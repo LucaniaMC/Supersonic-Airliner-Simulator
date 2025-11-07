@@ -77,6 +77,24 @@ MonoBehaviour:
     volume: 1
     loop: 0
     source: {fileID: 0}
+  - name: Shatter
+    clip: {fileID: 8300000, guid: 8ced35a41801a2249be06424a30dea04, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Honk
+    clip: {fileID: 8300000, guid: 939a77b1d27c5274990419d74298ee81, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: 52af5ab129a593d4a9275cad9c79ee0d, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
   - name: MenuMusic
     clip: {fileID: 8300000, guid: 801bc4a2871a43848874bf8d75c925c0, type: 3}
     type: 0

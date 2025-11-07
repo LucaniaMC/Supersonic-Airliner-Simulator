@@ -162,7 +162,7 @@ public class PlayerFailState : PlayerState
                 break;
 
             case DeathType.Collision:
-                // do something
+                AudioManager.instance.PlaySFX("Explosion", true);
                 break;
 
             default:
