@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
-    public GameObject shatterEffect;
     bool shattered = false;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -11,7 +10,7 @@ public class House : MonoBehaviour
         {
             if(shattered == false)
             {
-                GameObject.Instantiate(shatterEffect, transform.position, Quaternion.identity);
+                EffectManager.instance.InstantiateEffect("GlassShatter", transform.position, Quaternion.identity);
                 AudioManager.instance.PlaySFX("Shatter", true);
                 shattered = true;
             }

@@ -11,8 +11,6 @@ public class BirdPath : MonoBehaviour
     Vector3 pos2; //Position 2
     public float offset; //Start time offset
 
-    public GameObject feathers;
-
     //For bird flip
     float lastpos;
     public SpriteRenderer sprite;
@@ -77,7 +75,7 @@ public class BirdPath : MonoBehaviour
         if (other.tag == "Player")
         {
             AudioManager.instance.PlaySFX("Honk", true);
-            GameObject.Instantiate(feathers, transform.position, Quaternion.identity);
+            EffectManager.instance.InstantiateEffect("Feathers", transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

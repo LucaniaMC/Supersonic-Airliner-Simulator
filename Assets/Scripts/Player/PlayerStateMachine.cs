@@ -7,9 +7,6 @@ public class PlayerStateMachine : MonoBehaviour
 
     //Instances
     public GameObject boom;
-    public GameObject launch;
-    public GameObject confetti;
-    public GameObject boost;
 
     //References
     [HideInInspector] public PlayerMovement movement;

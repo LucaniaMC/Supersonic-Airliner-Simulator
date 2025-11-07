@@ -42,7 +42,7 @@ public class PlayerGroundedState : PlayerState
 
     public override void OnExit()
     {
-        GameObject.Instantiate(player.launch, player.transform.position, Quaternion.identity);
+        EffectManager.instance.InstantiateEffect("Launch", player.transform.position, Quaternion.identity);
         player.shadow.isActive = true;
         AudioManager.instance.PlaySFX("BoostStart", false);
     }
@@ -89,7 +89,7 @@ public class PlayerAirState : PlayerState
         //play boost start sound on click
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject.Instantiate(player.boost, player.transform.position, player.transform.rotation);
+            EffectManager.instance.InstantiateEffect("Boost", player.transform.position, player.transform.rotation);
             AudioManager.instance.PlaySFX("BoostStart", false);
         }
 
@@ -198,7 +198,7 @@ public class PlayerWinState : PlayerState
         player.shadow.isActive = false;
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
         AudioManager.instance.PlaySFX("Finish", false);
-        GameObject.Instantiate(player.confetti, LevelManager.instance.goal.transform.position, Quaternion.identity);
+        EffectManager.instance.InstantiateEffect("Confetti", LevelManager.instance.goal.transform.position, Quaternion.identity);
     }
 
     public override void StateUpdate()

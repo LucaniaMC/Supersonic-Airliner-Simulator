@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a13b96f76802b42b785fac154f3f8e, type: 3}
+  m_Name: Effect Database
+  m_EditorClassIdentifier: 
+  effects:
+  - name: Boost
+    prefab: {fileID: 2546003374484257424, guid: 03fb201db4c5c51458581bfd110b3d01, type: 3}
+  - name: Confetti
+    prefab: {fileID: 1073120195597019897, guid: 2228b05487032784bb24c53cb99d6c4c, type: 3}
+  - name: Feathers
+    prefab: {fileID: 1800180154445907167, guid: 891856b93b961f7489ab58b71ce53411, type: 3}
+  - name: GlassShatter
+    prefab: {fileID: 4223450807542096702, guid: fa3f1d31cf00c4f48b955d4adc87538c, type: 3}
+  - name: Launch
+    prefab: {fileID: 778915846643892628, guid: a4c1348d75c6a774e8d9e15fc41b71b3, type: 3}
+  - name: Explosion1
+    prefab: {fileID: 3376998503924020913, guid: e3a8e2689685d7e46b612f1f84925c86, type: 3}
