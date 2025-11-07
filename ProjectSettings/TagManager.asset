@@ -9,6 +9,9 @@ TagManager:
   - House
   - Star
   - Manager
+  - Bird
+  - Obstacle
+  - BlackHole
   layers:
   - Default
   - TransparentFX

@@ -96,7 +96,7 @@ public class PlayerAirState : PlayerState
         //fail if out of fuel
         if (player.fuelBar.fuel == 0)
         {
-            LevelManager.instance.status = LevelManager.LevelStatus.Failed;
+            LevelManager.instance.Fail(DeathType.Fuel);
             Debug.Log("PlayerState: Failed by out of fuel");
         }
         
@@ -111,7 +111,7 @@ public class PlayerAirState : PlayerState
     {
         if (LevelManager.instance.status == LevelManager.LevelStatus.Failed)
         {
-            player.TransitionToState(new PlayerFailState(player));
+            player.TransitionToState(new PlayerFailState(player, LevelManager.instance.causeOfDeath));
         }
 
         if (LevelManager.instance.status == LevelManager.LevelStatus.Finished)
@@ -126,14 +126,49 @@ public class PlayerAirState : PlayerState
 #region Fail State
 public class PlayerFailState : PlayerState
 {
-    public PlayerFailState(PlayerStateMachine player) : base(player) { }
+    DeathType deathType;
+
+    public PlayerFailState(PlayerStateMachine player, DeathType deathType) : base(player)
+    {
+        this.deathType = deathType;
+    }
 
     public override void OnEnter()
     {
         Debug.Log("Player: fail state entered");
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
         AudioManager.instance.PlaySFX("Fail", false); //Failsound
-        LevelManager.instance.Fail();
+
+        switch (deathType)
+        {
+            case DeathType.Fuel:
+                // do something
+                break;
+
+            case DeathType.DeathZone:
+                // do something
+                break;
+
+            case DeathType.House:
+                // do something
+                break;
+
+            case DeathType.Bird:
+                // do something
+                break;
+
+            case DeathType.BlackHole:
+                // do something
+                break;
+
+            case DeathType.Collision:
+                // do something
+                break;
+
+            default:
+                // nothing
+                break;
+        }
     }
 
     public override void StateUpdate()
@@ -163,7 +198,6 @@ public class PlayerWinState : PlayerState
         player.shadow.isActive = false;
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
         AudioManager.instance.PlaySFX("Finish", false);
-        LevelManager.instance.Finish();
         GameObject.Instantiate(player.confetti, LevelManager.instance.goal.transform.position, Quaternion.identity);
     }
 

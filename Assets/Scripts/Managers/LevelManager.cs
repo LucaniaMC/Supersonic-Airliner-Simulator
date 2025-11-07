@@ -7,7 +7,8 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;    //Singleton self reference
 
     public enum LevelStatus { InProgress, Failed, Finished }    //All possible level status
-    public LevelStatus status = LevelStatus.InProgress; //Current status of the level
+    public LevelStatus status { get; private set; } = LevelStatus.InProgress; //Current status of the level
+    public DeathType causeOfDeath { get; private set; } = DeathType.None;  //Death type on fail
 
     [SerializeField] private LevelDatabase levelDatabase;
 
@@ -80,6 +81,8 @@ public class LevelManager : MonoBehaviour
         overlayAnimator = overlay != null ? overlay.GetComponent<Animator>() : null;
 
         if (currentLevelData != null) AudioManager.instance.PlayMusic(currentLevelData.BGMName);
+
+        causeOfDeath = DeathType.None;
     }
 
 
@@ -112,6 +115,7 @@ public class LevelManager : MonoBehaviour
 
     public void Finish()
     {
+        status = LevelStatus.Finished;
         Invoke(nameof(ActivateScorePanel), 1.5f);
 
         //Update level completion stats
@@ -120,7 +124,11 @@ public class LevelManager : MonoBehaviour
         starRating = CalculateStarRating(fuelRemaining);
 
         UpdateStars();
+
+        //Unlock next levels
         if (currentLevelData != null) UnlockLevels(currentLevelData.unlockLevels);
+
+        //Save game
         GameManager.instance.SaveProgress();
     }
 
@@ -212,12 +220,16 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    public void Fail()
+    public void Fail(DeathType deathType)
     {
+        status = LevelStatus.Failed;
+        causeOfDeath = deathType;
+
         overlay.SetActive(true);
         overlayAnimator.SetBool("OnDeath", true);
 
         Invoke(nameof(ReloadScene), 2f);
+        Debug.Log("LevelManager: Level failed from " + deathType);
     }
 
 

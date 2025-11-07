@@ -7,7 +7,7 @@ public class EnableLights : MonoBehaviour
 
     void Start()
     {
-        if (LevelManager.instance.currentLevelData.isNight)
+        if (LevelManager.instance.currentLevelData?.isNight == true)
         {
             lights.SetActive(true);
         }

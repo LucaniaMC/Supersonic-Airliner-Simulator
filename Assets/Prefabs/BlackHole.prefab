@@ -4911,7 +4911,7 @@ GameObject:
   - component: {fileID: 882424970727961552}
   m_Layer: 0
   m_Name: BlackHole
-  m_TagString: DeathZone
+  m_TagString: BlackHole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
