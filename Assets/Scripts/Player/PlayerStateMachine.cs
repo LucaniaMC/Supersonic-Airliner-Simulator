@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    public GameObject overlay;      //overlay object on top of screen
     public WindParticleEffect windParticles;    //wind particle script
 
     //Instances

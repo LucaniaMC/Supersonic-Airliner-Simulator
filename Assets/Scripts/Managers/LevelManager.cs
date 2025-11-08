@@ -31,7 +31,8 @@ public class LevelManager : MonoBehaviour
     public GameObject player { get; private set; }
     public GameObject goal { get; private set; }
     private FuelBar fuelBar;
-    private GameObject overlay;
+
+    private Animator deathOverlayAnimator;
     private Animator overlayAnimator;
     private ScoreMenu scoreMenu;
 
@@ -76,9 +77,9 @@ public class LevelManager : MonoBehaviour
         goal = GameObject.FindWithTag("Finish");
         player = GameObject.FindWithTag("Player");
         fuelBar = FindObjectOfType<FuelBar>();
-        overlay = GameObject.Find("Overlay");
         scoreMenu = FindObjectOfType<ScoreMenu>();
-        overlayAnimator = overlay != null ? overlay.GetComponent<Animator>() : null;
+        overlayAnimator = GameObject.Find("BlackOverlay").GetComponent<Animator>();
+        deathOverlayAnimator = GameObject.Find("DeathOverlay").GetComponent<Animator>();
 
         if (currentLevelData != null) AudioManager.instance.PlayMusic(currentLevelData.BGMName);
 
@@ -192,8 +193,7 @@ public class LevelManager : MonoBehaviour
 
     public void NextButton()
     { 
-        overlay.SetActive(true);
-        overlayAnimator.SetBool("Finish", true);
+        overlayAnimator.SetTrigger("FadeIn");
         Invoke("NextScene", 2f);
     }
 
@@ -225,8 +225,8 @@ public class LevelManager : MonoBehaviour
         status = LevelStatus.Failed;
         causeOfDeath = deathType;
 
-        overlay.SetActive(true);
-        overlayAnimator.SetBool("OnDeath", true);
+        deathOverlayAnimator.SetTrigger("OnDeath");
+        overlayAnimator.SetTrigger("OnDeath");
 
         Invoke(nameof(ReloadScene), 2f);
         Debug.Log("LevelManager: Level failed from " + deathType);
