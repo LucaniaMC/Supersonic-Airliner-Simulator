@@ -37,6 +37,7 @@ public class PlayerCollision : MonoBehaviour
             case "Refuel":
                 LevelManager.instance.fuelBar.ResetFuel();
                 EffectManager.instance.InstantiateEffect("Refuel", other.transform.position, Quaternion.identity);
+                AudioManager.instance.PlaySFX("Refuel", true);
                 break;
         }
     }
