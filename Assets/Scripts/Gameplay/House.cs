@@ -8,6 +8,7 @@ public class House : MonoBehaviour
     {   
         if (other.tag == "Boom")
         {
+            //Play shatter effect if not played yet
             if(shattered == false)
             {
                 EffectManager.instance.InstantiateEffect("GlassShatter", transform.position, Quaternion.identity);
@@ -15,7 +16,7 @@ public class House : MonoBehaviour
                 shattered = true;
             }
             
-
+            //Fails level if it's in progress
             if (LevelManager.instance.status != LevelManager.LevelStatus.InProgress)
                 return;
             

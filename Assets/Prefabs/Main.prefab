@@ -5722,7 +5722,7 @@ Transform:
   - {fileID: 5253468603163436671}
   - {fileID: 1887484418022778465}
   m_Father: {fileID: 8429168692320197640}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7372846574574030739
 GameObject:
@@ -5779,37 +5779,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &8429168691989648594
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8429168691989648595}
-  m_Layer: 0
-  m_Name: PlayerTarget
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8429168691989648595
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8429168691989648594}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 11}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8429168692320197640}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8429168692175345059
 GameObject:
   m_ObjectHideFlags: 0
@@ -6055,7 +6024,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8429168693724788653}
-  - {fileID: 8429168691989648595}
   - {fileID: 8429168693530980489}
   - {fileID: 8783624328231615012}
   m_Father: {fileID: 8429168693152847464}
@@ -6134,7 +6102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb0e2680ab2cf749abee7da5cfda94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlay: {fileID: 8429168692223993338}
   windParticles: {fileID: 5182458254381715209}
   boom: {fileID: 8564431319478455084, guid: ae2d5ba917fb0d64f9d495e4e4a9f663, type: 3}
   movement: {fileID: 0}
@@ -6733,7 +6700,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8429168692320197640}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8429168693530980495
 SpriteRenderer:

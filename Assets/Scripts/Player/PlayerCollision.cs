@@ -12,6 +12,7 @@ public class PlayerCollision : MonoBehaviour
             //Reach goal finish game
             case "Finish":
                 LevelManager.instance.Finish();
+                EffectManager.instance.InstantiateEffect("Confetti", other.transform.position, Quaternion.identity);
                 break;
 
             //Deaths
@@ -31,6 +32,10 @@ public class PlayerCollision : MonoBehaviour
 
             case "BlackHole":
                 LevelManager.instance.Fail(DeathType.BlackHole);
+                break;
+
+            case "Refuel":
+                Debug.Log("refuel");
                 break;
 
             default:

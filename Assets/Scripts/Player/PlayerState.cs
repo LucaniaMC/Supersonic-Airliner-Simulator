@@ -198,7 +198,6 @@ public class PlayerWinState : PlayerState
         player.shadow.isActive = false;
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
         AudioManager.instance.PlaySFX("Finish", false);
-        EffectManager.instance.InstantiateEffect("Confetti", LevelManager.instance.goal.transform.position, Quaternion.identity);
     }
 
     public override void StateUpdate()

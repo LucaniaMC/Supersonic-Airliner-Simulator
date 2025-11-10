@@ -2,16 +2,17 @@
 
 public class GoalLine : MonoBehaviour
 {
-    GameObject pos1;
-    GameObject pos2;
+    Transform goal;
+    Transform player;
     LineRenderer lineRenderer;
+    float zDepth = 11f;
     
 
     void Start() 
     {
         //Get all componenets
-        pos1 = GameObject.Find("GoalTarget");
-        pos2 = GameObject.Find("PlayerTarget");
+        goal = transform;
+        player = GameObject.Find("Player").transform;
         lineRenderer = GetComponent<LineRenderer>();
     }
 
@@ -19,7 +20,7 @@ public class GoalLine : MonoBehaviour
     void Update()
     {
         //Draw line
-        lineRenderer.SetPosition(0, pos1.transform.position);
-        lineRenderer.SetPosition(1, pos2.transform.position); 
+        lineRenderer.SetPosition(0, new Vector3(goal.position.x, goal.position.y, zDepth));
+        lineRenderer.SetPosition(1, new Vector3(player.position.x, player.position.y, zDepth)); 
     }
 }

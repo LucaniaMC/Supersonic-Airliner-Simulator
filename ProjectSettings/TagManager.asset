@@ -12,6 +12,7 @@ TagManager:
   - Bird
   - Obstacle
   - BlackHole
+  - Refuel
   layers:
   - Default
   - TransparentFX
