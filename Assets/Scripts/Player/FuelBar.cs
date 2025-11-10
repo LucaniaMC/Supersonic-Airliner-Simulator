@@ -45,6 +45,7 @@ public class FuelBar : MonoBehaviour
 
     public void ResetFuel()
     {
+        time = 0f;
         fuel = 100;
         UpdateFuel();
     }

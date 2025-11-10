@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour
     //Object References
     public GameObject player { get; private set; }
     public GameObject goal { get; private set; }
-    private FuelBar fuelBar;
+    public FuelBar fuelBar { get; private set; }
 
     private Animator deathOverlayAnimator;
     private Animator overlayAnimator;

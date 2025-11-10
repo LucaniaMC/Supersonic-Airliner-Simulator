@@ -35,11 +35,8 @@ public class PlayerCollision : MonoBehaviour
                 break;
 
             case "Refuel":
-                Debug.Log("refuel");
-                break;
-
-            default:
-                // not failing
+                LevelManager.instance.fuelBar.ResetFuel();
+                EffectManager.instance.InstantiateEffect("Refuel", other.transform.position, Quaternion.identity);
                 break;
         }
     }

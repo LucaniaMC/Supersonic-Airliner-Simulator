@@ -35,3 +35,5 @@ MonoBehaviour:
     prefab: {fileID: 91234988814362444, guid: b593108a19185804992049af8a99aed1, type: 3}
   - name: Smoke
     prefab: {fileID: 4913841474062141676, guid: 899978676d7d62a4da3be04171e59258, type: 3}
+  - name: Refuel
+    prefab: {fileID: 5288938256576017219, guid: 7d47f00dca4190c4fbbf7a8b8067a480, type: 3}
