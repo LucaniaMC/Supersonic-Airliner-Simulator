@@ -63,6 +63,9 @@ public class PlayerAirState : PlayerState
 {
     public PlayerAirState(PlayerStateMachine player) : base(player) { }
 
+    float lastBoostEndTime = 0f;    //The time when the last boost stopped
+    float fuelPenaltyTime = 5f;     //How long without boosting does the fuel start depleting faster
+
     public override void OnEnter()
     {
         Debug.Log("Player: air state entered");
@@ -75,7 +78,7 @@ public class PlayerAirState : PlayerState
         player.movement.MoveTowardsCursor();
 
         //Switch between speeds when holding down left mouse button
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && LevelManager.paused == false) //Added paused condition check to stop sfx from playing when paused
         {
             player.movement.SonicBoost();
             player.fuelBar.DecreaseFuel(1f);
@@ -83,11 +86,25 @@ public class PlayerAirState : PlayerState
         else
         {
             player.movement.Move();
-            player.fuelBar.DecreaseFuel(0.5f);
+
+            if (Time.time - lastBoostEndTime < fuelPenaltyTime)
+            {
+                player.fuelBar.DecreaseFuel(1f);
+            }
+            else
+            {
+                player.fuelBar.DecreaseFuel(0.5f);
+            }
+        }
+
+        //Get the time when the boost button is realeased
+        if(Input.GetMouseButtonUp(0))
+        {
+            lastBoostEndTime = Time.time;
         }
 
         //play boost start sound on click
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && LevelManager.paused == false)
         {
             EffectManager.instance.InstantiateEffect("Boost", player.transform.position, player.transform.rotation);
             AudioManager.instance.PlaySFX("BoostStart", false);
