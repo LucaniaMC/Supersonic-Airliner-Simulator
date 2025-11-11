@@ -2,7 +2,7 @@ using UnityEngine;
 
 //https://discussions.unity.com/t/smooth-movement-along-waypoints-update-vs-fixedupdate/165974
 //For emeny airplanes, rotate and move towards random positions
-public class RandomMovement : MonoBehaviour
+public class Airliner : MonoBehaviour
 {
     //parameters
     public Vector2 range;   //The x and y range in which the plane will choose random targets to fly to
