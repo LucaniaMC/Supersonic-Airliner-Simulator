@@ -74,12 +74,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 184a8c4daff82974aa50bc5222e537b6, type: 3}
+  m_Sprite: {fileID: 2126480558, guid: a1b9d1f9a1ae6564a8b508bad50ded89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7, y: 0.55}
+  m_Size: {x: 0.65, y: 0.55}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -188,9 +188,9 @@ MonoBehaviour:
   pathMode: 0
   speed: 1
   offset: 0
-  feathers: {fileID: 1800180154445907167, guid: 891856b93b961f7489ab58b71ce53411, type: 3}
   sprite: {fileID: 2950529749753355287}
   target: {fileID: 2950529750348446790}
+  animator: {fileID: 2950529749753355280}
 --- !u!61 &2950529750487018869
 BoxCollider2D:
   m_ObjectHideFlags: 0

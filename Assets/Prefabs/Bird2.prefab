@@ -51,9 +51,9 @@ MonoBehaviour:
   pathMode: 0
   speed: 1
   offset: 0
-  feathers: {fileID: 1800180154445907167, guid: 891856b93b961f7489ab58b71ce53411, type: 3}
   sprite: {fileID: 1336587120355031711}
   target: {fileID: 1970416853145984737}
+  animator: {fileID: 1121028454421896110}
 --- !u!61 &7195111368894942254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d8306b29059119f4892233833b199804, type: 3}
+  m_Sprite: {fileID: -467685391, guid: 425c9e3c8b980274c83de479270108a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

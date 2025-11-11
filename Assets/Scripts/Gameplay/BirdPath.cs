@@ -15,8 +15,10 @@ public class BirdPath : MonoBehaviour
     float lastpos;
     public SpriteRenderer sprite;
     public GameObject target;
+    public Animator animator;
 
     float journeyLength;
+    bool facingLeft;
 
 
     void Start()
@@ -59,17 +61,29 @@ public class BirdPath : MonoBehaviour
         //Flips asset
         if (transform.position.x < lastpos)
         {
+            if (facingLeft != true)
+            {
+                facingLeft = true;
+                animator.SetTrigger("Turn");
+            }
             sprite.flipX = false;
-            lastpos = transform.position.x;
         }
 
         else if (transform.position.x > lastpos)
         {
+            if (facingLeft != false)
+            {
+                facingLeft = false;
+                animator.SetTrigger("Turn");
+            }
             sprite.flipX = true;
-            lastpos = transform.position.x;
         }
+
+        lastpos = transform.position.x;
     }
 
+
+    //Honk and dies on player contact
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
