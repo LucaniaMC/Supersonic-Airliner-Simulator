@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EffectManager : MonoBehaviour
@@ -32,7 +33,7 @@ public class EffectManager : MonoBehaviour
     }
 
 
-        public void InstantiateEffect(string name, Vector3 position, Quaternion rotation)
+    public void InstantiateEffect(string name, Vector3 position, Quaternion rotation)
     {
         Instantiate(effectDatabase.GetEffectData(name).prefab, position, rotation);
     }
