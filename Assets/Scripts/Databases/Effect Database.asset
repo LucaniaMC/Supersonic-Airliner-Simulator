@@ -37,3 +37,5 @@ MonoBehaviour:
     prefab: {fileID: 4913841474062141676, guid: 899978676d7d62a4da3be04171e59258, type: 3}
   - name: Refuel
     prefab: {fileID: 5288938256576017219, guid: 7d47f00dca4190c4fbbf7a8b8067a480, type: 3}
+  - name: Shockwave
+    prefab: {fileID: 4958721892608187114, guid: de4eecb6e312b7942b89a7990ba62f4d, type: 3}

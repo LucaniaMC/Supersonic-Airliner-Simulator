@@ -20,19 +20,15 @@ public class EffectManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-
-    public void InstantiateEffect(string name)
-    {
-        Instantiate(effectDatabase.GetEffectData(name).prefab);
-    }
-
-
+    
+    //Instantiate effect as child of an object
     public void InstantiateEffect(string name, Transform parent)
     {
         Instantiate(effectDatabase.GetEffectData(name).prefab, parent);
     }
 
 
+    //Instantiate effect at a position
     public void InstantiateEffect(string name, Vector3 position, Quaternion rotation)
     {
         Instantiate(effectDatabase.GetEffectData(name).prefab, position, rotation);

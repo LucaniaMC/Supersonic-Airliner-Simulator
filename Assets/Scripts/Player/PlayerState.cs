@@ -45,6 +45,7 @@ public class PlayerGroundedState : PlayerState
         EffectManager.instance.InstantiateEffect("Launch", player.transform.position, Quaternion.identity);
         player.shadow.isActive = true;
         AudioManager.instance.PlaySFX("BoostStart", false);
+        EffectManager.instance.InstantiateEffect("Shockwave", player.transform.position, Quaternion.identity);
     }
 
     public override void Transitions()
@@ -107,6 +108,7 @@ public class PlayerAirState : PlayerState
         if (Input.GetMouseButtonDown(0) && LevelManager.paused == false)
         {
             EffectManager.instance.InstantiateEffect("Boost", player.transform.position, player.transform.rotation);
+            EffectManager.instance.InstantiateEffect("Shockwave", player.transform.position, Quaternion.identity);
             AudioManager.instance.PlaySFX("BoostStart", false);
         }
 

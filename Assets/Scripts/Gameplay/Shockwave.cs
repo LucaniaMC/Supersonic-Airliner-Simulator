@@ -16,15 +16,7 @@ public class Shockwave : MonoBehaviour
     void Start()
     {
         material = sprite.material;
-    }
-
-
-    void Update()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            StartShockwave();
-        }
+        StartShockwave();
     }
 
     

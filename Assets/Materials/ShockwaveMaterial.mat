@@ -44,7 +44,7 @@ Material:
     m_Floats:
     - _Progress: 0
     - _Sharpness: 0.05
-    - _Strength: -0.5
+    - _Strength: -0.2
     - _Width: 0.05
     - _width: 0
     m_Colors: []
