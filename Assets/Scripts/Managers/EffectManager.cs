@@ -5,6 +5,7 @@ public class EffectManager : MonoBehaviour
 {
     public static EffectManager instance;
     public EffectDatabase effectDatabase;
+    
 
     void Awake()
     {

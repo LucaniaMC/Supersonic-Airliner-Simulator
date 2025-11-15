@@ -20,20 +20,20 @@ public class PlayerMovement : MonoBehaviour
 
     //references
     private PlayerStateMachine player;
-    private Camera mainCamera;
+    Camera cameraRig;
 
 
     void Start()
     {
         player = FindObjectOfType<PlayerStateMachine>();
-        mainCamera = Camera.main;
+        cameraRig = GameObject.FindWithTag("CameraRig").GetComponent<Camera>();
     }
 
 
     public void MoveTowardsCursor()
     {
         // Get mouse position in world space
-        target = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        target = cameraRig.ScreenToWorldPoint(Input.mousePosition);
         target.z = transform.position.z; // keep same z depth
 
         // Move toward the mouse direction

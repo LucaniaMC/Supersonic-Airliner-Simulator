@@ -22,11 +22,13 @@ public class PlayerCollision : MonoBehaviour
 
             case "Bird":
                 LevelManager.instance.Fail(DeathType.Bird);
+                CameraManager.instance.StartCameraShake(0.2f, 0.05f);
                 EffectManager.instance.InstantiateEffect("Smoke", transform);
                 break;
 
             case "Obstacle":
                 LevelManager.instance.Fail(DeathType.Collision);
+                CameraManager.instance.StartCameraShake(1f, 0.1f);
                 EffectManager.instance.InstantiateEffect("Flames", transform);
                 break;
 
