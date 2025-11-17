@@ -38,6 +38,10 @@ public class CameraManager : MonoBehaviour
     {
         cameraRig = GameObject.FindWithTag("CameraRig");
         mainCamera = GameObject.FindWithTag("MainCamera");
+
+        //prevent coroutine from carrying over between scenes
+        if (cameraShakeCoroutine!= null)
+            StopCoroutine(cameraShakeCoroutine);
     }
 
 
