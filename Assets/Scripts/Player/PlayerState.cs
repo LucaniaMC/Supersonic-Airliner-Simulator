@@ -46,6 +46,7 @@ public class PlayerGroundedState : PlayerState
         player.shadow.isActive = true;
         AudioManager.instance.PlaySFX("BoostStart", false);
         CameraManager.instance.StartCameraShake(0.2f, 0.05f);
+        CameraManager.instance.Zoom(4.8f, 0.5f);
     }
 
     public override void Transitions()
@@ -102,6 +103,7 @@ public class PlayerAirState : PlayerState
         if(Input.GetMouseButtonUp(0))
         {
             lastBoostEndTime = Time.time;
+            CameraManager.instance.Zoom(4.5f, 0.8f);
         }
 
         //play boost start sound on click
@@ -110,6 +112,7 @@ public class PlayerAirState : PlayerState
             EffectManager.instance.InstantiateEffect("Boost", player.transform.position, player.transform.rotation);
             CameraManager.instance.StartCameraShake(0.2f, 0.05f);
             AudioManager.instance.PlaySFX("BoostStart", false);
+            CameraManager.instance.Zoom(4.8f, 0.5f);
         }
 
         //fail if out of fuel
@@ -124,7 +127,10 @@ public class PlayerAirState : PlayerState
 
     public override void StateFixedUpdate(){}
 
-    public override void OnExit(){}
+    public override void OnExit()
+    {
+        CameraManager.instance.Zoom(4.5f, 0.8f);
+    }
 
     public override void Transitions()
     {
