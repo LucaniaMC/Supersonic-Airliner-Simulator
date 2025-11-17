@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    public WindParticleEffect windParticles;    //wind particle script
-
     //Instances
     public GameObject boom;
 

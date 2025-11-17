@@ -10,11 +10,13 @@ public class WindZone : MonoBehaviour
     public bool resetOnExit = false;
 
     PlayerMovement player;
+    WindParticleEffect effects;
 
 
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>();
+        effects = FindObjectOfType<WindParticleEffect>();
     }
 
 
@@ -23,6 +25,7 @@ public class WindZone : MonoBehaviour
         if (other.tag == "Player")
         {
             player.SetWind(windAngle, windStrength);
+            effects.SetWind(windAngle, windStrength);
         }
     }
 
@@ -32,6 +35,7 @@ public class WindZone : MonoBehaviour
         if (other.tag == "Player" && resetOnExit == true)
         {
             player.SetWind(0f, 0f);
+            effects.SetWind(0f, 0f);
         }
     }
 }

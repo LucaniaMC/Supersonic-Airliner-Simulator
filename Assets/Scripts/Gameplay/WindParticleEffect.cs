@@ -26,8 +26,23 @@ public class WindParticleEffect : MonoBehaviour
     }
 
 
+    public void SetWind(float angle, float strength)
+    {
+        if (strength > 0)
+        {
+            SetRotation(angle);
+            SetSpeed(strength);
+            ActivateWind(true);
+        }
+        else
+        {
+            ActivateWind(false);
+        }
+    }
+
+
     //Fade the particle effect in and out
-    public void ActivateWind(bool isActive)
+    void ActivateWind(bool isActive)
     {
         if (fadeRoutine != null)
             StopCoroutine(fadeRoutine);
@@ -37,21 +52,21 @@ public class WindParticleEffect : MonoBehaviour
 
 
     //Set the speed of the particles with velocity over time
-    public void SetSpeed(float speed)
+    void SetSpeed(float speed)
     {
         velocity.z = speed * windSpeedMultiplier;
     }
 
 
     // Set the object's rotation to an angle
-    public void SetRotation(float zRotation)
+    void SetRotation(float zRotation)
     {
         transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
     }
 
 
     //instantly set trail transparency without fading
-    public void SetVisible(bool isVisible)
+    void SetVisible(bool isVisible)
     {
         //stop any fading coroutine
         if (fadeRoutine != null)
