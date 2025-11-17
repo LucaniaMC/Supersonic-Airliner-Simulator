@@ -9,8 +9,8 @@ public class FuelBar : MonoBehaviour
 
     float time = 0f;
 
-    public Gradient gradient; //Colors that the slider change to when decreasing
-    public Image fill; //Reference to the slider image to change its color
+    [SerializeField] Gradient gradient; //Colors that the slider change to when decreasing
+    [SerializeField] Image fill; //Reference to the slider image to change its color
 
 
     void Start()
