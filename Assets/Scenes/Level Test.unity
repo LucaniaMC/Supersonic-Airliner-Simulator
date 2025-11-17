@@ -1787,10 +1787,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DayLight
       objectReference: {fileID: 0}
-    - target: {fileID: 2968866626961467134, guid: 1606f98648579bd4caba6055292826e9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1606f98648579bd4caba6055292826e9, type: 3}
 --- !u!1001 &3015373532847280993
