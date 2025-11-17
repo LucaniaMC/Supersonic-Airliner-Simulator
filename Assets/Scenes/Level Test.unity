@@ -2536,22 +2536,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3984249792510973922, guid: af05297d7d322fc4aaa084c93a0554d8, type: 3}
-      propertyPath: m_ChunkCullingBounds.x
-      value: 1.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 3984249792510973922, guid: af05297d7d322fc4aaa084c93a0554d8, type: 3}
-      propertyPath: m_ChunkCullingBounds.y
-      value: 0.67499995
-      objectReference: {fileID: 0}
-    - target: {fileID: 3984249792510973922, guid: af05297d7d322fc4aaa084c93a0554d8, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-    - target: {fileID: 6257893252156382291, guid: af05297d7d322fc4aaa084c93a0554d8, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 7130434156053396370, guid: af05297d7d322fc4aaa084c93a0554d8, type: 3}
       propertyPath: m_Size.x
       value: 20
@@ -12804,10 +12788,6 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[609].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
-    - target: {fileID: 8531402914981641643, guid: af05297d7d322fc4aaa084c93a0554d8, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af05297d7d322fc4aaa084c93a0554d8, type: 3}
 --- !u!1001 &9090272094819363072
