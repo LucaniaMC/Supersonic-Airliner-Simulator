@@ -14,7 +14,9 @@ public class LevelManager : MonoBehaviour
 
     //Current Level Data
     public LevelData currentLevelData { get; private set; }
-    public static bool paused = false;  //Is the game paused
+
+    //Pause and Time Scale
+    public static bool paused = false;  
 
     //Player stats on completion
     public int fuelRemaining { get; private set; } = 0;

@@ -58,10 +58,10 @@ public class CameraManager : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.fixedDeltaTime;
             float strength = curve.Evaluate(elapsedTime / duration);
             mainCamera.transform.position = (Vector2)cameraRig.transform.position + Random.insideUnitCircle * strength * intensity;
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
 
         mainCamera.transform.position = cameraRig.transform.position;

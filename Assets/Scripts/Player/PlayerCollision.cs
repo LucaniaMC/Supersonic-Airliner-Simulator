@@ -22,7 +22,7 @@ public class PlayerCollision : MonoBehaviour
 
             case "Bird":
                 LevelManager.instance.Fail(DeathType.Bird);
-                CameraManager.instance.StartCameraShake(0.2f, 0.05f);
+                CameraManager.instance.StartCameraShake(0.5f, 0.05f);
                 EffectManager.instance.InstantiateEffect("Smoke", transform);
                 break;
 
