@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)] public float SFXVolume = 1f; //volume multiplier for SFX
     [Range(0f, 1f)] public float musicVolume = 1f; //Volume multiplier for music
 
-    public Sound[] sounds;  //collection of all sounds, modified in editor
+    public AudioDatabase audioDatabase;
 
     private Sound currentMusic; //Currently playing music
 
@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
     //Initialization, create audiosource components from array
     void InitializeSounds()
     {
-        foreach (Sound s in sounds)
+        foreach (Sound s in audioDatabase.sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour
     //Play a generic sound by name
     public void Play(string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
+        Sound s = audioDatabase.GetAudioData(name);
         //Warning if there is no sound
         if (s == null)
         {
@@ -72,11 +72,18 @@ public class AudioManager : MonoBehaviour
     //Play an SFX sound with the option for random pitch
     public void PlaySFX(string name, bool randompitch)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name && sound.type == SoundType.SFX);
+        Sound s = audioDatabase.GetAudioData(name);
         //Warning if there is no sound
         if (s == null)
         {
             Debug.LogWarning("AudioManager: SFX not found: " + name);
+            return;
+        }
+
+        //warning if wrong type
+        if(s.type != SoundType.SFX)
+        {
+            Debug.LogWarning("AudioManager: Audio "+ name + " type is not SFX");
             return;
         }
 
@@ -85,6 +92,7 @@ public class AudioManager : MonoBehaviour
         {
             s.source.pitch = UnityEngine.Random.Range(0.7f, 1.3f);
         }
+        
         s.source.PlayOneShot(s.clip);
     }
 
@@ -92,13 +100,21 @@ public class AudioManager : MonoBehaviour
     //Turn a looping SFX on or off
     public void ToggleLoopingSFX(string name, bool play)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name && sound.type == SoundType.SFX);
+        Sound s = audioDatabase.GetAudioData(name);
         //Warning if there is no sound
         if (s == null)
         {
             Debug.LogWarning("AudioManager: SFX not found: " + name);
             return;
         }
+
+        //warning if wrong type
+        if(s.type != SoundType.SFX)
+        {
+            Debug.LogWarning("AudioManager: Audio "+ name + " type is not SFX");
+            return;
+        }
+
         //Warning if SFX isn't a looping type
         if (s.source.loop == false)
         {
@@ -122,11 +138,18 @@ public class AudioManager : MonoBehaviour
     //Plays looping music
     public void PlayMusic(string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name && sound.type == SoundType.Music);
+        Sound s = audioDatabase.GetAudioData(name);
         //Warning if there is no sound
-        if (s == null)
+        if (s == null || s.type != SoundType.Music)
         {
             Debug.LogWarning("AudioManager: Music not found: " + name);
+            return;
+        }
+
+        //warning if wrong type
+        if(s.type != SoundType.Music)
+        {
+            Debug.LogWarning("AudioManager: Audio "+ name + " type is not Music");
             return;
         }
 
@@ -143,7 +166,7 @@ public class AudioManager : MonoBehaviour
     //update volume for each sound
     public void ApplyVolumeSettings()
     {
-        foreach (Sound s in sounds)
+        foreach (Sound s in audioDatabase.sounds)
         {
             if (s.source == null) continue;
 

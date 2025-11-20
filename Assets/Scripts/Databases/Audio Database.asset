@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102783a78f1cbf547b42b0e1b93aa12d, type: 3}
+  m_Name: Audio Database
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: BoostStart
+    clip: {fileID: 8300000, guid: 71907fe034e457b4b87bf024f924c036, type: 3}
+    type: 1
+    volume: 0.4
+    loop: 0
+    source: {fileID: 0}
+  - name: BoostLoop
+    clip: {fileID: 8300000, guid: 9e4e9b2cb887f804bb6995d886ff8b7d, type: 3}
+    type: 1
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Fail
+    clip: {fileID: 8300000, guid: 63b777fbe15d00243970cbc460388b6b, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Finish
+    clip: {fileID: 8300000, guid: 59622fc4cb735d14eaefd1f077b35df4, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: 3980e31a4b4b83e4592a4de6f35403ed, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Shatter
+    clip: {fileID: 8300000, guid: 8ced35a41801a2249be06424a30dea04, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Honk
+    clip: {fileID: 8300000, guid: 939a77b1d27c5274990419d74298ee81, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: 52af5ab129a593d4a9275cad9c79ee0d, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 801bc4a2871a43848874bf8d75c925c0, type: 3}
+    type: 0
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: DayMusic
+    clip: {fileID: 8300000, guid: c50394e1f121ed74eb72e220f7f9c5c8, type: 3}
+    type: 0
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: NightMusic
+    clip: {fileID: 8300000, guid: f027e75cbfdf06c4bbf1c3f9da6f1dda, type: 3}
+    type: 0
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Refuel
+    clip: {fileID: 8300000, guid: 1c007bb5604f339419478cce3972b183, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
