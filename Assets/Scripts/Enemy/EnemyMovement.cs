@@ -38,6 +38,29 @@ public class EnemyMovement : MonoBehaviour
     }
 
 
+    // Moves the object toward a target at a constant speed
+    public Vector3 SeekConstantSpeed(Vector3 targetPosition, float speed)
+    {
+        // Direction toward the target
+        Vector2 direction = (targetPosition - transform.position).normalized;
+
+        // Desired velocity (just direction; speed will be applied later)
+        Vector2 desiredVelocity = direction * speed;
+
+        // Steering force (same as typical steering behavior)
+        Vector2 steering = desiredVelocity - currentVelocity;
+        steering = Vector2.ClampMagnitude(steering, maxAcceleration * Time.deltaTime);
+
+        // Apply steering
+        Vector2 newVelocity = currentVelocity + steering;
+
+        // Force velocity to be constant
+        newVelocity = newVelocity.normalized * speed;
+
+        return newVelocity;
+    }
+
+
     //Moves the object towards a target, slows down when approaching within the radius
     public Vector3 Arrive(Vector3 targetPosition, float radius)
     {

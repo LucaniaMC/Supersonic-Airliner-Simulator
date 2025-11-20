@@ -19,7 +19,7 @@ public class TestWanderEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.Move(movement.Seek(currentTarget));
+        movement.Move(movement.SeekConstantSpeed(currentTarget, movement.maxSpeed));
 
         if(movement.IsInRange(currentTarget, 1f))
         {
