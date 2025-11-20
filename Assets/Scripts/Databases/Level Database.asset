@@ -64,5 +64,14 @@ MonoBehaviour:
     BGMName: NightMusic
     threeStarThreshold: 50
     twoStarThreshold: 25
+    unlockLevels:
+    - 2-2
+    nextLevel: 2-2
+  - sceneNumber: 2-2
+    world: 1
+    isNight: 1
+    BGMName: NightMusic
+    threeStarThreshold: 50
+    twoStarThreshold: 25
     unlockLevels: []
     nextLevel: 
