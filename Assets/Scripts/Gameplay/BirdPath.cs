@@ -94,4 +94,10 @@ public class BirdPath : MonoBehaviour
         }
     }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(target.transform.position, 0.25f);
+        Gizmos.DrawLine(transform.position, target.transform.position);
+    }
 }
