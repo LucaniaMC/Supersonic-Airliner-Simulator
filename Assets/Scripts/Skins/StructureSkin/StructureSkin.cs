@@ -11,7 +11,7 @@ public abstract class StructureSkin
 
 
 //Different types of houses and airports
-public enum HouseType { Default, Water, Desert, Snow }
+public enum HouseType { Default, Water, Desert, DesertWater, Snow, SnowWater }
 public enum AirportType { Black, White, Orange}
 
 
