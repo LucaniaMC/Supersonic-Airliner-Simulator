@@ -126,6 +126,48 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    public Vector3 Avoid(float radius, float strength)
+    {
+        Vector2 avoidanceForce = Vector2.zero;  //direction to avoid other enemies
+        int count = 0;  //number of enemies in range
+
+        //array of all other enemies. Use reference in LevelManager later
+        EnemyMovement[] all = FindObjectsOfType<EnemyMovement>();
+
+        // Add force for each enemy in range
+        foreach (EnemyMovement other in all)
+        {
+            if (other != this)
+            {
+                float dist = Vector2.Distance(transform.position, other.transform.position);
+                if (dist < radius && dist > 0.001f)
+                {
+                    // Direction away from the other airplane
+                    Vector2 push = (Vector2)(transform.position - other.transform.position);
+
+                    // stronger push when getting closer
+                    float weight = 1f - (dist / radius);
+                    push = push.normalized * weight;
+
+                    avoidanceForce += push;
+                }
+                count++;
+            }
+        }
+
+        //average out force
+        if (count > 0)
+            avoidanceForce /= count;
+
+        // Scale by strength and speed
+        Vector2 desiredVelocity = avoidanceForce * maxSpeed * strength;
+
+        // Steering force
+        //Vector2 steering = Vector2.ClampMagnitude(desiredVelocity, maxAcceleration * Time.deltaTime);
+
+        return Vector2.ClampMagnitude(desiredVelocity, maxSpeed);
+    }
+
     #endregion
 
 

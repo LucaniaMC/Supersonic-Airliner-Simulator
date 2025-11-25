@@ -19,7 +19,7 @@ public class TestWanderEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.Move(movement.SeekConstantSpeed(currentTarget, movement.maxSpeed));
+        movement.Move(movement.Seek(currentTarget) + movement.Avoid(3f, 1f));
 
         if(movement.IsInRange(currentTarget, 1f))
         {
@@ -33,5 +33,10 @@ public class TestWanderEnemy : MonoBehaviour
     void PickNewTarget()
     {
         currentTarget = center + new Vector2(Random.Range(-range.x, range.x), Random.Range(-range.y, range.y));
+    }
+
+     void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, transform.position + movement.Avoid(3f, 1f));
     }
 }
