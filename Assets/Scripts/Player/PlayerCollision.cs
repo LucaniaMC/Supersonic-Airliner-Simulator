@@ -32,6 +32,12 @@ public class PlayerCollision : MonoBehaviour
                 EffectManager.instance.InstantiateEffect("Flames", transform);
                 break;
 
+            case "Enemy":
+                LevelManager.instance.Fail(DeathType.Enemy);
+                CameraManager.instance.StartCameraShake(1f, 0.1f);
+                EffectManager.instance.InstantiateEffect("Flames", transform);
+                break;
+
             case "BlackHole":
                 LevelManager.instance.Fail(DeathType.BlackHole);
                 break;

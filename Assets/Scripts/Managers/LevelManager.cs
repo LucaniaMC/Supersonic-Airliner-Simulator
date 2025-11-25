@@ -34,6 +34,8 @@ public class LevelManager : MonoBehaviour
     public GameObject goal { get; private set; }
     public FuelBar fuelBar { get; private set; }
 
+    public GameObject[] enemies;
+
     private Animator deathOverlayAnimator;
     private Animator overlayAnimator;
     private ScoreMenu scoreMenu;
@@ -82,6 +84,7 @@ public class LevelManager : MonoBehaviour
         scoreMenu = FindObjectOfType<ScoreMenu>();
         overlayAnimator = GameObject.Find("BlackOverlay").GetComponent<Animator>();
         deathOverlayAnimator = GameObject.Find("DeathOverlay").GetComponent<Animator>();
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         if (currentLevelData != null) AudioManager.instance.PlayMusic(currentLevelData.BGMName);
 
