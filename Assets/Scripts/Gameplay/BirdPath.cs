@@ -3,16 +3,23 @@
 //For birds to patrol back and forth between its initial position and the position of a target object
 public class BirdPath : MonoBehaviour
 {
-    public enum PathMode { Time, Speed } 
+    public enum SpeedMode { Time, Speed }
+    public enum PathType { Line, Circle }
 
-    public PathMode pathMode = PathMode.Time;
-    public float speed = 1f;    //for Time mode this is time it takes to travel the distance, for Speed mode is speed per second
+    public SpeedMode speedMode = SpeedMode.Time;
+    public PathType pathType = PathType.Line;   //Moves in a line or circle
 
+
+    public float speed = 1f;    //for Time mode how many loops it'll complete per second, for Speed mode is speed per second
     public float offset; //Start time offset
 
-    //references
-    public SpriteRenderer sprite;   //bird's sprite renderer
+    [Header ("Circle Mode Parameters")]
+    public float radius;
+    public bool counterClockwise;
+
+    [Header ("References")]
     public GameObject target;       //target that the bird moves to
+    public SpriteRenderer sprite;   //bird's sprite renderer
     public GameObject bird;         //the bird that's moving
     public Animator animator;       //animator of the bird
 
@@ -37,30 +44,58 @@ public class BirdPath : MonoBehaviour
     {
         if (bird == null) return;
 
-        if (pathMode == PathMode.Time)
+        if (pathType == PathType.Line)
         {
-            //Bird moves back and forth
-            bird.transform.position = Vector3.Lerp(pos1, pos2, Mathf.PingPong(Time.time * speed + offset, 1f));
-        }
-
-        if (pathMode == PathMode.Speed)
-        {
-            if (journeyLength <= 0.001f)
+            if (speedMode == SpeedMode.Time)
             {
-                bird.transform.position = pos1;
-                return;
+                //Bird moves back and forth
+                bird.transform.position = Vector3.Lerp(pos1, pos2, Mathf.PingPong(Time.time * speed + offset, 1f));
             }
 
-            // Base distance traveled so far
-            float distanceCovered = Time.time * speed;
+            if (speedMode == SpeedMode.Speed)
+            {
+                if (journeyLength <= 0.001f)
+                {
+                    bird.transform.position = pos1;
+                    return;
+                }
 
-            // Apply offset as fraction of journey length
-            distanceCovered += offset * journeyLength;
+                // Base distance traveled so far
+                float distanceCovered = Time.time * speed;
 
-            // PingPong across the journey length to move back and forth
-            float fractionOfJourney = Mathf.PingPong(distanceCovered, journeyLength) / journeyLength;
+                // Apply offset as fraction of journey length
+                distanceCovered += offset * journeyLength;
 
-            bird.transform.position = Vector3.Lerp(pos1, pos2, fractionOfJourney);
+                // PingPong across the journey length to move back and forth
+                float fractionOfJourney = Mathf.PingPong(distanceCovered, journeyLength) / journeyLength;
+
+                bird.transform.position = Vector3.Lerp(pos1, pos2, fractionOfJourney);
+            }
+        }
+        
+        if(pathType == PathType.Circle)
+        {
+            if (radius <= 0.001f) return;
+
+            float angle;
+
+            if (speedMode == SpeedMode.Time)
+            {
+                angle = (Time.time * speed + offset) * Mathf.PI * 2f;
+            }
+            else // Speed mode
+            {
+                float circumference = 2f * Mathf.PI * radius;
+                float distance = Time.time * speed + offset * circumference;
+                angle = distance / radius; 
+            }
+
+            if (!counterClockwise) angle = -angle;
+
+            float x = pos1.x + Mathf.Cos(angle) * radius;
+            float y = pos1.y + Mathf.Sin(angle) * radius;
+
+            bird.transform.position = new Vector3(x, y, bird.transform.position.z);
         }
 
 
@@ -92,6 +127,13 @@ public class BirdPath : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, target.transform.position);
+
+        // Draw line path
+        if (pathType == PathType.Line)
+            Gizmos.DrawLine(transform.position, target.transform.position);
+
+        // Draw circle path
+        if (pathType == PathType.Circle)
+            Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
