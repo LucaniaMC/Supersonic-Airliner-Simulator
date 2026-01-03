@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 4066521}
   - component: {fileID: 4066520}
   - component: {fileID: 4066519}
+  - component: {fileID: 4066522}
   - component: {fileID: 4066518}
   - component: {fileID: 4066517}
   - component: {fileID: 4066516}
@@ -284,7 +285,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4066515}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1eb98cde3c2c51a428e7ac51df54db21, type: 3}
   m_Name: 
@@ -335,6 +336,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4066522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30b2c4374c2d564aa4439da201ac19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 4066518}
 --- !u!1 &116592219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2233,6 +2247,7 @@ GameObject:
   - component: {fileID: 1002848633}
   - component: {fileID: 1002848632}
   - component: {fileID: 1002848631}
+  - component: {fileID: 1002848634}
   - component: {fileID: 1002848630}
   - component: {fileID: 1002848629}
   - component: {fileID: 1002848628}
@@ -2384,7 +2399,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002848627}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1eb98cde3c2c51a428e7ac51df54db21, type: 3}
   m_Name: 
@@ -2435,6 +2450,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1002848634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002848627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30b2c4374c2d564aa4439da201ac19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 1002848630}
 --- !u!1 &1055423258
 GameObject:
   m_ObjectHideFlags: 0
