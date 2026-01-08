@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//Turns the player's landing lights on and off
 public class LandingLights : MonoBehaviour
 {
     GameObject pos1;
@@ -13,12 +14,11 @@ public class LandingLights : MonoBehaviour
 
     void Start()
     {
-        pos1 = GameObject.Find("Player");
-        pos2 = GameObject.Find("Goal");
+        pos1 = LevelManager.instance.player;
+        pos2 = LevelManager.instance.goal;
     }
 
 
-    // Update is called once per frame
     void Update()
     {
         distanceToGoal = Vector3.Distance (pos1.transform.position, pos2.transform.position); //Get distance to goal

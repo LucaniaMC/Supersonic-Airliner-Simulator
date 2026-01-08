@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //For player movements
-    private float moveSpeed = 0f;
+    private float moveSpeed = 0f;   //The player's current moving speed
     readonly float normalSpeed = 1.5f;
     readonly float boostSpeed = 3f;
 
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     //wind
     [Range(0f, 360f)] public float windAngle = 0f;      // wind angle in degrees
-    public float windStrength = 0f;              // speed of wind
+    public float windStrength = 0f;                     // speed of wind
 
     //references
     private PlayerStateMachine player;

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//Attach this script to an object to create a line connecting to the player
 public class GoalLine : MonoBehaviour
 {
     Transform goal;
@@ -12,7 +13,7 @@ public class GoalLine : MonoBehaviour
     {
         //Get all componenets
         goal = transform;
-        player = GameObject.Find("Player").transform;
+        player = LevelManager.instance.player.transform;
         lineRenderer = GetComponent<LineRenderer>();
     }
 

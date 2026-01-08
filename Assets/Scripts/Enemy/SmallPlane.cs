@@ -13,7 +13,7 @@ public class SmallPlane : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = LevelManager.instance.player;
     }
 
 

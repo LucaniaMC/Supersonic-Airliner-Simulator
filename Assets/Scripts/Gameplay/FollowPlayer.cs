@@ -9,7 +9,7 @@ public class FollowPlayer : MonoBehaviour
     {
         if (player == null)
         {
-            player = GameObject.FindWithTag("Player").transform;
+            player = LevelManager.instance.player.transform;
         }
     }
 

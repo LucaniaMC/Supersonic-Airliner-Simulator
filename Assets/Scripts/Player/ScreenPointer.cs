@@ -9,6 +9,7 @@ public class ScreenPointer : MonoBehaviour
     GameObject player;
     private readonly Plane[] planes = new Plane[6];
 
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -27,6 +28,7 @@ public class ScreenPointer : MonoBehaviour
         var screenPos = mainCamera.WorldToViewportPoint(transform.position);
         bool isOffScreen = screenPos.x <= 0 || screenPos.x >= 1 || screenPos.y <= 0 || screenPos.y >= 1;
 
+        //Activates pointer when the target is off screen
         if (isOffScreen)
         {
             pointerInstance.SetActive(true);
@@ -58,7 +60,7 @@ public class ScreenPointer : MonoBehaviour
             pointerInstance.transform.position = hitPoint;
 
         }
-        else
+        else //Deactivates pointer when the target is on screen
         {
             pointerInstance.SetActive(false);
         }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// Aligns the shadow with the player's rotation and position with an optional offset, attached to the shadow sprite
 public class PlayerShadow : MonoBehaviour
 {
     public Transform player;
