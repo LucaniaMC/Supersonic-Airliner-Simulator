@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4610812419819274357}
   - component: {fileID: 8583617503908681451}
-  - component: {fileID: 595274258423063965}
   m_Layer: 0
   m_Name: Bird4
   m_TagString: Bird
@@ -47,39 +46,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8a39b8c3535314fa3b16d0bad29fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathMode: 0
+  speedMode: 0
+  pathType: 0
   speed: 1
   offset: 0
-  sprite: {fileID: 1726118780629163335}
+  radius: 0
+  counterClockwise: 0
   target: {fileID: 3691186551099316254}
+  sprite: {fileID: 1726118780629163335}
   bird: {fileID: 7881735517633261957}
   animator: {fileID: 3002737986053729103}
---- !u!61 &595274258423063965
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3329318519313270579}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3}
-  m_EdgeRadius: 0
 --- !u!1 &3472934277852104247
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5499466230159720236}
   - component: {fileID: 3333453108562397978}
+  - component: {fileID: 64293870168381560}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Bird
@@ -347,3 +324,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd5f145efaac8f458379f82f375227d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &64293870168381560
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881735517633261957}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3}
+  m_EdgeRadius: 0
