@@ -17,16 +17,16 @@ public class ScreenPointer : MonoBehaviour
         pointerInstance = Instantiate(pointer);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        //Rotates the pointer away from player
-        float angle = Mathf.Atan2(player.transform.position.y, player.transform.position.x) * Mathf.Rad2Deg;
+        //Rotates from the player towards target
+        float angle = Mathf.Atan2(player.transform.position.y - transform.position.y, player.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
         pointerInstance.transform.rotation = Quaternion.Euler(0f, 0f, angle - 180f);
 
         //check if the object is off screen
         var screenPos = mainCamera.WorldToViewportPoint(transform.position);
-        bool isOffScreen = screenPos.x < 0 || screenPos.x > 1 || screenPos.y < 0 || screenPos.y > 1;
+        bool isOffScreen = screenPos.x <= 0 || screenPos.x >= 1 || screenPos.y <= 0 || screenPos.y >= 1;
 
         if (isOffScreen)
         {
