@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 public class CameraManager : MonoBehaviour
 {
     public static CameraManager instance;
-    GameObject cameraRig;
-    GameObject mainCamera;
+    public GameObject cameraRig {get; private set;}   //Secondary camera used for screen position calculations unaffected by screen shake
+    public GameObject mainCamera {get; private set;}  //Main camera used for rendering
 
     Coroutine cameraShakeCoroutine;
     Coroutine zoomCoroutine;

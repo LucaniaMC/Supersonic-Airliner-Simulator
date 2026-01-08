@@ -20,13 +20,13 @@ public class PlayerMovement : MonoBehaviour
 
     //references
     private PlayerStateMachine player;
-    Camera cameraRig;
+    Camera cameraRig;   //Uses the camera rig for accurate mouse position during screen shakes
 
 
     void Start()
     {
         player = FindObjectOfType<PlayerStateMachine>();
-        cameraRig = GameObject.FindWithTag("CameraRig").GetComponent<Camera>();
+        cameraRig = CameraManager.instance.cameraRig.GetComponent<Camera>();
     }
 
 
