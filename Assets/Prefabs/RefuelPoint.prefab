@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2e25ad0806c984bafa5da339ec3951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointer: {fileID: 5685452925502655664, guid: 629c5927c9558dd4f8f3e5f6d88af249, type: 3}
 --- !u!114 &112792671683411048
 MonoBehaviour:
   m_ObjectHideFlags: 0
