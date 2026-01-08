@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // Attach this script to an object to create a pointer towards it from the player when the object is off screen
@@ -9,7 +7,7 @@ public class ScreenPointer : MonoBehaviour
     GameObject pointerInstance; //Active instance of the pointer
     Camera mainCamera;
     GameObject player;
-    float offset = 0f;
+    private readonly Plane[] planes = new Plane[6];
 
     void Start()
     {
@@ -18,7 +16,7 @@ public class ScreenPointer : MonoBehaviour
         pointerInstance = Instantiate(pointer);
     }
 
-    
+
     void Update()
     {
         //Rotates from the player towards target
@@ -34,10 +32,31 @@ public class ScreenPointer : MonoBehaviour
             pointerInstance.SetActive(true);
 
             //position the pointer on screen edge between the player and the target object
-            Vector3 clampedPosition = transform.position;
-            clampedPosition.x = Mathf.Clamp(clampedPosition.x, mainCamera.ViewportToWorldPoint(Vector3.zero).x, mainCamera.ViewportToWorldPoint(Vector3.one).x);
-            clampedPosition.y = Mathf.Clamp(clampedPosition.y, mainCamera.ViewportToWorldPoint(Vector3.zero).y, mainCamera.ViewportToWorldPoint(Vector3.one).y);
-            pointerInstance.transform.position = clampedPosition;
+            Vector3 origin = player.transform.position;
+            Vector3 direction = transform.position - player.transform.position;
+
+            var ray = new Ray(origin, direction);
+
+            var closestDistance = float.PositiveInfinity;
+            var hitPoint = Vector3.zero;
+            GeometryUtility.CalculateFrustumPlanes(mainCamera, planes);
+            for (var i = 0; i < 4; i++)
+            {
+                // Raycast against the plane
+                if (planes[i].Raycast(ray, out var distance))
+                {
+                    // Keep the closest hit
+                    if (distance < closestDistance)
+                    {
+                        hitPoint = ray.origin + ray.direction * distance;
+                        closestDistance = distance;
+                    }
+                }
+            } //https://stackoverflow.com/questions/63034454/unity-get-point-on-edge-of-the-screen-that-object-directed-to
+
+            //position the pointer at the hitpoint
+            pointerInstance.transform.position = hitPoint;
+
         }
         else
         {
