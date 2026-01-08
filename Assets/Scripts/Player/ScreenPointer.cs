@@ -19,7 +19,8 @@ public class ScreenPointer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Rotates the pointer away from player
         float angle = Mathf.Atan2(player.transform.position.y, player.transform.position.x) * Mathf.Rad2Deg;
-        pointerInstance.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        pointerInstance.transform.rotation = Quaternion.Euler(0f, 0f, angle - 180f);
     }
 }
