@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2038943378809686765}
   - component: {fileID: 2038943378809686754}
   - component: {fileID: 2038943378809686755}
+  - component: {fileID: 8080997324748675486}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Finish
@@ -174,6 +175,19 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &8080997324748675486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038943378809686767}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2e25ad0806c984bafa5da339ec3951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointer: {fileID: 5685452925502655664, guid: 04a16a3f94ef7fc4c803521fa8da9ec1, type: 3}
 --- !u!1 &2038943378871109451
 GameObject:
   m_ObjectHideFlags: 0
