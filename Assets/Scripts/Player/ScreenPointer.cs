@@ -9,6 +9,7 @@ public class ScreenPointer : MonoBehaviour
     GameObject pointerInstance; //Active instance of the pointer
     Camera mainCamera;
     GameObject player;
+    float offset = 0f;
 
     void Start()
     {
@@ -31,6 +32,12 @@ public class ScreenPointer : MonoBehaviour
         if (isOffScreen)
         {
             pointerInstance.SetActive(true);
+
+            //position the pointer on screen edge between the player and the target object
+            Vector3 clampedPosition = transform.position;
+            clampedPosition.x = Mathf.Clamp(clampedPosition.x, mainCamera.ViewportToWorldPoint(Vector3.zero).x, mainCamera.ViewportToWorldPoint(Vector3.one).x);
+            clampedPosition.y = Mathf.Clamp(clampedPosition.y, mainCamera.ViewportToWorldPoint(Vector3.zero).y, mainCamera.ViewportToWorldPoint(Vector3.one).y);
+            pointerInstance.transform.position = clampedPosition;
         }
         else
         {
