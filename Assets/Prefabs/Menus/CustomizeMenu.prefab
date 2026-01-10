@@ -123,6 +123,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6263800147797117859}
+        m_TargetAssemblyTypeName: CustomizeMenu, Assembly-CSharp
+        m_MethodName: SaveSkin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6263800147797117859}
         m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
         m_MethodName: PlayClickSound
         m_Mode: 1
@@ -137,18 +149,6 @@ MonoBehaviour:
       - m_Target: {fileID: 6263800147797117859}
         m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
         m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6263800147797117859}
-        m_TargetAssemblyTypeName: CustomizeMenu, Assembly-CSharp
-        m_MethodName: SaveSkin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -489,6 +489,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   window: {fileID: 6263800149207554222}
+  OnShow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHide:
+    m_PersistentCalls:
+      m_Calls: []
   playerSkinDatabase: {fileID: 11400000, guid: 67ee304976c49504c8e15b073c8bc53e, type: 2}
   artSprite: {fileID: 6263800148383921443}
   description: {fileID: 6263800147749238025}
