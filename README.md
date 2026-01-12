@@ -1,6 +1,6 @@
 # SUPERSONIC AIRLINER SIMULATOR
 
-a web-based 2D puzzle game where the player control a supersonic airliner to complete levels. 
+a web-based 2D action-puzzle game where the player control a supersonic airliner to complete levels. 
 
 Itch.io Page: https://bestlucania.itch.io/supersonic-airliner-simulator
 
@@ -10,7 +10,7 @@ Itch.io Page: https://bestlucania.itch.io/supersonic-airliner-simulator
 2. In Unity Hub, click Add to add the folder as a new project
 3. Open the project in Unity
 
-The project is made with Unity version 2021.3.31f1.
+The project is made with Unity version 2021.3.31f1. Updated to 2021.3.45f2.
 
 ## Controls
 
