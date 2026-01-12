@@ -6,15 +6,9 @@ public class SkinTab : MonoBehaviour
     public Sprite skinSprite;   //The sprite of the player skin
     public Image targetImage;   //Target image for player skin in each tab
     public Toggle toggle;       //The toggle component
-    CustomizeMenu customizeMenu;
+    public CustomizeMenu customizeMenu; //Reference back to the menu, set in the CustomizeMenu script
 
     public int skinIndex;   //Which skin does this tab correspond to
-
-
-    void Start()
-    {
-        customizeMenu = GetComponentInParent<CustomizeMenu>();
-    }
 
 
     //Set the skin image in tab to the corresponding skin sprite

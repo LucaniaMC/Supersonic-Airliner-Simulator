@@ -70,6 +70,7 @@ public class CustomizeMenu : UIMenu
 
             //Update tab appearance
             SkinTab tabInstance = tab.GetComponent<SkinTab>();
+            tabInstance.customizeMenu = this;
             tabInstance.skinSprite = skins.playerSprite;
             tabInstance.UpdateTab();
 
