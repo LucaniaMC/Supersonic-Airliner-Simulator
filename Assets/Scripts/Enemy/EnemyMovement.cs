@@ -101,21 +101,6 @@ public class EnemyMovement : MonoBehaviour
     }
 
 
-    public Vector3 Interpose(EnemyMovement target1, EnemyMovement target2)
-    {
-        Vector3 midPoint = (target1.transform.position + target2.transform.position) / 2;
-
-        float timeToReachMidPoint = Vector3.Distance(midPoint, transform.position) / maxSpeed;
-
-        Vector3 futureTarget1Pos = target1.transform.position + (Vector3)target1.currentVelocity * timeToReachMidPoint;
-        Vector3 futureTarget2Pos = target2.transform.position + (Vector3)target2.currentVelocity * timeToReachMidPoint;
-
-        midPoint = (futureTarget1Pos + futureTarget2Pos) / 2;
-
-        return Arrive(midPoint, 1f);
-    }
-
-
     public void RotateTowardsVelocity()
     {
         if (currentVelocity.sqrMagnitude > 0.01f)
