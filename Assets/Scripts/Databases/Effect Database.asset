@@ -39,3 +39,5 @@ MonoBehaviour:
     prefab: {fileID: 5288938256576017219, guid: 7d47f00dca4190c4fbbf7a8b8067a480, type: 3}
   - name: Shockwave
     prefab: {fileID: 4958721892608187114, guid: de4eecb6e312b7942b89a7990ba62f4d, type: 3}
+  - name: Zap
+    prefab: {fileID: 3075660573237040951, guid: 575ef0fc3400d3b498b8aec013550f5a, type: 3}

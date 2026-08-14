@@ -46,6 +46,7 @@ public class PlayerCollision : MonoBehaviour
                 LevelManager.instance.Fail(DeathType.Electric);
                 CameraManager.instance.StartCameraShake(1f, 0.1f);
                 EffectManager.instance.InstantiateEffect("Smoke", transform);
+                EffectManager.instance.InstantiateEffect("Zap", transform);
                 AudioManager.instance.PlaySFX("Zap", true);
                 break;
 
