@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5696dde58ed55ec4abe0de0273d2c08a
+guid: 6dbae0d61e70af347ae0719f599cd7a9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ElectricTile_4_0
+      name: ElectricTile_6_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,20 +117,20 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -7, y: -10}
-        - {x: -7, y: 10}
-        - {x: 10, y: 10}
-        - {x: 10, y: -10}
+      - - {x: -10, y: -10}
+        - {x: -10, y: 7}
+        - {x: 7, y: 7}
+        - {x: 7, y: -10}
       tessellationDetail: 0
       bones: []
-      spriteID: ae95197f7d8f2fb4aa5deeb70ee71220
-      internalID: 1594754751
+      spriteID: b7e8621a4224dc449b1c17cc7356f811
+      internalID: -264215911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElectricTile_4_1
+      name: ElectricTile_6_1
       rect:
         serializedVersion: 2
         x: 20
@@ -142,20 +142,20 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -7, y: -10}
-        - {x: -7, y: 10}
-        - {x: 10, y: 10}
-        - {x: 10, y: -10}
+      - - {x: -10, y: -10}
+        - {x: -10, y: 7}
+        - {x: 7, y: 7}
+        - {x: 7, y: -10}
       tessellationDetail: 0
       bones: []
-      spriteID: 87570d597febe9347985405b10a60569
-      internalID: 1941407141
+      spriteID: d9a8a405f46d122408871ba86c96bb63
+      internalID: -2118405152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElectricTile_4_2
+      name: ElectricTile_6_2
       rect:
         serializedVersion: 2
         x: 40
@@ -167,14 +167,14 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -7, y: -10}
-        - {x: -7, y: 10}
-        - {x: 10, y: 10}
-        - {x: 10, y: -10}
+      - - {x: -10, y: -10}
+        - {x: -10, y: 7}
+        - {x: 7, y: 7}
+        - {x: 7, y: -10}
       tessellationDetail: 0
       bones: []
-      spriteID: e3f70212635e6e041a716a5c37f708d0
-      internalID: -1256193202
+      spriteID: 604c4eb5024abf6479dbf4b17482dc30
+      internalID: -1725316150
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ElectricTile_4_0: 1594754751
-      ElectricTile_4_1: 1941407141
-      ElectricTile_4_2: -1256193202
+      ElectricTile_6_0: -264215911
+      ElectricTile_6_1: -2118405152
+      ElectricTile_6_2: -1725316150
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

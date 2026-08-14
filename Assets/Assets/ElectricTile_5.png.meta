@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5696dde58ed55ec4abe0de0273d2c08a
+guid: e224339f9117bfa449621e5ea17a2f3e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ElectricTile_4_0
+      name: ElectricTile_5_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,19 +118,19 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -7, y: -10}
-        - {x: -7, y: 10}
-        - {x: 10, y: 10}
+        - {x: -7, y: 7}
+        - {x: 10, y: 7}
         - {x: 10, y: -10}
       tessellationDetail: 0
       bones: []
-      spriteID: ae95197f7d8f2fb4aa5deeb70ee71220
-      internalID: 1594754751
+      spriteID: 264d568f4f12abd47b6f3469d99d771b
+      internalID: 1178576656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElectricTile_4_1
+      name: ElectricTile_5_1
       rect:
         serializedVersion: 2
         x: 20
@@ -143,19 +143,19 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -7, y: -10}
-        - {x: -7, y: 10}
-        - {x: 10, y: 10}
+        - {x: -7, y: 7}
+        - {x: 10, y: 7}
         - {x: 10, y: -10}
       tessellationDetail: 0
       bones: []
-      spriteID: 87570d597febe9347985405b10a60569
-      internalID: 1941407141
+      spriteID: 65703b19d507fab41afa433613b9d8a1
+      internalID: -1834855553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElectricTile_4_2
+      name: ElectricTile_5_2
       rect:
         serializedVersion: 2
         x: 40
@@ -168,13 +168,13 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -7, y: -10}
-        - {x: -7, y: 10}
-        - {x: 10, y: 10}
+        - {x: -7, y: 7}
+        - {x: 10, y: 7}
         - {x: 10, y: -10}
       tessellationDetail: 0
       bones: []
-      spriteID: e3f70212635e6e041a716a5c37f708d0
-      internalID: -1256193202
+      spriteID: 05475ff31c970e74ea6e834c6fb974b1
+      internalID: -1114168479
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ElectricTile_4_0: 1594754751
-      ElectricTile_4_1: 1941407141
-      ElectricTile_4_2: -1256193202
+      ElectricTile_5_0: 1178576656
+      ElectricTile_5_1: -1834855553
+      ElectricTile_5_2: -1114168479
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
