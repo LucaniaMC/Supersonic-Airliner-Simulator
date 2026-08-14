@@ -29,7 +29,10 @@ public class PlayerCollision : MonoBehaviour
             case "Obstacle":
                 LevelManager.instance.Fail(DeathType.Collision);
                 CameraManager.instance.StartCameraShake(1f, 0.1f);
-                EffectManager.instance.InstantiateEffect("Flames", transform);
+                AudioManager.instance.PlaySFX("Explosion", true);
+                EffectManager.instance.InstantiateEffect("Explosion2", transform.position, Quaternion.identity);
+                EffectManager.instance.InstantiateEffect("PlanePieces", transform.position, Quaternion.identity);
+                EffectManager.instance.InstantiateEffect("Flames", transform.position, Quaternion.identity);
                 break;
 
             case "Enemy":
@@ -50,6 +53,7 @@ public class PlayerCollision : MonoBehaviour
                 AudioManager.instance.PlaySFX("Zap", true);
                 break;
 
+            //Refuel
             case "Refuel":
                 LevelManager.instance.fuelBar.ResetFuel();
                 EffectManager.instance.InstantiateEffect("Refuel", transform.position, Quaternion.identity);

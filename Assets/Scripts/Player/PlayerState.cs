@@ -89,11 +89,12 @@ public class PlayerAirState : PlayerState
         {
             player.movement.Move();
 
-            if (Time.time - lastBoostEndTime < fuelPenaltyTime)
+            //Fuel Decrease
+            if (Time.time - lastBoostEndTime < fuelPenaltyTime) //Fast fuel decrease if penalty time is reached
             {
                 player.fuelBar.DecreaseFuel(1f);
             }
-            else
+            else    //Slow fuel decrease
             {
                 player.fuelBar.DecreaseFuel(0.5f);
             }
@@ -187,6 +188,15 @@ public class PlayerFailState : PlayerState
                 break;
 
             case DeathType.Collision:
+                player.shadow.isActive = false;
+                player.playerSprite.enabled = false;
+                break;
+
+            case DeathType.Enemy:
+                // do something
+                break;
+
+            case DeathType.Electric:
                 // do something
                 break;
 
@@ -198,8 +208,13 @@ public class PlayerFailState : PlayerState
 
     public override void StateUpdate()
     {
-        player.movement.MoveTowardsCursor();
-        player.movement.Move();
+        //Continue moving if not colliding with obstacles
+        if(deathType != DeathType.Collision)
+        {
+            player.movement.MoveTowardsCursor();
+            player.movement.Move();
+        }
+
         Transitions();
     }
 

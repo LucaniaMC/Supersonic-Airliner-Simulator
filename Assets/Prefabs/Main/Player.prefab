@@ -644,11 +644,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb0e2680ab2cf749abee7da5cfda94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windParticles: {fileID: 0}
   boom: {fileID: 8564431319478455084, guid: ae2d5ba917fb0d64f9d495e4e4a9f663, type: 3}
   movement: {fileID: 0}
   fuelBar: {fileID: 0}
   shadow: {fileID: 0}
+  playerSprite: {fileID: 7133833780382601949}
 --- !u!114 &8920325275296154668
 MonoBehaviour:
   m_ObjectHideFlags: 0

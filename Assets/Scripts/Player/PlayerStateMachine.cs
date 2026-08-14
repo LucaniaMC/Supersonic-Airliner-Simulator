@@ -9,6 +9,7 @@ public class PlayerStateMachine : MonoBehaviour
     [HideInInspector] public PlayerMovement movement;
     [HideInInspector] public FuelBar fuelBar;
     [HideInInspector] public PlayerShadow shadow;
+    public SpriteRenderer playerSprite;
 
 
     public PlayerState currentState { get; private set; }   
