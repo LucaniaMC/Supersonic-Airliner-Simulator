@@ -13,6 +13,54 @@ MonoBehaviour:
   m_Name: Level Database
   m_EditorClassIdentifier: 
   levels:
+  - sceneNumber: Test
+    world: 0
+    isNight: 0
+    BGMName: 
+    threeStarThreshold: 2
+    twoStarThreshold: 1
+    unlockLevels: []
+    nextLevel: 
+  - sceneNumber: Night Test
+    world: 1
+    isNight: 1
+    BGMName: 
+    threeStarThreshold: 2
+    twoStarThreshold: 1
+    unlockLevels: []
+    nextLevel: 
+  - sceneNumber: Ocean Test
+    world: 2
+    isNight: 0
+    BGMName: 
+    threeStarThreshold: 2
+    twoStarThreshold: 1
+    unlockLevels: []
+    nextLevel: 
+  - sceneNumber: Desert Test
+    world: 3
+    isNight: 0
+    BGMName: 
+    threeStarThreshold: 2
+    twoStarThreshold: 1
+    unlockLevels: []
+    nextLevel: 
+  - sceneNumber: Snow Test
+    world: 4
+    isNight: 0
+    BGMName: 
+    threeStarThreshold: 2
+    twoStarThreshold: 1
+    unlockLevels: []
+    nextLevel: 
+  - sceneNumber: Space Test
+    world: 5
+    isNight: 1
+    BGMName: 
+    threeStarThreshold: 2
+    twoStarThreshold: 1
+    unlockLevels: []
+    nextLevel: 
   - sceneNumber: 1-1
     world: 0
     isNight: 0

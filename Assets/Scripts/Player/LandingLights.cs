@@ -21,6 +21,8 @@ public class LandingLights : MonoBehaviour
 
     void Update()
     {
+        if (pos1 == null || pos2 == null) return;
+        
         distanceToGoal = Vector3.Distance (pos1.transform.position, pos2.transform.position); //Get distance to goal
         distanceToSpawn = Vector3.Distance (pos1.transform.position, Vector3.zero); //Get distance to spawn
         animator.SetFloat("Distance", Mathf.Min(distanceToGoal, distanceToSpawn)); //Lights turn on when close to spawn or goal, turns off when away

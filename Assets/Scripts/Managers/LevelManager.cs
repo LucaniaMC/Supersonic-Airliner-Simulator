@@ -205,13 +205,6 @@ public class LevelManager : MonoBehaviour
 
     public void NextScene()
     {
-        //if in test scene, reload the scene
-        if (SceneManager.GetActiveScene().name == "Level Test")
-        {
-            ReloadScene();
-            return;
-        }
-
         //if next level doesn't exist, go back to title screen
         if (string.IsNullOrEmpty(currentLevelData.nextLevel))
         {
