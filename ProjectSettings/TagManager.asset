@@ -15,6 +15,7 @@ TagManager:
   - Refuel
   - CameraRig
   - Enemy
+  - Electric
   layers:
   - Default
   - TransparentFX

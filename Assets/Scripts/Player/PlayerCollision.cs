@@ -42,6 +42,13 @@ public class PlayerCollision : MonoBehaviour
                 LevelManager.instance.Fail(DeathType.BlackHole);
                 break;
 
+            case "Electric":
+                LevelManager.instance.Fail(DeathType.Electric);
+                CameraManager.instance.StartCameraShake(1f, 0.1f);
+                EffectManager.instance.InstantiateEffect("Smoke", transform);
+                AudioManager.instance.PlaySFX("Zap", true);
+                break;
+
             case "Refuel":
                 LevelManager.instance.fuelBar.ResetFuel();
                 EffectManager.instance.InstantiateEffect("Refuel", transform.position, Quaternion.identity);
