@@ -24,7 +24,7 @@ MonoBehaviour:
   - sceneNumber: Night Test
     world: 1
     isNight: 1
-    BGMName: 
+    BGMName: NightMusic
     threeStarThreshold: 2
     twoStarThreshold: 1
     unlockLevels: []
@@ -32,7 +32,7 @@ MonoBehaviour:
   - sceneNumber: Ocean Test
     world: 2
     isNight: 0
-    BGMName: 
+    BGMName: OceanMusic
     threeStarThreshold: 2
     twoStarThreshold: 1
     unlockLevels: []
@@ -40,7 +40,7 @@ MonoBehaviour:
   - sceneNumber: Desert Test
     world: 3
     isNight: 0
-    BGMName: 
+    BGMName: DesertMusic
     threeStarThreshold: 2
     twoStarThreshold: 1
     unlockLevels: []
@@ -56,7 +56,7 @@ MonoBehaviour:
   - sceneNumber: Space Test
     world: 5
     isNight: 1
-    BGMName: 
+    BGMName: SpaceMusic
     threeStarThreshold: 2
     twoStarThreshold: 1
     unlockLevels: []
