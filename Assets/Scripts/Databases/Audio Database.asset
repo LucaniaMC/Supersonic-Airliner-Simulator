@@ -61,6 +61,18 @@ MonoBehaviour:
     volume: 1
     loop: 0
     source: {fileID: 0}
+  - name: Refuel
+    clip: {fileID: 8300000, guid: 1c007bb5604f339419478cce3972b183, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Zap
+    clip: {fileID: 8300000, guid: b158302bf4cb60442a9a317a862dfb2f, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
   - name: MenuMusic
     clip: {fileID: 8300000, guid: 801bc4a2871a43848874bf8d75c925c0, type: 3}
     type: 0
@@ -79,15 +91,27 @@ MonoBehaviour:
     volume: 1
     loop: 1
     source: {fileID: 0}
-  - name: Refuel
-    clip: {fileID: 8300000, guid: 1c007bb5604f339419478cce3972b183, type: 3}
-    type: 1
+  - name: OceanMusic
+    clip: {fileID: 8300000, guid: 23da0594874b58f42b880b466760f664, type: 3}
+    type: 0
     volume: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
-  - name: Zap
-    clip: {fileID: 8300000, guid: b158302bf4cb60442a9a317a862dfb2f, type: 3}
-    type: 1
+  - name: DesertMusic
+    clip: {fileID: 8300000, guid: 5e49e00662fdb1d459d3d4819a79987f, type: 3}
+    type: 0
     volume: 1
-    loop: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: SnowMusic
+    clip: {fileID: 8300000, guid: 5ea92a4d8fcbac44f98a27bc7be68ae6, type: 3}
+    type: 0
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: SpaceMusic
+    clip: {fileID: 8300000, guid: 0597d0d42498afa42b90a78f24265aae, type: 3}
+    type: 0
+    volume: 1
+    loop: 1
     source: {fileID: 0}

@@ -48,7 +48,7 @@ MonoBehaviour:
   - sceneNumber: Snow Test
     world: 4
     isNight: 0
-    BGMName: 
+    BGMName: SnowMusic
     threeStarThreshold: 2
     twoStarThreshold: 1
     unlockLevels: []
