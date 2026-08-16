@@ -4070,10 +4070,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChromaticShift
       objectReference: {fileID: 0}
-    - target: {fileID: 7236844525119560266, guid: f1e582709d5a0044083392dc1dd34db0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e582709d5a0044083392dc1dd34db0, type: 3}
 --- !u!4 &1852090067058698904 stripped
