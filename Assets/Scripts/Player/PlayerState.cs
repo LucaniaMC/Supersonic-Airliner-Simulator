@@ -65,6 +65,10 @@ public class PlayerAirState : PlayerState
 {
     public PlayerAirState(PlayerStateMachine player) : base(player) { }
 
+    //for sonic boom timer
+    float time = 0f;
+    readonly float delay = 0.1f;
+
     float lastBoostEndTime = 0f;    //The time when the last boost stopped
     float fuelPenaltyTime = 5f;     //How long without boosting does the fuel start depleting faster
 
@@ -84,6 +88,15 @@ public class PlayerAirState : PlayerState
         {
             player.movement.SonicBoost();
             player.fuelBar.DecreaseFuel(1f);
+
+            //Spawn sonic boom
+            time = time + 1f * Time.deltaTime;
+
+            if (time >= delay)
+            {
+                time = 0f;
+                GameObject.Instantiate(player.boom, player.transform.position, Quaternion.identity);
+            }
         }
         else
         {
