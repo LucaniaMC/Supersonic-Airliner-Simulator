@@ -67,7 +67,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: c3e4e4ef107e93d4286da85489a83ab4, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -198,7 +198,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 32
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -341,7 +341,7 @@ PrefabInstance:
     - target: {fileID: 9207706264511300982, guid: 4a4472a375cf9cc4a91496a5e9b17156, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 3161708821719770605}
+      objectReference: {fileID: 1384210770247936321}
     - target: {fileID: 9207706264511300982, guid: 4a4472a375cf9cc4a91496a5e9b17156, type: 3}
       propertyPath: m_SortingOrder
       value: 100

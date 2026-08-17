@@ -16,6 +16,7 @@ TagManager:
   - CameraRig
   - Enemy
   - Electric
+  - GameScreen
   layers:
   - Default
   - TransparentFX
