@@ -7,16 +7,18 @@ public class PlayerMovement : MonoBehaviour
     readonly float normalSpeed = 1.5f;
     readonly float boostSpeed = 3f;
 
-    //for sonic boom timer
-    float time = 0f;
-    readonly float delay = 0.1f;
-
     //mouse position that the player points to
     Vector3 target;
 
     //wind
-    [Range(0f, 360f)] public float windAngle = 0f;      // wind angle in degrees
-    public float windStrength = 0f;                     // speed of wind
+    public float windAngle {get; private set;} = 0f;      // wind angle in degrees ranging from 0-360
+    public float windStrength {get; private set;} = 0f;                     // speed of wind
+
+    //Black hole references
+    BlackHole[] blackHoles; //Every black hole
+
+    //Readable parameters
+    public float distanceToBlackHoles {get; private set;}
 
     //references
     private PlayerStateMachine player;
@@ -27,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
     {
         player = FindObjectOfType<PlayerStateMachine>();
         cameraRig = CameraManager.instance.cameraRig.GetComponent<Camera>();
+
+        //Get a reference for all black holes in scene
+        blackHoles = FindObjectsOfType<BlackHole>();
     }
 
 
@@ -51,11 +56,22 @@ public class PlayerMovement : MonoBehaviour
             newPos += windOffset;
         }
 
+        //reset distance to nearest black holes
+        distanceToBlackHoles = Mathf.Infinity;
+
         //Calculate black hole pulls
-        foreach (BlackHole blackHole in FindObjectsOfType<BlackHole>())
+        foreach (BlackHole blackHole in blackHoles)
         {
+            //Calculate black hole pulls
             Vector3 pull = blackHole.GetPullForce(player.transform.position);
             newPos += pull * Time.deltaTime;
+
+            //Calculate nearest black hole distance
+            float distance = Vector2.Distance(player.transform.position, blackHole.transform.position);
+            if (distance < distanceToBlackHoles)
+            {
+                distanceToBlackHoles = distance;    //loop through all black holes and keep the smallest number
+            }
         }
 
         //Calculate composite player position to move to
@@ -72,8 +88,6 @@ public class PlayerMovement : MonoBehaviour
     {
         moveSpeed = boostSpeed;
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", true);
-
-        SpawnSonicBoom();
     }
 
 
@@ -84,22 +98,10 @@ public class PlayerMovement : MonoBehaviour
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
     }
 
-
-    void SpawnSonicBoom()
-    {
-        time = time + 1f * Time.deltaTime;
-
-        if (time >= delay)
-        {
-            time = 0f;
-            GameObject.Instantiate(player.boom, player.transform.position, Quaternion.identity);
-        }
-    }
-
     
     public void SetWind(float angle, float strength)
     {
-        windAngle = angle;
-        windStrength = strength;
+        windAngle = Mathf.Clamp(angle, 0, 360);
+        windStrength = Mathf.Max(strength, 0f);
     }
 }
