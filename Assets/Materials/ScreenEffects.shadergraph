@@ -122,7 +122,14 @@
         }
     ],
     "m_GroupDatas": [],
-    "m_StickyNoteDatas": [],
+    "m_StickyNoteDatas": [
+        {
+            "m_Id": "c7ab9d7d76c2436ebecac95c4eab90c0"
+        },
+        {
+            "m_Id": "8343fe8bc9844d249b82835a03c42096"
+        }
+    ],
     "m_Edges": [
         {
             "m_OutputSlot": {
@@ -603,8 +610,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": -178.3999481201172,
-            "y": -296.7999267578125
+            "x": 398.40008544921877,
+            "y": -296.79998779296877
         },
         "m_Blocks": [
             {
@@ -620,8 +627,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": -178.3999481201172,
-            "y": -96.79993438720703
+            "x": 398.40008544921877,
+            "y": -96.80003356933594
         },
         "m_Blocks": [
             {
@@ -2743,6 +2750,26 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "8343fe8bc9844d249b82835a03c42096",
+    "m_Title": "Greyscale",
+    "m_Content": "",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -1397.60009765625,
+        "y": -142.39999389648438,
+        "width": 200.0,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": ""
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Texture2DInputMaterialSlot",
     "m_ObjectId": "83aac5704d644b4fa1ad5386f43f3e88",
     "m_Id": 1,
@@ -3765,6 +3792,26 @@
     },
     "m_Property": {
         "m_Id": "762878b9d0fa45aca33a4ad958ba86aa"
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "c7ab9d7d76c2436ebecac95c4eab90c0",
+    "m_Title": "Chromatic Shift",
+    "m_Content": "",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -2849.60009765625,
+        "y": -807.2000122070313,
+        "width": 200.0,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": ""
     }
 }
 
