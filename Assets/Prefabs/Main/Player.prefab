@@ -546,6 +546,7 @@ GameObject:
   - component: {fileID: 7133833780052818303}
   - component: {fileID: 7133833780052818302}
   - component: {fileID: 1094091720832966982}
+  - component: {fileID: 4483735204822619186}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -744,6 +745,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lights: {fileID: 8321157362874122914}
+--- !u!81 &4483735204822619186
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7133833780052818292}
+  m_Enabled: 1
 --- !u!1 &7133833780190369271
 GameObject:
   m_ObjectHideFlags: 0

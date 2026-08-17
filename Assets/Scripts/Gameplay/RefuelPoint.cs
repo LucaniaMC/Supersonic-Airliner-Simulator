@@ -17,7 +17,7 @@ public class RefuelPoint : MonoBehaviour
         {
             isActive = false;
             animator.SetBool("IsActive", false);
-            AudioManager.instance.PlaySFX("Refuel", true);
+            AudioManager.instance.PlayUISound("Refuel", true);
             hitbox.enabled = false;
             line.enabled = false;
 

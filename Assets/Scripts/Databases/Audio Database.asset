@@ -18,106 +18,124 @@ MonoBehaviour:
     type: 1
     volume: 0.4
     loop: 0
+    spatialBlend: 1
     source: {fileID: 0}
   - name: BoostLoop
     clip: {fileID: 8300000, guid: 9e4e9b2cb887f804bb6995d886ff8b7d, type: 3}
     type: 1
     volume: 1
     loop: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: Fail
     clip: {fileID: 8300000, guid: 63b777fbe15d00243970cbc460388b6b, type: 3}
-    type: 1
+    type: 2
     volume: 1
     loop: 0
+    spatialBlend: 0
     source: {fileID: 0}
   - name: Finish
     clip: {fileID: 8300000, guid: 59622fc4cb735d14eaefd1f077b35df4, type: 3}
-    type: 1
+    type: 2
     volume: 1
     loop: 0
+    spatialBlend: 0
     source: {fileID: 0}
   - name: Click
     clip: {fileID: 8300000, guid: 3980e31a4b4b83e4592a4de6f35403ed, type: 3}
     type: 2
     volume: 1
     loop: 0
+    spatialBlend: 0
     source: {fileID: 0}
   - name: Shatter
     clip: {fileID: 8300000, guid: 8ced35a41801a2249be06424a30dea04, type: 3}
     type: 1
     volume: 1
     loop: 0
+    spatialBlend: 1
     source: {fileID: 0}
   - name: Honk
     clip: {fileID: 8300000, guid: 939a77b1d27c5274990419d74298ee81, type: 3}
     type: 1
     volume: 1
     loop: 0
+    spatialBlend: 1
     source: {fileID: 0}
   - name: Explosion
     clip: {fileID: 8300000, guid: 52af5ab129a593d4a9275cad9c79ee0d, type: 3}
     type: 1
     volume: 1
     loop: 0
+    spatialBlend: 1
     source: {fileID: 0}
   - name: Refuel
     clip: {fileID: 8300000, guid: 1c007bb5604f339419478cce3972b183, type: 3}
-    type: 1
+    type: 2
     volume: 1
     loop: 0
+    spatialBlend: 0
     source: {fileID: 0}
   - name: Zap
     clip: {fileID: 8300000, guid: b158302bf4cb60442a9a317a862dfb2f, type: 3}
     type: 1
     volume: 1
     loop: 0
+    spatialBlend: 1
     source: {fileID: 0}
   - name: MenuMusic
     clip: {fileID: 8300000, guid: 801bc4a2871a43848874bf8d75c925c0, type: 3}
     type: 0
     volume: 1
     loop: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: DayMusic
     clip: {fileID: 8300000, guid: c50394e1f121ed74eb72e220f7f9c5c8, type: 3}
     type: 0
     volume: 1
     loop: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: NightMusic
     clip: {fileID: 8300000, guid: f027e75cbfdf06c4bbf1c3f9da6f1dda, type: 3}
     type: 0
     volume: 1
     loop: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: OceanMusic
     clip: {fileID: 8300000, guid: 23da0594874b58f42b880b466760f664, type: 3}
     type: 0
     volume: 1
     loop: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: DesertMusic
     clip: {fileID: 8300000, guid: 5e49e00662fdb1d459d3d4819a79987f, type: 3}
     type: 0
     volume: 1
     loop: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: SnowMusic
     clip: {fileID: 8300000, guid: 5ea92a4d8fcbac44f98a27bc7be68ae6, type: 3}
     type: 0
     volume: 1
     loop: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: SpaceMusic
     clip: {fileID: 8300000, guid: 0597d0d42498afa42b90a78f24265aae, type: 3}
     type: 0
     volume: 1
     loop: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: Bark
     clip: {fileID: 8300000, guid: 51e677861197f6e449eb4d19ccd4baca, type: 3}
     type: 1
     volume: 1
     loop: 0
+    spatialBlend: 1
     source: {fileID: 0}

@@ -50,14 +50,23 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
 
             //Spatial Sound for SFX
-            if (s.type != SoundType.SFX) continue;
-            s.source.spatialBlend = 1f;
-            s.source.rolloffMode = AudioRolloffMode.Linear;
-            s.source.minDistance = 1f;
-            s.source.maxDistance = 5f;
+            if (s.spatialBlend == false) continue;
+            SetDefaultSpatialBlending(s.source);
         }
 
         ApplyVolumeSettings();
+    }
+
+
+    //Default set of parameters for spatial blending
+    void SetDefaultSpatialBlending (AudioSource source)
+    {
+        source.spatialBlend = 1f;
+        source.rolloffMode = AudioRolloffMode.Linear;
+        source.minDistance = 2f;
+        source.maxDistance = 5f;
+        source.dopplerLevel = 0f;
+        source.spread = 0f;
     }
 
 
@@ -98,7 +107,7 @@ public class AudioManager : MonoBehaviour
         //Pitch variation
         if (randompitch == true)
         {
-            s.source.pitch = UnityEngine.Random.Range(0.7f, 1.3f);
+            s.source.pitch = randompitch ? UnityEngine.Random.Range(0.7f, 1.3f) : 1f;
         }
         
         s.source.PlayOneShot(s.clip);
@@ -126,10 +135,63 @@ public class AudioManager : MonoBehaviour
         //Pitch variation
         if (randompitch == true)
         {
-            s.source.pitch = UnityEngine.Random.Range(0.7f, 1.3f);
+            s.source.pitch = randompitch ? UnityEngine.Random.Range(0.7f, 1.3f) : 1f;
         }
         
         AudioSource.PlayClipAtPoint(s.clip, position);
+    }
+
+
+    //Play an SFX following an object
+    public void PlaySFXAsChild(string name, bool randompitch, Transform parent)
+    {
+        Sound s = audioDatabase.GetAudioData(name);
+
+        // Warning if there is no sound
+        if (s == null)
+        {
+            Debug.LogWarning("AudioManager: SFX not found: " + name);
+            return;
+        }
+
+        // Warning if wrong type
+        if (s.type != SoundType.SFX)
+        {
+            Debug.LogWarning("AudioManager: Audio " + name + " type is not SFX");
+            return;
+        }
+
+        if (parent == null)
+        {
+            Debug.LogWarning("AudioManager: PlaySFXAsChild received a null Transform.");
+            return;
+        }
+
+        // Create temporary object
+        GameObject tempObject = new GameObject("SFX_" + name);
+
+        // Parent it to the target
+        tempObject.transform.SetParent(parent);
+        tempObject.transform.localPosition = Vector3.zero;
+
+        // Create AudioSource
+        AudioSource tempSource = tempObject.AddComponent<AudioSource>();
+
+        //Initial setup
+        tempSource.clip = s.clip;
+        tempSource.volume = s.volume * SFXVolume;
+        //Spatial blend setup
+        if (s.spatialBlend == true)
+        SetDefaultSpatialBlending(tempSource);
+
+        // Pitch variation
+        tempSource.pitch = randompitch ? UnityEngine.Random.Range(0.7f, 1.3f) : 1f;
+
+        // Play
+        tempSource.Play();
+
+        // Destroy after clip finishes
+        Destroy(tempObject, s.clip.length / Mathf.Abs(tempSource.pitch));
     }
     #endregion
 
@@ -156,7 +218,7 @@ public class AudioManager : MonoBehaviour
         //Pitch variation
         if (randompitch == true)
         {
-            s.source.pitch = UnityEngine.Random.Range(0.7f, 1.3f);
+            s.source.pitch = randompitch ? UnityEngine.Random.Range(0.7f, 1.3f) : 1f;
         }
         
         s.source.PlayOneShot(s.clip);

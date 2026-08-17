@@ -44,7 +44,7 @@ public class PlayerGroundedState : PlayerState
     {
         EffectManager.instance.InstantiateEffect("Launch", player.transform.position, Quaternion.identity);
         player.shadow.isActive = true;
-        AudioManager.instance.PlaySFX("BoostStart", false);
+        AudioManager.instance.PlaySFXAsChild("BoostStart", true, player.transform);
         CameraManager.instance.StartCameraShake(0.2f, 0.05f);
         //CameraManager.instance.Zoom(4.8f, 0.5f);
     }
@@ -112,7 +112,7 @@ public class PlayerAirState : PlayerState
         {
             EffectManager.instance.InstantiateEffect("Boost", player.transform.position, player.transform.rotation);
             CameraManager.instance.StartCameraShake(0.2f, 0.05f);
-            AudioManager.instance.PlaySFX("BoostStart", false);
+            AudioManager.instance.PlaySFXAsChild("BoostStart", true, player.transform);
             //CameraManager.instance.Zoom(4.8f, 0.5f);
         }
 
@@ -163,7 +163,7 @@ public class PlayerFailState : PlayerState
     {
         Debug.Log("Player: fail state entered");
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
-        AudioManager.instance.PlaySFX("Fail", false); //Failsound
+        AudioManager.instance.PlayUISound("Fail", false); //Failsound
 
         switch (deathType)
         {
@@ -237,7 +237,7 @@ public class PlayerWinState : PlayerState
         Debug.Log("Player: win state entered");
         player.shadow.isActive = false;
         AudioManager.instance.ToggleLoopingSFX("BoostLoop", false);
-        AudioManager.instance.PlaySFX("Finish", false);
+        AudioManager.instance.PlayUISound("Finish", false);
     }
 
     public override void StateUpdate()

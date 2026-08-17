@@ -11,6 +11,7 @@ public class Sound
 
     [Range(0f, 1f)] public float volume;
     public bool loop;   //Is the sound played on loop
+    public bool spatialBlend;   //True for 3D sound, false for flat sound
 
     [HideInInspector]
     public AudioSource source;  //Corresponding audio source which will be created in runtime
