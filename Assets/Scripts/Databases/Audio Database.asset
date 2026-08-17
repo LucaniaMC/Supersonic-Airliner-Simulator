@@ -39,7 +39,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Click
     clip: {fileID: 8300000, guid: 3980e31a4b4b83e4592a4de6f35403ed, type: 3}
-    type: 1
+    type: 2
     volume: 1
     loop: 0
     source: {fileID: 0}
@@ -114,4 +114,10 @@ MonoBehaviour:
     type: 0
     volume: 1
     loop: 1
+    source: {fileID: 0}
+  - name: Bark
+    clip: {fileID: 8300000, guid: 51e677861197f6e449eb4d19ccd4baca, type: 3}
+    type: 1
+    volume: 1
+    loop: 0
     source: {fileID: 0}

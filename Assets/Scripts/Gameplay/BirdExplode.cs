@@ -7,7 +7,7 @@ public class BirdExplode : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            AudioManager.instance.PlaySFX("Honk", true);
+            AudioManager.instance.PlaySFX("Honk", true, transform.position);
             EffectManager.instance.InstantiateEffect("Feathers", transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

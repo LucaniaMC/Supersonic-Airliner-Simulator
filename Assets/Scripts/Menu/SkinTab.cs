@@ -26,7 +26,7 @@ public class SkinTab : MonoBehaviour
 
     public void PlayClickSound()
     {
-        if (toggle.isOn) AudioManager.instance.PlaySFX("Click", true);
+        if (toggle.isOn) AudioManager.instance.PlayUISound("Click", true);
     }
 
 

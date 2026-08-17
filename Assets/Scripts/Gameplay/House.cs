@@ -12,7 +12,7 @@ public class House : MonoBehaviour
             if(shattered == false)
             {
                 EffectManager.instance.InstantiateEffect("GlassShatter", transform.position, Quaternion.identity);
-                AudioManager.instance.PlaySFX("Shatter", true);
+                AudioManager.instance.PlaySFX("Shatter", true, transform.position);
                 shattered = true;
             }
             

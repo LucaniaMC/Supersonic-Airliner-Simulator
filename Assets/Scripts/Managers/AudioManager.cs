@@ -48,12 +48,20 @@ public class AudioManager : MonoBehaviour
 
             s.source.loop = s.loop;
             s.source.volume = s.volume;
+
+            //Spatial Sound for SFX
+            if (s.type != SoundType.SFX) continue;
+            s.source.spatialBlend = 1f;
+            s.source.rolloffMode = AudioRolloffMode.Linear;
+            s.source.minDistance = 1f;
+            s.source.maxDistance = 5f;
         }
 
         ApplyVolumeSettings();
     }
 
 
+    #region SFX Functions
     //Play a generic sound by name
     public void Play(string name)
     {
@@ -97,6 +105,66 @@ public class AudioManager : MonoBehaviour
     }
 
 
+    //Play an SFX sound at a position with the option for random pitch
+    public void PlaySFX(string name, bool randompitch, Vector3 position)
+    {
+        Sound s = audioDatabase.GetAudioData(name);
+        //Warning if there is no sound
+        if (s == null)
+        {
+            Debug.LogWarning("AudioManager: SFX not found: " + name);
+            return;
+        }
+
+        //warning if wrong type
+        if(s.type != SoundType.SFX)
+        {
+            Debug.LogWarning("AudioManager: Audio "+ name + " type is not SFX");
+            return;
+        }
+
+        //Pitch variation
+        if (randompitch == true)
+        {
+            s.source.pitch = UnityEngine.Random.Range(0.7f, 1.3f);
+        }
+        
+        AudioSource.PlayClipAtPoint(s.clip, position);
+    }
+    #endregion
+
+
+    #region UI Sound
+    //Play a UI sound with the option for random pitch
+    public void PlayUISound(string name, bool randompitch)
+    {
+        Sound s = audioDatabase.GetAudioData(name);
+        //Warning if there is no sound
+        if (s == null)
+        {
+            Debug.LogWarning("AudioManager: SFX not found: " + name);
+            return;
+        }
+
+        //warning if wrong type
+        if(s.type != SoundType.UI)
+        {
+            Debug.LogWarning("AudioManager: Audio "+ name + " type is not UI");
+            return;
+        }
+
+        //Pitch variation
+        if (randompitch == true)
+        {
+            s.source.pitch = UnityEngine.Random.Range(0.7f, 1.3f);
+        }
+        
+        s.source.PlayOneShot(s.clip);
+    }
+    #endregion
+
+
+    #region Loop SFX
     //Turn a looping SFX on or off
     public void ToggleLoopingSFX(string name, bool play)
     {
@@ -133,14 +201,16 @@ public class AudioManager : MonoBehaviour
                 s.source.Stop();
         }
     }
+    #endregion
 
 
+    #region Music Functions
     //Plays looping music
     public void PlayMusic(string name)
     {
         Sound s = audioDatabase.GetAudioData(name);
         //Warning if there is no sound
-        if (s == null || s.type != SoundType.Music)
+        if (s == null)
         {
             Debug.LogWarning("AudioManager: Music not found: " + name);
             return;
@@ -161,8 +231,10 @@ public class AudioManager : MonoBehaviour
         //currentMusic.source.volume = s.volume; // reset in case it was faded
         currentMusic.source.Play();
     }
+    #endregion
 
 
+    #region Settings
     //update volume for each sound
     public void ApplyVolumeSettings()
     {
@@ -195,4 +267,5 @@ public class AudioManager : MonoBehaviour
         musicVolume = value;
         ApplyVolumeSettings();
     }
+    #endregion
 }

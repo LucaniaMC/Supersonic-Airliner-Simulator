@@ -26,6 +26,6 @@ public abstract class UIMenu : MonoBehaviour
 
     public void PlayClickSound()
     {
-        AudioManager.instance.PlaySFX("Click", true);
+        AudioManager.instance.PlayUISound("Click", true);
     }
 }

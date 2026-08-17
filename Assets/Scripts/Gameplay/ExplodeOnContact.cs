@@ -31,7 +31,7 @@ public class ExplodeOnContact : MonoBehaviour
                             EffectManager.instance.InstantiateEffect(effect.name, transform.position, rotation);
                         }
                             
-                        AudioManager.instance.PlaySFX("Explosion", true);
+                        AudioManager.instance.PlaySFX("Explosion", true, transform.position);
                     }
                 }
 

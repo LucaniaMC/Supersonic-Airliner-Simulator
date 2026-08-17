@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum SoundType { Music, SFX }
+public enum SoundType { Music, SFX, UI }
 
 [System.Serializable]
 public class Sound
@@ -13,6 +13,6 @@ public class Sound
     public bool loop;   //Is the sound played on loop
 
     [HideInInspector]
-    public AudioSource source;  //Corresponding audio source which will be created
+    public AudioSource source;  //Corresponding audio source which will be created in runtime
 
 }
