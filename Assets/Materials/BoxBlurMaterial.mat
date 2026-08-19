@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BoxBlur
+  m_Name: BoxBlurMaterial
   m_Shader: {fileID: -6465566751694194690, guid: 5befc6678cab34a4ca65b01529a362e0, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -54,7 +54,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlurAmount: 0
+    - _BlurAmount: 10
     - _ChromaticShift: 0
     - _Greyscale: 0
     - _QueueControl: 0
