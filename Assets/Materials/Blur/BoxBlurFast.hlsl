@@ -17,7 +17,7 @@ out float Out_Alpha)
 
     for (int x = lower; x <= upper; ++x)
     {
-        float2 offset = float2(_MainTex_TexelSize.x * x, 0);
+        float2 offset = float2(_BlitTexture_TexelSize.x * x, 0);
         colx += Texture.Sample(Sampler, UV + offset);
         kernelSum += 1.0;
     }
@@ -27,7 +27,7 @@ out float Out_Alpha)
     kernelSum = 0.0;
     for (int y = lower; y <= upper; ++y)
     {
-        float2 offset = float2(0, _MainTex_TexelSize.y * y);
+        float2 offset = float2(0, _BlitTexture_TexelSize.y * y);
         coly += Texture.Sample(Sampler, UV + offset);
         kernelSum += 1.0;
     }
