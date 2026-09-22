@@ -157,14 +157,14 @@ public class CameraManager : MonoBehaviour
     public void SetChromaticShift(float amount)
     {
         if (!gameScreen) return;
-        gameScreen.material.SetFloat("_ChromaticShift", amount);
+        //gameScreen.material.SetFloat("_ChromaticShift", amount);
     }
 
 
     public void SetGreyscale(float amount)
     {
         if (!gameScreen) return;
-        gameScreen.material.SetFloat("_Greyscale", amount);
+        //gameScreen.material.SetFloat("_Greyscale", amount);
     }
     #endregion
 }
