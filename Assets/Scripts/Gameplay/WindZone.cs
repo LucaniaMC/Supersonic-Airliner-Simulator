@@ -2,7 +2,7 @@ using UnityEngine;
 
 //Attach the script with a Collider2D for it to change wind on player enter/exit
 [RequireComponent(typeof(Collider2D))]
-public class WindZone : MonoBehaviour
+public class WindArea : MonoBehaviour
 {
     public float windAngle;
     public float windStrength;
