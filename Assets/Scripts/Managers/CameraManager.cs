@@ -171,10 +171,17 @@ public class CameraManager : MonoBehaviour
         rendererMaterials[1].SetFloat("_Greyscale", amount);
     }
 
-    //Reset material values on quit
+    public void SetGlow(float amount)
+    {
+        rendererMaterials[0].SetFloat("_Intensity", amount);
+    }
+
+    //Reset material values on quit to prevent runtime changes from being saved
     void OnApplicationQuit()
     {
         rendererMaterials[2].SetFloat("_ShiftAmount", 0f);
+        rendererMaterials[1].SetFloat("_Greyscale", 0f);
+        rendererMaterials[0].SetFloat("_Intensity", 0f);
     }
     #endregion
 }

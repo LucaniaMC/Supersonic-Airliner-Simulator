@@ -1311,7 +1311,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "56b7bc7d09ef408f9affd1f970127c0b",
     "m_Id": 0,
-    "m_DisplayName": "BlendIntensity",
+    "m_DisplayName": "Intensity",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1328,10 +1328,10 @@
     "m_Guid": {
         "m_GuidSerialized": "56fabb46-2388-46fa-87ef-0a0a2541d1bc"
     },
-    "m_Name": "BlendIntensity",
+    "m_Name": "Intensity",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "BlendIntensity",
-    "m_DefaultReferenceName": "_BlendIntensity",
+    "m_RefNameGeneratedByDisplayName": "Intensity",
+    "m_DefaultReferenceName": "_Intensity",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
