@@ -1,14 +1,17 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class CameraManager : MonoBehaviour
 {
     public static CameraManager instance;
     public GameObject cameraRig {get; private set;}   //Secondary camera used for screen position calculations unaffected by screen shake
     public GameObject mainCamera {get; private set;}  //Main camera used for rendering
-    public RawImage gameScreen {get; private set;} //render texture that displays the main camera output
+    [SerializeField] Renderer2DData mainRenderer; //Renderer for the main camera
+
+    private List<Material> rendererMaterials = new List<Material>(); //All fullscreen render feature materials in the main renderer
 
     Coroutine cameraShakeCoroutine;
     Coroutine zoomCoroutine;
@@ -30,6 +33,15 @@ public class CameraManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        //Get material reference for all rendering features
+        foreach (var feature in mainRenderer.rendererFeatures)
+        {
+            if (feature is FullScreenPassRendererFeature fullScreen)
+            {
+                rendererMaterials.Add(fullScreen.passMaterial);
+            }
+        }
     }
 
 
@@ -43,12 +55,7 @@ public class CameraManager : MonoBehaviour
     {
         //Get references
         cameraRig = GameObject.FindWithTag("CameraRig");
-        mainCamera = GameObject.FindWithTag("MainCamera");
-        gameScreen = GameObject.FindWithTag("GameScreen").GetComponent<RawImage>();
-
-        //Replace RawImage's shared material reference with an instantiated one to prevent runtime changes from being saved
-        Material mat = Instantiate(gameScreen.material);
-        gameScreen.material = mat;   
+        mainCamera = GameObject.FindWithTag("MainCamera");   
 
         //prevent coroutine from carrying over between scenes
         StopAllCoroutines();
@@ -156,15 +163,18 @@ public class CameraManager : MonoBehaviour
     #region Post Effects
     public void SetChromaticShift(float amount)
     {
-        if (!gameScreen) return;
-        //gameScreen.material.SetFloat("_ChromaticShift", amount);
+        rendererMaterials[2].SetFloat("_ShiftAmount", amount);
     }
-
 
     public void SetGreyscale(float amount)
     {
-        if (!gameScreen) return;
-        //gameScreen.material.SetFloat("_Greyscale", amount);
+        rendererMaterials[1].SetFloat("_Greyscale", amount);
+    }
+
+    //Reset material values on quit
+    void OnApplicationQuit()
+    {
+        rendererMaterials[2].SetFloat("_ShiftAmount", 0f);
     }
     #endregion
 }

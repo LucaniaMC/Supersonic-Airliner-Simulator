@@ -10,7 +10,7 @@ public class ChromaticShift : MonoBehaviour
     float idleMaxIntensity = 0.15f;  //Maximum shift amount for the idle loop
 
 
-    void Update()
+    void FixedUpdate()
     {
         //Idle Effect
         float sin = Mathf.Sin(Time.time * idleSpeedModifier);
