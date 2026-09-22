@@ -18,6 +18,6 @@ public class ChromaticShift : MonoBehaviour
         float shiftedSin = clampedSin + 0.5f;
         idleShiftAmount = shiftedSin * idleMaxIntensity;
 
-        CameraManager.instance.SetChromaticShift(idleShiftAmount);
+        ShaderManager.instance.SetChromaticShift(idleShiftAmount);
     }
 }

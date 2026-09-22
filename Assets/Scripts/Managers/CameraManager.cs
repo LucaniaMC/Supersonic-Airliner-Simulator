@@ -9,9 +9,6 @@ public class CameraManager : MonoBehaviour
     public static CameraManager instance;
     public GameObject cameraRig {get; private set;}   //Secondary camera used for screen position calculations unaffected by screen shake
     public GameObject mainCamera {get; private set;}  //Main camera used for rendering
-    [SerializeField] Renderer2DData mainRenderer; //Renderer for the main camera
-
-    private List<Material> rendererMaterials = new List<Material>(); //All fullscreen render feature materials in the main renderer
 
     Coroutine cameraShakeCoroutine;
     Coroutine zoomCoroutine;
@@ -33,15 +30,6 @@ public class CameraManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
-
-        //Get material reference for all rendering features
-        foreach (var feature in mainRenderer.rendererFeatures)
-        {
-            if (feature is FullScreenPassRendererFeature fullScreen)
-            {
-                rendererMaterials.Add(fullScreen.passMaterial);
-            }
-        }
     }
 
 
@@ -156,32 +144,6 @@ public class CameraManager : MonoBehaviour
         }
 
         cam.orthographicSize = endSize;
-    }
-    #endregion
-
-
-    #region Post Effects
-    public void SetChromaticShift(float amount)
-    {
-        rendererMaterials[2].SetFloat("_ShiftAmount", amount);
-    }
-
-    public void SetGreyscale(float amount)
-    {
-        rendererMaterials[1].SetFloat("_Greyscale", amount);
-    }
-
-    public void SetGlow(float amount)
-    {
-        rendererMaterials[0].SetFloat("_Intensity", amount);
-    }
-
-    //Reset material values on quit to prevent runtime changes from being saved
-    void OnApplicationQuit()
-    {
-        rendererMaterials[2].SetFloat("_ShiftAmount", 0f);
-        rendererMaterials[1].SetFloat("_Greyscale", 0f);
-        rendererMaterials[0].SetFloat("_Intensity", 0f);
     }
     #endregion
 }
