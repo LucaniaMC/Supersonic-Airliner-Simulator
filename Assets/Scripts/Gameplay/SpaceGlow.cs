@@ -1,8 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-//Controls the intensity of the chromatic shift effect for space level
-//Includng an idle looping effect, and increase intensity when getting near black holes (TBA)
 public class SpaceGlow : MonoBehaviour
 {
     //Subtle idle effect that fades in and out

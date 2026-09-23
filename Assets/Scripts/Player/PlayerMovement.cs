@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Readable parameters
     public float distanceToBlackHoles {get; private set;}
+    public Vector3 blackHolePull {get; private set;}
 
     //references
     private PlayerStateMachine player;
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Get a reference for all black holes in scene
         blackHoles = FindObjectsOfType<BlackHole>();
+        distanceToBlackHoles = Mathf.Infinity;
     }
 
 
@@ -65,6 +67,9 @@ public class PlayerMovement : MonoBehaviour
             //Calculate black hole pulls
             Vector3 pull = blackHole.GetPullForce(player.transform.position);
             newPos += pull * Time.deltaTime;
+
+            //store pull
+            blackHolePull = pull;
 
             //Calculate nearest black hole distance
             float distance = Vector2.Distance(player.transform.position, blackHole.transform.position);
