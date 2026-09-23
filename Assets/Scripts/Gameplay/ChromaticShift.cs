@@ -7,7 +7,7 @@ public class ChromaticShift : MonoBehaviour
     //Subtle idle effect that fades in and out
     float idleShiftAmount = 0f; //Shift amount input into the material
     float idleSpeedModifier = 2f;   //Speed for the idle loop
-    float idleMaxIntensity = 0.15f;  //Maximum shift amount for the idle loop
+    float idleMaxIntensity = 0.1f;  //Maximum shift amount for the idle loop
 
     float blackHoleMax = 0.35f; //Maximum shift amount when getting close to a black hole
     float greyScaleMax = 0.75f; //Maximum greyscale amount when getting close to a black hole
