@@ -1,7 +1,7 @@
 using UnityEngine;
 
 //Controls the intensity of the chromatic shift effect for space level
-//Includng an idle looping effect, and increase intensity when getting near black holes (TBA)
+//Includng an idle looping effect, and increase intensity when getting near black holes
 public class ChromaticShift : MonoBehaviour
 {
     //Subtle idle effect that fades in and out
@@ -28,16 +28,23 @@ public class ChromaticShift : MonoBehaviour
         float shiftedSin = clampedSin + 0.5f;
         idleShiftAmount = shiftedSin * idleMaxIntensity;
 
-        //Shift amount in black hole range
-        float pullRange = Mathf.Clamp(player.blackHolePull.magnitude, 0f, 3f);
-        float normal = Mathf.InverseLerp(0f, 3f, pullRange);
-        float blackHoleShiftAmount = Mathf.Lerp(0f, blackHoleMax, normal);
+        //declare effect intensity variables
+        float blackHoleShiftAmount = 0f;
+        float greyScaleAmount = 0f;
 
-        //Greyscale amount in black hole range
-        float greyScaleAmount = Mathf.Lerp(0f, greyScaleMax, normal);
+        if (player.distanceToBlackHoles >= 0.3f)
+        {
+            //Shift amount in black hole range
+            float pullRange = Mathf.Clamp(player.blackHolePull.magnitude, 0f, 3f);
+            float normal = Mathf.InverseLerp(0f, 3f, pullRange);
+            blackHoleShiftAmount = Mathf.Lerp(0f, blackHoleMax, normal);
+
+            //Greyscale amount in black hole range
+            greyScaleAmount = Mathf.Lerp(0f, greyScaleMax, normal);
+        }
 
         //Override intensity to max when very close to black hole to prevent effects flashing
-        if(player.distanceToBlackHoles < 0.3f)
+        if (player.distanceToBlackHoles < 0.3f)
         {
             blackHoleShiftAmount = blackHoleMax;
             greyScaleAmount = greyScaleMax;
